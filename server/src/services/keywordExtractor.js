@@ -8,6 +8,9 @@ const STOPWORDS = new Set([
   '위해', '통해', '대해', '관련', '동안', '가운데', '때문', '이라며', '라며',
   '있다', '했다', '한다', '된다', '있는', '없는', '것으로', '것이다', '등',
   '및', '그리고', '하지만', '그러나', '에서', '으로', '에게', '까지', '부터',
+  // 특정 이슈를 가리키지 않는 범용 명사 — 이 단어들이 카드 라벨(entity/event word)에
+  // 단독으로 들어가면 "근황"처럼 아무 정보도 없는 트렌드가 되므로 아예 후보에서 제외한다.
+  '근황', '소감', '공개', '출연', '포착', '눈길', '화제', '전해', '깜짝',
 ]);
 
 const PARTICLE_SUFFIXES = ['에서의', '이라는', '했다는', '한다는', '에게', '으로', '에서', '에도', '까지', '부터', '이라', '라는', '은', '는', '이', '가', '을', '를', '도', '만', '와', '과'];
@@ -36,4 +39,43 @@ function extractKeywords(title) {
   return Array.from(new Set(tokens));
 }
 
-module.exports = { extractKeywords };
+// 카드 라벨용 "사건/행위" 화이트리스트 — entity 뒤에 붙여 "문근영 결혼" 같은 라벨을 만든다.
+// 화이트리스트에 없으면 그다음으로 자주 나온 보조 토큰으로 대체한다.
+const EVENT_WORDS = new Set([
+  '결혼', '이혼', '열애', '스캔들', '사고', '사망', '은퇴', '컴백',
+  '우승', '부상', '임신', '출산', '파경', '구속', '사퇴',
+]);
+
+// extractKeywords()의 결과는 제목에 등장한 순서 그대로다(Set은 삽입 순서 보존).
+// 한국어 뉴스 제목은 관행적으로 "누가, ..." 형태로 시작하므로, 첫 생존 토큰을 주어(entity)로 삼는다.
+function getPrimaryEntity(keywords) {
+  return keywords.length > 0 ? keywords[0] : null;
+}
+
+// entity로 묶인 모든 기사의 (entity 제외) 토큰들 중에서 대표 "사건어"를 고른다.
+// tokenOccurrences: 빈도 계산을 위해 중복 포함한 토큰 배열.
+function pickEventWord(entity, tokenOccurrences) {
+  const freq = new Map();
+  for (const kw of tokenOccurrences) {
+    if (kw === entity) continue;
+    freq.set(kw, (freq.get(kw) || 0) + 1);
+  }
+
+  let best = null;
+  for (const [kw, count] of freq) {
+    if (EVENT_WORDS.has(kw) && (!best || count > best.count)) best = { kw, count };
+  }
+  if (best) return best.kw;
+
+  let fallback = null;
+  for (const [kw, count] of freq) {
+    if (!fallback || count > fallback.count) fallback = { kw, count };
+  }
+  return fallback ? fallback.kw : null;
+}
+
+function buildDisplayKeyword(entity, eventWord) {
+  return eventWord ? `${entity} ${eventWord}` : entity;
+}
+
+module.exports = { extractKeywords, EVENT_WORDS, getPrimaryEntity, pickEventWord, buildDisplayKeyword };

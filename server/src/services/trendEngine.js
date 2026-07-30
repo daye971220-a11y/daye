@@ -1,5 +1,6 @@
 const db = require('../db');
 const categories = require('../config/categories');
+const { getPrimaryEntity, pickEventWord, buildDisplayKeyword } = require('./keywordExtractor');
 
 const LOOKBACK_MIN = 6 * 60; // 트렌드 계산에 사용할 전체 관찰 구간
 const RECENT_WINDOW_MIN = 60; // "지금 뜨는"으로 볼 최근 구간
@@ -32,6 +33,15 @@ const insertSnapshot = db.prepare(`
 
 const deleteOldSnapshots = db.prepare(`DELETE FROM trend_snapshots WHERE category = ? AND snapshot_at < ?`);
 
+// 스파이크 판단(6h/60min)과 별개로, "이 주어가 실제로 언제 처음 등장했는지"는
+// 시간 하한 없이 전체 기록에서 찾는다 — pub_date는 네이버가 준 실제 발행 시각이라 이미 정확하고,
+// extracted_keywords는 JSON.stringify(토큰배열)로 저장돼 있어 LIKE '%"entity"%'로 정확히 매칭된다.
+const selectEarliestForEntity = db.prepare(`
+  SELECT MIN(pub_date) as earliest
+  FROM articles
+  WHERE category = ? AND extracted_keywords LIKE ?
+`);
+
 function computeCategory(category) {
   const now = Date.now();
   const lookbackSince = new Date(now - LOOKBACK_MIN * 60 * 1000).toISOString();
@@ -39,7 +49,9 @@ function computeCategory(category) {
 
   const rows = selectArticles.all(category.id, lookbackSince);
 
-  const byKeyword = new Map();
+  // 토큰마다가 아니라 "주어(entity)"마다 버킷을 만든다 — 기사 1건당 버킷 1개.
+  // 이렇게 하면 표현이 달라진 후속 기사도 같은 인물이면 같은 버킷(=같은 카드)에 계속 쌓인다.
+  const byEntity = new Map();
   for (const row of rows) {
     let keywords;
     try {
@@ -47,16 +59,16 @@ function computeCategory(category) {
     } catch {
       continue;
     }
-    for (const kw of keywords) {
-      if (!byKeyword.has(kw)) byKeyword.set(kw, []);
-      byKeyword.get(kw).push(row);
-    }
+    const entity = getPrimaryEntity(keywords);
+    if (!entity) continue;
+    if (!byEntity.has(entity)) byEntity.set(entity, []);
+    byEntity.get(entity).push({ ...row, _keywords: keywords });
   }
 
   const baselineMinutes = LOOKBACK_MIN - RECENT_WINDOW_MIN;
   const results = [];
 
-  for (const [keyword, articles] of byKeyword) {
+  for (const [entity, articles] of byEntity) {
     if (articles.length < MIN_ARTICLES) continue;
 
     const recent = articles.filter((a) => a.pub_date >= recentSince);
@@ -67,11 +79,24 @@ function computeCategory(category) {
     const spikeScore = recent.length / (baselineAvgPerRecentWindow + 1);
 
     const sorted = [...articles].sort((a, b) => (a.pub_date < b.pub_date ? 1 : -1));
-    const firstSeenAt = articles.reduce((min, a) => (a.pub_date < min ? a.pub_date : min), articles[0].pub_date);
+
+    // firstSeenAt: 6시간으로 잘린 articles가 아니라 전체 기록에서 이 entity의 진짜 최초 시점을 조회
+    const earliestRow = selectEarliestForEntity.get(category.id, `%"${entity}"%`);
+    const firstSeenAt = earliestRow && earliestRow.earliest
+      ? earliestRow.earliest
+      : articles.reduce((min, a) => (a.pub_date < min ? a.pub_date : min), articles[0].pub_date);
+
+    // 카드 라벨: entity + (화이트리스트 사건어, 없으면 다음으로 자주 나온 보조 토큰)
+    const tokenOccurrences = [];
+    for (const a of articles) {
+      for (const kw of a._keywords) if (kw !== entity) tokenOccurrences.push(kw);
+    }
+    const eventWord = pickEventWord(entity, tokenOccurrences);
+    const displayKeyword = buildDisplayKeyword(entity, eventWord);
 
     results.push({
       category: category.id,
-      keyword,
+      keyword: displayKeyword,
       articleCount: articles.length,
       spikeScore,
       sampleTitles: JSON.stringify(sorted.slice(0, 3).map((a) => a.title)),
