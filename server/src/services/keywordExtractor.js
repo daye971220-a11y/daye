@@ -24,9 +24,17 @@ function stripParticle(word) {
   return word;
 }
 
+// [포토], [S포토], [NC포토], [ET포토], [포토S] 등 언론사 포토 캡션 태그 —
+// 브래킷이 사라진 뒤에도 "포토"만 단독/영문 접두·접미로 붙은 토큰은 항상 이 태그이지
+// 실제 인물/작품명이 아니므로 제외한다(영화/드라마/패션 카테고리는 포토 캡션 기사 비중이
+// 높아서, 이 태그가 첫 토큰으로 뽑히면 진짜 주어 대신 "S포토" 같은 게 entity가 되어버림).
+const PHOTO_TAG = /^[A-Za-z]{0,4}포토[A-Za-z]{0,4}$/;
+// [TD영상], [TOP영상]처럼 같은 패턴의 영상 캡션 태그도 동일한 이유로 제외한다.
+const VIDEO_TAG = /^[A-Za-z0-9]{0,4}영상[A-Za-z0-9]{0,4}$/;
+
 function extractKeywords(title) {
   const cleaned = title
-    .replace(/["'“”‘’()\[\]<>『』「」…!?]/g, ' ')
+    .replace(/["'“”‘’()\[\]<>『』「」…!?:]/g, ' ')
     .replace(/[.,]/g, ' ');
 
   const tokens = cleaned
@@ -34,7 +42,7 @@ function extractKeywords(title) {
     .map((t) => t.trim())
     .filter(Boolean)
     .map(stripParticle)
-    .filter((t) => t.length >= 2 && !STOPWORDS.has(t) && !/^\d+$/.test(t));
+    .filter((t) => t.length >= 2 && !STOPWORDS.has(t) && !PHOTO_TAG.test(t) && !VIDEO_TAG.test(t) && !/^\d+$/.test(t));
 
   return Array.from(new Set(tokens));
 }

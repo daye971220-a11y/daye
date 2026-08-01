@@ -8,7 +8,7 @@ async function runCycle() {
     const collected = await collectAll();
     const totalCollected = Object.values(collected).reduce((sum, n) => sum + n, 0);
 
-    const { summary: computed } = computeAll();
+    const { summary: computed } = await computeAll();
     const totalTrends = Object.values(computed).reduce((sum, n) => sum + n, 0);
 
     const tookSec = ((Date.now() - startedAt) / 1000).toFixed(1);
