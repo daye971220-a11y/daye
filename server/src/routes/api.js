@@ -37,6 +37,7 @@ router.get('/trends', (req, res) => {
     keyword: r.keyword,
     articleCount: r.article_count,
     spikeScore: Number(r.spike_score.toFixed(2)),
+    blogCount: r.blog_count === null || r.blog_count === undefined ? null : Number(r.blog_count),
     sampleTitles: JSON.parse(r.sample_titles),
     sampleLinks: JSON.parse(r.sample_links),
     firstSeenAt: r.first_seen_at,

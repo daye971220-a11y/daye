@@ -3,9 +3,18 @@ const statusEl = document.getElementById('status');
 const cardsEl = document.getElementById('cards');
 const refreshBtn = document.getElementById('refreshBtn');
 
+const cardnewsModal = document.getElementById('cardnewsModal');
+const cardnewsTitleEl = document.getElementById('cardnewsTitle');
+const cardnewsSlidesEl = document.getElementById('cardnewsSlides');
+const cardnewsCloseBtn = document.getElementById('cardnewsClose');
+const cardnewsDownloadAllBtn = document.getElementById('cardnewsDownloadAll');
+
 let categories = [];
 let activeCategory = null;
 let pollTimer = null;
+let lastTrends = [];
+let currentCardNewsSlides = [];
+let currentCardNewsKeyword = '';
 
 function escapeHtml(str) {
   const div = document.createElement('div');
@@ -49,8 +58,10 @@ function renderTrends(data) {
 
   statusEl.textContent = `마지막 갱신: ${timeAgo(data.snapshotAt)}`;
 
+  lastTrends = data.trends;
+
   cardsEl.innerHTML = data.trends
-    .map((t) => {
+    .map((t, idx) => {
       const samples = t.sampleTitles
         .map(
           (title, i) =>
@@ -58,19 +69,100 @@ function renderTrends(data) {
         )
         .join('');
 
+      const blogBadge =
+        t.blogCount === null
+          ? ''
+          : `<span class="badge badge-blog">✍️ 블로그 ${t.blogCount}개뿐</span>`;
+
       return `
         <article class="card">
           <div class="card-top">
             <span class="badge">🔥 ${t.articleCount}건 몰림</span>
+            ${blogBadge}
           </div>
           <div class="keyword">${escapeHtml(t.keyword)}</div>
           <div class="meta">${timeAgo(t.firstSeenAt)} 처음 감지 · 최신 기사 ${timeAgo(t.latestArticleAt)}</div>
           <ul class="sample-list">${samples}</ul>
+          <button class="cardnews-btn" data-idx="${idx}">🖼️ 카드뉴스 만들기</button>
         </article>
       `;
     })
     .join('');
+
+  cardsEl.querySelectorAll('.cardnews-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.dataset.idx);
+      openCardNewsModal(lastTrends[idx]);
+    });
+  });
 }
+
+function sanitizeFilename(str) {
+  return str.replace(/[\\/:*?"<>|]/g, '').replace(/\s+/g, '_');
+}
+
+function downloadCanvas(canvas, filename) {
+  canvas.toBlob((blob) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }, 'image/png');
+}
+
+function openCardNewsModal(trend) {
+  if (!trend || !window.CardNews) return;
+  const categoryMeta = categories.find((c) => c.id === activeCategory) || {};
+  const slides = window.CardNews.generate(trend, categoryMeta);
+
+  currentCardNewsSlides = slides;
+  currentCardNewsKeyword = sanitizeFilename(trend.keyword);
+
+  cardnewsTitleEl.textContent = `🖼️ 카드뉴스 - ${trend.keyword}`;
+  cardnewsSlidesEl.innerHTML = '';
+
+  slides.forEach((canvas, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'cardnews-slide';
+
+    canvas.className = 'cardnews-canvas';
+
+    const dlBtn = document.createElement('button');
+    dlBtn.className = 'cardnews-dl-btn';
+    dlBtn.textContent = `${i + 1}번 다운로드`;
+    dlBtn.addEventListener('click', () =>
+      downloadCanvas(canvas, `카드뉴스_${currentCardNewsKeyword}_${i + 1}.png`)
+    );
+
+    wrap.appendChild(canvas);
+    wrap.appendChild(dlBtn);
+    cardnewsSlidesEl.appendChild(wrap);
+  });
+
+  cardnewsModal.classList.remove('hidden');
+}
+
+function closeCardNewsModal() {
+  cardnewsModal.classList.add('hidden');
+}
+
+cardnewsCloseBtn.addEventListener('click', closeCardNewsModal);
+cardnewsModal.addEventListener('click', (e) => {
+  if (e.target === cardnewsModal) closeCardNewsModal();
+});
+
+cardnewsDownloadAllBtn.addEventListener('click', () => {
+  currentCardNewsSlides.forEach((canvas, i) => {
+    setTimeout(
+      () => downloadCanvas(canvas, `카드뉴스_${currentCardNewsKeyword}_${i + 1}.png`),
+      i * 300
+    );
+  });
+});
 
 async function loadTrends() {
   if (!activeCategory) return;
