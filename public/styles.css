@@ -299,3 +299,146 @@ body {
 .primary-btn:hover {
   opacity: 0.9;
 }
+
+/* 모드 전환(지금 뜨는 이슈 / 키워드 리서치) */
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px 0;
+}
+
+.mode-tab {
+  flex: 0 0 auto;
+  padding: 8px 18px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mode-tab.active {
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 키워드 리서치 테이블 */
+.content-wide {
+  max-width: 1100px;
+}
+
+.keyword-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.keyword-toolbar .status {
+  text-align: left;
+  margin: 0;
+}
+
+.keyword-toolbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.keyword-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.keyword-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 900px;
+}
+
+.keyword-table th {
+  background: var(--text);
+  color: var(--card-bg);
+  text-align: center;
+  padding: 10px 8px;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.keyword-table td {
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.keyword-table tbody tr:nth-child(even) {
+  background: var(--accent-bg);
+}
+
+.keyword-table .col-rank,
+.keyword-table .col-center {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.keyword-table .col-num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.keyword-table .col-keyword {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.keyword-table .col-title {
+  color: var(--muted);
+  min-width: 320px;
+}
+
+.keyword-table td.error {
+  text-align: center;
+  white-space: pre-line;
+  padding: 30px 16px;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.priority-badge.priority-hot {
+  background: #ffe1d6;
+  color: #c1441c;
+}
+
+.priority-badge.priority-high {
+  background: #dcf5e3;
+  color: #1c7a3c;
+}
+
+.priority-badge.priority-mid {
+  background: #e3ecff;
+  color: #2a53c1;
+}
+
+.priority-badge.priority-low {
+  background: var(--border);
+  color: var(--muted);
+}

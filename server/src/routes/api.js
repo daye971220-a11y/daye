@@ -1,6 +1,8 @@
 const express = require('express');
 const db = require('../db');
 const categories = require('../config/categories');
+const keywordResearch = require('../services/keywordResearch');
+const { buildWorkbook } = require('../services/keywordExcel');
 
 const router = express.Router();
 
@@ -77,6 +79,65 @@ router.get('/feed', (req, res) => {
       matchedKeyword: r.matched_keyword,
     }))
   );
+});
+
+// --- 키워드 리서치 (여행/경제/연예 핵심 키워드 TOP100) ---
+
+router.get('/keyword-topics', (req, res) => {
+  res.json(keywordResearch.topics.map(({ id, label, emoji }) => ({ id, label, emoji })));
+});
+
+function findTopic(topicId) {
+  return keywordResearch.topics.find((t) => t.id === topicId);
+}
+
+router.get('/keywords/:topic', (req, res) => {
+  const topic = findTopic(req.params.topic);
+  if (!topic) return res.status(400).json({ error: '유효하지 않은 토픽입니다.' });
+
+  const data = keywordResearch.getLatest(topic.id);
+  res.json(data);
+});
+
+// 새로고침은 검색광고/데이터랩 API를 여러 번 호출하는 무거운 작업이라, 토픽당 동시에
+// 하나만 돌게 막는다 (버튼 연타로 API를 스팸하지 않도록).
+const refreshingTopics = new Set();
+
+router.post('/keywords/:topic/refresh', async (req, res) => {
+  const topic = findTopic(req.params.topic);
+  if (!topic) return res.status(400).json({ error: '유효하지 않은 토픽입니다.' });
+
+  if (refreshingTopics.has(topic.id)) {
+    return res.status(429).json({ error: '이미 새로고침 중입니다. 잠시 후 다시 시도해주세요.' });
+  }
+
+  refreshingTopics.add(topic.id);
+  try {
+    await keywordResearch.refreshTopic(topic.id);
+    res.json(keywordResearch.getLatest(topic.id));
+  } catch (err) {
+    res.status(502).json({ error: err.message });
+  } finally {
+    refreshingTopics.delete(topic.id);
+  }
+});
+
+router.get('/keywords/:topic/export.xlsx', async (req, res) => {
+  const topic = findTopic(req.params.topic);
+  if (!topic) return res.status(400).json({ error: '유효하지 않은 토픽입니다.' });
+
+  const data = keywordResearch.getLatest(topic.id);
+  if (data.rows.length === 0) {
+    return res.status(404).json({ error: '내보낼 데이터가 없습니다. 먼저 새로고침 해주세요.' });
+  }
+
+  const wb = buildWorkbook(topic.label, data);
+  const filename = encodeURIComponent(`${topic.label}_핵심키워드_TOP${data.rows.length}.xlsx`);
+
+  res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+  res.setHeader('Content-Disposition', `attachment; filename*=UTF-8''${filename}`);
+  await wb.xlsx.write(res);
+  res.end();
 });
 
 module.exports = router;

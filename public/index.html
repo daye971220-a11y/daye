@@ -4,20 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>지금 뜨는 이슈 - 블로그 소재 피드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 카드뉴스 제목용 마카체 폰트. 카드뉴스 기능에서만 쓰이며, 없어도(오프라인 등) 기본 고딕체로 자동 대체됨 -->
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
-    <h1>🔥 지금 뜨는 이슈</h1>
+    <h1 id="pageTitle">🔥 지금 뜨는 이슈</h1>
     <button id="refreshBtn" class="refresh-btn">새로고침</button>
   </header>
 
-  <nav class="tabs" id="tabs"></nav>
+  <nav class="mode-tabs" id="modeTabs">
+    <button class="mode-tab active" data-mode="issue">🔥 지금 뜨는 이슈</button>
+    <button class="mode-tab" data-mode="keyword">🔑 키워드 리서치</button>
+  </nav>
 
-  <main id="content" class="content">
-    <p class="status" id="status">불러오는 중...</p>
-    <div class="cards" id="cards"></div>
-  </main>
+  <section id="issueView">
+    <nav class="tabs" id="tabs"></nav>
+
+    <main id="content" class="content">
+      <p class="status" id="status">불러오는 중...</p>
+      <div class="cards" id="cards"></div>
+    </main>
+  </section>
+
+  <section id="keywordView" class="hidden">
+    <nav class="tabs" id="keywordTopicTabs"></nav>
+
+    <main class="content content-wide">
+      <div class="keyword-toolbar">
+        <p class="status" id="keywordStatus">불러오는 중...</p>
+        <div class="keyword-toolbar-actions">
+          <button id="keywordRefreshBtn" class="refresh-btn">🔄 이 주제 새로고침</button>
+          <button id="keywordExportBtn" class="refresh-btn">⬇️ 엑셀 다운로드</button>
+        </div>
+      </div>
+      <div class="keyword-table-wrap">
+        <table class="keyword-table" id="keywordTable">
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>대표 키워드</th>
+              <th>PC 검색량</th>
+              <th>모바일 검색량</th>
+              <th>월간 총검색량</th>
+              <th>모바일 비중</th>
+              <th>유형</th>
+              <th>발행 우선순위</th>
+              <th>광고 경쟁도</th>
+              <th>추천 제목</th>
+            </tr>
+          </thead>
+          <tbody id="keywordTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </section>
 
   <div id="cardnewsModal" class="modal-overlay hidden">
     <div class="modal">

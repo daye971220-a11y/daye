@@ -57,14 +57,44 @@ db.exec(`
     category TEXT PRIMARY KEY,
     last_run_at TEXT NOT NULL
   );
+
+  -- "키워드 리서치" 탭(여행/경제/연예 핵심 키워드 TOP100) 결과 캐시.
+  -- 검색광고 API + 데이터랩 API를 매 페이지 로드마다 부르면 낭비라서, 새로고침 버튼을
+  -- 눌렀을 때만 재계산하고 그 결과를 topic별로 통째로 갈아끼우는 방식으로 저장한다.
+  CREATE TABLE IF NOT EXISTS keyword_research (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic TEXT NOT NULL,
+    rank INTEGER NOT NULL,
+    keyword TEXT NOT NULL,
+    pc_qc INTEGER NOT NULL,
+    mobile_qc INTEGER NOT NULL,
+    total_qc INTEGER NOT NULL,
+    mobile_ratio REAL NOT NULL,
+    season_type TEXT NOT NULL,
+    priority TEXT NOT NULL,
+    comp_idx TEXT,
+    recommended_title TEXT NOT NULL,
+    computed_at TEXT NOT NULL
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_keyword_research_topic ON keyword_research(topic, rank);
+
+  CREATE TABLE IF NOT EXISTS keyword_research_runs (
+    topic TEXT PRIMARY KEY,
+    last_run_at TEXT NOT NULL,
+    candidate_count INTEGER NOT NULL,
+    error TEXT
+  );
 `);
 
 // better-sqlite3 스타일의 db.transaction(fn) API를 node:sqlite 위에 흉내낸다.
-db.transaction = (fn) => (arg) => {
+// (인자 개수 제약 없이 그대로 fn에 전달 — 단일 배열 인자만 받던 콜러들과도 호환됨)
+db.transaction = (fn) => (...args) => {
   db.exec('BEGIN');
   try {
-    fn(arg);
+    const result = fn(...args);
     db.exec('COMMIT');
+    return result;
   } catch (err) {
     db.exec('ROLLBACK');
     throw err;

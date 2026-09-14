@@ -2,6 +2,16 @@ const tabsEl = document.getElementById('tabs');
 const statusEl = document.getElementById('status');
 const cardsEl = document.getElementById('cards');
 const refreshBtn = document.getElementById('refreshBtn');
+const pageTitleEl = document.getElementById('pageTitle');
+
+const modeTabsEl = document.getElementById('modeTabs');
+const issueViewEl = document.getElementById('issueView');
+const keywordViewEl = document.getElementById('keywordView');
+const keywordTopicTabsEl = document.getElementById('keywordTopicTabs');
+const keywordStatusEl = document.getElementById('keywordStatus');
+const keywordRefreshBtn = document.getElementById('keywordRefreshBtn');
+const keywordExportBtn = document.getElementById('keywordExportBtn');
+const keywordTableBodyEl = document.getElementById('keywordTableBody');
 
 const cardnewsModal = document.getElementById('cardnewsModal');
 const cardnewsTitleEl = document.getElementById('cardnewsTitle');
@@ -15,6 +25,10 @@ let pollTimer = null;
 let lastTrends = [];
 let currentCardNewsSlides = [];
 let currentCardNewsKeyword = '';
+
+let mode = 'issue';
+let keywordTopics = [];
+let activeKeywordTopic = null;
 
 function escapeHtml(str) {
   const div = document.createElement('div');
@@ -48,6 +62,150 @@ function renderTabs() {
     });
   });
 }
+
+function switchMode(nextMode) {
+  mode = nextMode;
+  modeTabsEl.querySelectorAll('.mode-tab').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.mode === mode);
+  });
+
+  const isIssue = mode === 'issue';
+  issueViewEl.classList.toggle('hidden', !isIssue);
+  keywordViewEl.classList.toggle('hidden', isIssue);
+  refreshBtn.classList.toggle('hidden', !isIssue);
+  pageTitleEl.textContent = isIssue ? '🔥 지금 뜨는 이슈' : '🔑 키워드 리서치';
+
+  // 키워드 표는 DB 캐시만 읽는 가벼운 조회라(외부 API 호출 없음) 탭 전환마다 새로 불러와도 무방
+  if (!isIssue && activeKeywordTopic) {
+    loadKeywordTable();
+  }
+}
+
+modeTabsEl.querySelectorAll('.mode-tab').forEach((btn) => {
+  btn.addEventListener('click', () => switchMode(btn.dataset.mode));
+});
+
+function renderKeywordTopicTabs() {
+  keywordTopicTabsEl.innerHTML = keywordTopics
+    .map(
+      (t) =>
+        `<button class="tab${t.id === activeKeywordTopic ? ' active' : ''}" data-id="${t.id}">${t.emoji} ${escapeHtml(t.label)}</button>`
+    )
+    .join('');
+
+  keywordTopicTabsEl.querySelectorAll('.tab').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeKeywordTopic = btn.dataset.id;
+      renderKeywordTopicTabs();
+      loadKeywordTable();
+    });
+  });
+}
+
+const PRIORITY_CLASS = {
+  '우선(급상승)': 'priority-hot',
+  '우선': 'priority-high',
+  '확장': 'priority-mid',
+  '보류': 'priority-low',
+};
+
+function renderKeywordTable(data) {
+  if (data.error) {
+    keywordStatusEl.textContent = '';
+    keywordTableBodyEl.innerHTML = `<tr><td colspan="10" class="error">${escapeHtml(data.error)}\nserver/.env에 NAVER_AD_API_KEY / NAVER_AD_SECRET_KEY / NAVER_AD_CUSTOMER_ID를 설정한 뒤 "새로고침"을 눌러주세요.</td></tr>`;
+    return;
+  }
+
+  if (!data.rows || data.rows.length === 0) {
+    keywordStatusEl.textContent = '아직 수집된 키워드가 없어요. "새로고침"을 눌러 시작해보세요.';
+    keywordTableBodyEl.innerHTML = '';
+    return;
+  }
+
+  keywordStatusEl.textContent = `마지막 갱신: ${timeAgo(data.lastRunAt)} · 키워드 ${data.rows.length}개`;
+
+  keywordTableBodyEl.innerHTML = data.rows
+    .map(
+      (r) => `
+        <tr>
+          <td class="col-rank">${r.rank}</td>
+          <td class="col-keyword">${escapeHtml(r.keyword)}</td>
+          <td class="col-num">${r.pcQc.toLocaleString('ko-KR')}</td>
+          <td class="col-num">${r.mobileQc.toLocaleString('ko-KR')}</td>
+          <td class="col-num">${r.totalQc.toLocaleString('ko-KR')}</td>
+          <td class="col-num">${r.mobileRatio.toFixed(1)}%</td>
+          <td class="col-center">${escapeHtml(r.seasonType)}</td>
+          <td class="col-center"><span class="priority-badge ${PRIORITY_CLASS[r.priority] || ''}">${escapeHtml(r.priority)}</span></td>
+          <td class="col-center">${escapeHtml(r.compIdx || '-')}</td>
+          <td class="col-title">${escapeHtml(r.recommendedTitle)}</td>
+        </tr>
+      `
+    )
+    .join('');
+}
+
+async function loadKeywordTable() {
+  if (!activeKeywordTopic) return;
+  try {
+    const res = await fetch(`/api/keywords/${encodeURIComponent(activeKeywordTopic)}`);
+    if (!res.ok) throw new Error(`서버 오류 (${res.status})`);
+    const data = await res.json();
+    renderKeywordTable(data);
+  } catch (err) {
+    keywordStatusEl.textContent = '';
+    keywordTableBodyEl.innerHTML = `<tr><td colspan="10" class="error">불러오기 실패: ${escapeHtml(err.message)}</td></tr>`;
+  }
+}
+
+async function refreshActiveKeywordTopic() {
+  if (!activeKeywordTopic) return;
+  const originalLabel = keywordRefreshBtn.textContent;
+  keywordRefreshBtn.disabled = true;
+  keywordRefreshBtn.textContent = '수집 중... (최대 1분)';
+  keywordStatusEl.textContent = '검색광고 API + 데이터랩에서 키워드를 모으는 중이에요...';
+
+  try {
+    const res = await fetch(`/api/keywords/${encodeURIComponent(activeKeywordTopic)}/refresh`, { method: 'POST' });
+    const data = await res.json();
+    if (!res.ok) {
+      renderKeywordTable({ error: data.error || `서버 오류 (${res.status})` });
+    } else {
+      renderKeywordTable(data);
+    }
+  } catch (err) {
+    renderKeywordTable({ error: err.message });
+  } finally {
+    keywordRefreshBtn.disabled = false;
+    keywordRefreshBtn.textContent = originalLabel;
+  }
+}
+
+function exportActiveKeywordTopic() {
+  if (!activeKeywordTopic) return;
+  const a = document.createElement('a');
+  a.href = `/api/keywords/${encodeURIComponent(activeKeywordTopic)}/export.xlsx`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+async function loadKeywordTopics() {
+  try {
+    const res = await fetch('/api/keyword-topics');
+    keywordTopics = await res.json();
+    if (keywordTopics.length > 0) {
+      activeKeywordTopic = keywordTopics[0].id;
+      renderKeywordTopicTabs();
+      await loadKeywordTable();
+    }
+  } catch (err) {
+    keywordStatusEl.textContent = '';
+    keywordTableBodyEl.innerHTML = `<tr><td colspan="10" class="error">서버에 연결할 수 없어요: ${escapeHtml(err.message)}</td></tr>`;
+  }
+}
+
+keywordRefreshBtn.addEventListener('click', refreshActiveKeywordTopic);
+keywordExportBtn.addEventListener('click', exportActiveKeywordTopic);
 
 function renderTrends(data) {
   if (!data.trends || data.trends.length === 0) {
@@ -94,7 +252,7 @@ function renderTrends(data) {
   cardsEl.querySelectorAll('.cardnews-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const idx = Number(btn.dataset.idx);
-      openCardNewsModal(lastTrends[idx]);
+      openCardNewsModal(lastTrends[idx], btn);
     });
   });
 }
@@ -116,10 +274,25 @@ function downloadCanvas(canvas, filename) {
   }, 'image/png');
 }
 
-function openCardNewsModal(trend) {
+async function openCardNewsModal(trend, triggerBtn) {
   if (!trend || !window.CardNews) return;
-  const categoryMeta = categories.find((c) => c.id === activeCategory) || {};
-  const slides = window.CardNews.generate(trend, categoryMeta);
+
+  const originalLabel = triggerBtn ? triggerBtn.textContent : null;
+  if (triggerBtn) {
+    triggerBtn.disabled = true;
+    triggerBtn.textContent = '만드는 중...';
+  }
+
+  let slides;
+  try {
+    const categoryMeta = categories.find((c) => c.id === activeCategory) || {};
+    slides = await window.CardNews.generate(trend, categoryMeta);
+  } finally {
+    if (triggerBtn) {
+      triggerBtn.disabled = false;
+      triggerBtn.textContent = originalLabel;
+    }
+  }
 
   currentCardNewsSlides = slides;
   currentCardNewsKeyword = sanitizeFilename(trend.keyword);
@@ -192,6 +365,8 @@ async function init() {
     statusEl.textContent = '';
     cardsEl.innerHTML = `<p class="error">서버에 연결할 수 없어요: ${escapeHtml(err.message)}</p>`;
   }
+
+  loadKeywordTopics();
 }
 
 refreshBtn.addEventListener('click', loadTrends);
