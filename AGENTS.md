@@ -1,0 +1,60 @@
+# 지금 뜨는 이슈 홈피드 사이트
+
+## 이게 뭔가요
+사용자(다예)는 블로거로, "지금 막 뜬 이슈"(예: 연예인 스캔들이 터진 지 5분 만에 여러 매체가 다루기 시작하는 순간)를 빠르게 캐치해서 글을 쓰면 조회수가 잘 나온다는 경험이 있음. 이걸 자동화하기 위해, 카테고리별(연예/연애, 경제, 정치/사회, 스포츠)로 네이버 뉴스를 주기적으로 수집하고 "갑자기 여러 기사가 몰리기 시작한 키워드"를 감지해 홈피드 카드로 보여주는 사이트를 만들었음.
+
+**만약 사용자가 다음에 할 일을 잘 설명하지 못하거나 "어제 하던 거 이어서 해줘"라고만 말해도, 이 문서와 아래 "다음에 이어서 할 일" 섹션을 기준으로 상황을 파악하고 먼저 어떤 걸 하고 싶은지 확인한 뒤 진행할 것.**
+
+## 구조
+- `server/` — Node.js + Express 백엔드. `npm install` 후 `npm start`로 실행 (기본 포트 4000)
+  - `src/services/naverClient.js` — 네이버 뉴스 검색 API 호출
+  - `src/services/collector.js` — 카테고리별 시드 키워드로 뉴스 수집 → DB 저장 (요청 간 0.3초 간격 있음, 네이버 API 429 방지용)
+  - `src/services/keywordExtractor.js` — 제목에서 키워드 후보 추출 (형태소 분석기 없는 러프한 방식, 알려진 한계 있음). 첫 생존 토큰을 "주어(entity)"로 보고, `EVENT_WORDS` 화이트리스트로 "인물+사건" 형태 라벨(예: "문근영 결혼")을 만듦
+  - `src/services/trendEngine.js` — entity(주어) 기준으로 기사 묶어서 급상승 점수 계산. 이름 표기가 갈라진 경우(예: "야노"/"야노시호") 접두사+공통 단어 조건으로 병합. 기존 링크 겹침 기반 중복 제거(`SAME_STORY_OVERLAP`)는 2차 안전망으로 유지
+  - `src/services/discordNotifier.js` — 뜨거운 이슈(기사 5건 이상)를 디스코드 웹훅으로 알림. `DISCORD_WEBHOOK_URL` 미설정 시 조용히 꺼짐
+  - `src/services/scheduler.js` — `COLLECT_INTERVAL_MIN`(기본 10분)마다 수집+계산(+디스코드 알림) 자동 실행
+  - `src/config/categories.js` — 카테고리/시드 키워드 목록 (여기서 추가/수정)
+  - DB는 `better-sqlite3`가 아니라 Node 내장 **`node:sqlite`** 사용 중 — 처음 만들 때 이 컴퓨터에 Python/빌드 도구가 없어서 네이티브 컴파일이 안 됐기 때문. 다른 컴퓨터에서도 Node 22+ 면 문제없이 동작하지만, 혹시 `node:sqlite` 관련 에러가 나면 Node 버전을 먼저 확인할 것 (`node -v`, 22 이상 필요).
+  - **키워드 리서치(여행/경제/연예 핵심 키워드 TOP100 표) 기능**: "지금 뜨는 이슈"와는 별개 기능. `src/config/keywordTopics.js`(토픽별 시드+뉴스검색어+추천제목 템플릿) → `src/services/keywordCandidates.js`(뉴스 헤드라인에서 후보 추가 채굴) → `src/services/datalabClient.js`(데이터랩 검색어트렌드로 시드의 급상승/계절성 판정, NAVER_CLIENT_ID/SECRET 재사용) → `src/services/searchAdClient.js`(네이버 **검색광고** API 키워드도구로 PC/모바일 검색량·경쟁도 조회, `NAVER_AD_API_KEY`/`NAVER_AD_SECRET_KEY`/`NAVER_AD_CUSTOMER_ID` 별도 키 필요) → `src/services/keywordResearch.js`(오케스트레이터, `keyword_research`/`keyword_research_runs` 테이블에 캐시) → `src/services/keywordExcel.js`(exceljs로 스타일 입힌 xlsx 생성). 라우트는 `routes/api.js` 하단 `/api/keyword-topics`, `/api/keywords/:topic`, `POST /api/keywords/:topic/refresh`, `/api/keywords/:topic/export.xlsx`. 검색광고 키가 없으면 이 기능만 "API 키 설정 필요" 에러를 보여주고 나머지 사이트는 정상 동작.
+- `public/` — 순수 HTML/CSS/JS 프론트엔드. 카테고리 탭 + 트렌드 카드 UI, `/api/trends`를 폴링
+  - `cardnews.js` — 이슈 카드를 블로그/인스타에 올릴 "카드뉴스" 이미지(PNG)로 만들어주는 모듈. 외부 라이브러리 없이 Canvas 2D API로 직접 그림. `window.CardNews.generate(trend, categoryMeta)`가 슬라이드별 `<canvas>` 배열을 반환 (표지 → 기사 제목 리스트 → 마무리, 1080×1350 인스타 세로형). `app.js`가 각 카드에 "🖼️ 카드뉴스 만들기" 버튼을 붙이고, 클릭하면 모달에서 슬라이드 미리보기 + 개별/전체 PNG 다운로드 제공.
+  - 상단에 "🔥 지금 뜨는 이슈" / "🔑 키워드 리서치" 모드 탭 추가됨 — 키워드 리서치는 여행/경제/연예 하위탭 + 표(순위/키워드/PC·모바일·총검색량/모바일비중/유형/발행우선순위/광고경쟁도/추천제목) + "새로고침"(검색광고+데이터랩 API 호출, 무거움)/"엑셀 다운로드" 버튼으로 구성.
+
+## ⚠️ 여러 컴퓨터에서 이어서 작업하기 (중요)
+**대화(챗) 히스토리는 컴퓨터마다 로컬에 저장되고 git으로 동기화되지 않음.** 회사컴에서 나눈 대화는 집컴에는 안 보이는 게 정상이고, 반대도 마찬가지. 게다가 **같은 파일을 양쪽 컴퓨터에서 커밋 없이 병렬로 고치면 나중에 병합이 꼬임** — 실제로 2026-08-06에 회사컴 로컬 미커밋 변경(`trendEngine.js`의 블로그 필터링+이슈 중복제거)과 집컴에서 이미 푸시된 변경(entity 기준 그룹핑, 디스코드 알림 등)이 같은 파일을 건드려 충돌났던 적 있음 → 회사컴 쪽 작업은 `backup/company-computer-work` 브랜치에 보존해두고 main은 집컴 버전으로 유지, 병합은 보류 중(아래 "다음에 이어서 할 일" 참고).
+
+이 문제를 막으려면:
+1. **작업을 시작하기 전에 항상 `git pull`부터** 할 것.
+2. 작업이 끝나면 (또는 세션이 길어지면) **바로 커밋 & 푸시**하고, **이 문서의 "다음에 이어서 할 일" 섹션도 그 시점 상태로 업데이트**해둘 것. 컴퓨터를 오래 안 갈아타더라도 미루지 말 것.
+3. 새 컴퓨터에서는 `git pull`로 최신 코드+문서를 받은 뒤, 새 대화를 시작해서 "어제 하던 거 이어서 해줘"라고 말하면 됨 — 이 문서만 보고 상황을 파악해서 이어갈 것.
+
+## 새 컴퓨터(회사)에서 처음 시작할 때
+```
+git clone https://github.com/daye971220-a11y/daye.git
+cd daye/server
+npm install
+```
+`server/.env.example`을 복사해 `server/.env`로 만들고 네이버 Client ID/Secret을 채워넣기 (키는 사용자에게 직접 물어볼 것 — git에는 안 올라가 있음). 디스코드 알림을 쓰려면 `DISCORD_WEBHOOK_URL`도 채워넣기 (안 채워도 사이트는 정상 동작, 알림만 꺼짐). **키워드 리서치 탭을 쓰려면 `NAVER_AD_API_KEY`/`NAVER_AD_SECRET_KEY`/`NAVER_AD_CUSTOMER_ID`도 채워넣기** (발급 방법은 아래 "다음에 이어서 할 일" 1번 참고, 안 채워도 사이트 나머지는 정상 동작). 그 다음 `npm start`.
+
+## 다음에 이어서 할 일 / 알려진 이슈
+(최신 갱신: 2026-10-06)
+
+0. **여행 블로그 원고 참고 자료 저장**: 밍짱이(from____ming)의 투어·호텔·교통카드 글 3개를 분석했다. `research/travel-blog-writing-guide.md`는 글의 구성, `research/blog-visual-audit/README.md`는 스티커·이모지·색·볼드·밑줄·폰트·사진·표의 분석, `inventory.md`는 구성 요소 194개 전체 목록이다. 여행 원고 요청 시 이 자료를 참고해 새 문장과 편집 위치 안내를 작성한다. 한 블로그의 세 표본이며 여러 상위 블로그 공통 규칙이나 성과로 일반화하지 않는다. 다음 단계는 다른 여행 블로그 표본을 추가해 공통점과 개인차를 비교하는 것. 확인용 원문 화면 이미지는 로컬에만 보관하고 GitHub에는 올리지 않는다.
+
+1. **[키 발급 대기] 키워드 리서치(여행/경제/연예 핵심 키워드 TOP100) 기능 코드는 완성, 검색광고 API 키만 있으면 바로 동작**: 다예님이 보내준 "네이버 건강 블로그 핵심 키워드 TOP100" 이미지 스타일을 재현한 기능. 코드/DB/라우트/프론트/엑셀 내보내기 전부 구현·테스트 완료(가짜 데이터로 렌더링·엑셀 다운로드까지 확인함). 그런데 실제 PC/모바일 검색량·광고 경쟁도는 **네이버 검색광고(searchad.naver.com) API** 전용 키가 있어야 나오고, 이건 기존 오픈 API 키(`NAVER_CLIENT_ID/SECRET`)와 완전히 별개라 아직 미발급 상태. 발급 절차: ① searchad.naver.com 광고주 가입(사업자 없이 개인 광고주로도 가능한 걸로 보이나 가입 화면에서 최종 확인 필요) → ② 로그인 후 우측 [광고시스템] 진입 → 상단 [도구] > [API 사용 관리] → API 라이선스 생성 → `Customer ID`(광고주 고객번호, 화면에 표시됨)/`API License`/`Secret Key` 3개를 `server/.env`의 `NAVER_AD_API_KEY`(=API License) / `NAVER_AD_SECRET_KEY` / `NAVER_AD_CUSTOMER_ID`에 채워넣기. 키 발급되면 사이트에서 "🔑 키워드 리서치" 탭 → 원하는 주제 → "🔄 이 주제 새로고침" 누르면 바로 동작 확인 가능. "떠오르는 키워드" 판정은 실시간 인기검색어가 아니라(네이버가 2021년에 없앰) 데이터랩 검색어트렌드로 시드 키워드의 최근 상승세를 근사하는 방식이라 완벽하진 않음 — 써보고 피드백 주면 `datalabClient.js`의 임계값(`momentum >= 1.3`, `seasonCv >= 0.45`)을 조정할 것. "발행 우선순위"/"추천 제목"은 자체 휴리스틱(`keywordResearch.js`, `keywordTopics.js`)이라 이것도 실사용 피드백 보고 튜닝 여지 있음.
+3. **[병합 보류] `backup/company-computer-work` 브랜치에 회사컴에서 만든 이슈 필터링/중복제거 로직이 있음**: 네이버 블로그 검색 API로 "이미 블로그에 많이 다뤄진 이슈"는 제외하는 필터(`getBlogCount`, `BLOG_MAX_COUNT`)와, 하루 지난 이슈는 기사가 더 붙어도 "새 이슈"로 재노출하지 않는 `surfaced_stories` 테이블 기반 로직, anchor+연관단어 라벨링(`buildLabel`)이 구현돼 있음. 근데 그 사이 집컴에서 entity(주어) 기준 그룹핑 + alias 병합으로 같은 문제를 다른 방식으로 풀어서 main에 먼저 들어가 있었고, 두 로직이 `trendEngine.js`/`db/index.js`에서 충돌함. **아직 병합 안 함** — 다음에 다예님과 상의해서 (a) 두 로직을 합치거나 (b) 블로그 필터만 entity 그룹핑 위에 다시 얹거나 (c) 둘 중 하나를 버리는 방향으로 정리할 것. 브랜치 자체는 지워지지 않았으니 급하지 않음.
+4. **카드뉴스 생성 기능 추가 완료 (2026-08-06)**: 이슈 카드마다 "🖼️ 카드뉴스 만들기" 버튼 → 표지/내용/마무리 슬라이드를 PNG로 다운로드 가능. `public/cardnews.js` 참고. 색상·마무리 문구("더 자세한 이야기는 블로그에서 👀")·워터마크 텍스트는 하드코딩돼 있으니, 실제로 써보고 "이 문구/색 바꿔줘" 피드백 주면 그때 조정.
+5. **네이버 API 키 재발급 고려**: 기존 키가 대화 중 노출됐고 저장소가 Public이라, `developers.naver.com` 내 애플리케이션에서 키를 재발급하는 걸 권장했었음. 재발급했다면 `.env`도 새 키로 업데이트해야 함.
+6. **키워드 추출/중복 제거는 entity(주어) 기준으로 개편 완료, 그래도 완벽하진 않음**: `keywordExtractor.js`의 `EVENT_WORDS`(사건어 화이트리스트)나 `STOPWORDS`(범용 명사 차단 목록)를 실사용 피드백 보고 계속 보강할 것. `trendEngine.js`의 이름 병합 로직(`mergeAliasBuckets`)도 마찬가지로 튜닝 여지 있음.
+7. **트렌드 파라미터 튜닝 여지 있음**: `trendEngine.js`의 `MIN_ARTICLES`(최소 기사 수, 현재 3), `RECENT_WINDOW_MIN`(급상승 판단 구간, 현재 60분), `TOP_K`(카테고리별 카드 수, 현재 8) 등은 실제 사용 패턴을 보고 조정하는 게 자연스러움. `discordNotifier.js`의 `NOTIFY_MIN_ARTICLES`(현재 5), `RENOTIFY_ARTICLE_INCREASE`(현재 3)도 마찬가지.
+8. **현재는 로컬(localhost)에서만 실행 중**: 다른 기기나 외부에서 접속하고 싶으면 배포(Vercel/Render 등)가 필요한데 아직 결정 안 됨. 사용자가 원하면 그때 방식을 상의해서 진행할 것.
+9. **카테고리/시드 키워드 확장 가능**: 사용자가 새로운 관심 카테고리를 원하면 `categories.js`에 추가하면 됨. 영화/드라마/공연·전시/패션 카테고리 추가됨(다예님 기존 블로그 "무모한당케의 인생여행" 소재 기준).
+10. **디스코드 알림 추가됨**: `DISCORD_WEBHOOK_URL` 설정하면 기사 5건 이상 몰린 이슈를 디스코드로 알림. 처음 뜰 때 1번 + 기사 수가 3건 이상 더 늘면 재알림. 알림이 너무 많거나 적으면 `discordNotifier.js`의 기준값 조정.
+11. **경제 카테고리는 거시경제 뉴스가 아니라 "내가 받을 수 있는 혜택/돈" 위주로 재정의됨**: 지원금·환급금·청년정책 / 은행·적금·카드·통신비 혜택 / 가격 인상·수수료·제도 변경 / 소비자 할인·보상 4갈래로 시드 키워드 교체(증시/코스피/부동산 등 거시 뉴스는 의도적으로 제외). 네이버 검색 특성상 여전히 무관한 기사가 섞일 수 있어서(예: 스마트폰 판매 소식, 해외 비자 수수료 뉴스), 실사용하면서 `categories.js`의 economy `seedKeywords`를 계속 다듬을 것.
+
+## 작업 후 GitHub에 반영하는 법
+```
+git add -A
+git commit -m "설명"
+git push
+```
