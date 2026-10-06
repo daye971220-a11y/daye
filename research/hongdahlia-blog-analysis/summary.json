@@ -1,0 +1,83 @@
+{
+  "hilton": {
+    "title": "경주 힐튼 뷔페 조식 수영장 경주 숙소 추천 가격 비교 후기",
+    "url": "https://blog.naver.com/PostView.naver?blogId=hongdahlia&logNo=224430714355&redirect=Dlog",
+    "components": 70,
+    "types": {
+      "se-sticker": 3,
+      "se-image": 24,
+      "se-text": 30,
+      "se-quotation": 7,
+      "se-table": 2,
+      "se-imageGroup": 1,
+      "se-oglink": 2,
+      "se-placesMap": 1
+    },
+    "images": 26,
+    "boldCharacterPercentExcludingTags": 12.34,
+    "paragraphs": 257,
+    "blankParagraphs": 93,
+    "medianManualParagraphCharsExcludingTags": 15,
+    "emojiAndPictographicSymbols": {
+      "🔗": 2,
+      "✨": 2,
+      "👇": 2
+    },
+    "manualUnderlineRuns": 0,
+    "linkUnderlineRuns": 8,
+    "italicRuns": 0,
+    "strikeRuns": 0
+  },
+  "fukuoka": {
+    "title": "더 베이직스 후쿠오카 하카타역 호텔 추천 트윈룸 조식 라운지 가격 할인 예약 후기",
+    "url": "https://blog.naver.com/PostView.naver?blogId=hongdahlia&logNo=224432701228&redirect=Dlog",
+    "components": 60,
+    "types": {
+      "se-sticker": 3,
+      "se-image": 17,
+      "se-text": 26,
+      "se-quotation": 8,
+      "se-table": 1,
+      "se-oglink": 3,
+      "se-imageGroup": 1,
+      "se-placesMap": 1
+    },
+    "images": 19,
+    "boldCharacterPercentExcludingTags": 9.76,
+    "paragraphs": 218,
+    "blankParagraphs": 76,
+    "medianManualParagraphCharsExcludingTags": 15,
+    "emojiAndPictographicSymbols": {
+      "🔗": 3,
+      "🔎": 2,
+      "👇": 4
+    },
+    "manualUnderlineRuns": 0,
+    "linkUnderlineRuns": 10,
+    "italicRuns": 0,
+    "strikeRuns": 0
+  },
+  "food": {
+    "title": "청주 봉명동 맛집 고기집 안민 특수부위 모둠 껍데기 항정살 예약 주차 후기",
+    "url": "https://blog.naver.com/PostView.naver?blogId=hongdahlia&logNo=224432607242&redirect=Dlog",
+    "components": 51,
+    "types": {
+      "se-image": 22,
+      "se-text": 19,
+      "se-sticker": 3,
+      "se-quotation": 5,
+      "se-video": 1,
+      "se-placesMap": 1
+    },
+    "images": 22,
+    "boldCharacterPercentExcludingTags": 1.31,
+    "paragraphs": 154,
+    "blankParagraphs": 58,
+    "medianManualParagraphCharsExcludingTags": 14,
+    "emojiAndPictographicSymbols": {},
+    "manualUnderlineRuns": 0,
+    "linkUnderlineRuns": 0,
+    "italicRuns": 0,
+    "strikeRuns": 0
+  }
+}
