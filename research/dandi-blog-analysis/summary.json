@@ -1,0 +1,85 @@
+{
+  "food": {
+    "title": "웨이팅 기본이라더니 진짜였다 경주 황리단길 맛집 황남두꺼비",
+    "url": "https://blog.naver.com/PostView.naver?blogId=zzxx2424&logNo=224431954901&redirect=Dlog",
+    "components": 47,
+    "types": {
+      "se-image": 12,
+      "se-text": 19,
+      "se-quotation": 7,
+      "se-placesMap": 1,
+      "se-imageGroup": 2,
+      "se-video": 1,
+      "se-sticker": 1,
+      "se-horizontalLine": 2,
+      "se-oglink": 2
+    },
+    "images": 16,
+    "boldCharacterPercentExcludingTags": 0.0,
+    "paragraphs": 220,
+    "blankParagraphs": 96,
+    "medianManualParagraphCharsExcludingTags": 11.0,
+    "emojiAndPictographicSymbols": {},
+    "manualUnderlineRuns": 0,
+    "linkUnderlineRuns": 0,
+    "italicRuns": 6,
+    "strikeRuns": 0
+  },
+  "hotel": {
+    "title": "경주 마우나오션리조트 수영장 스파 별장 35평 취사가능 가족여행 숙소 추천",
+    "url": "https://blog.naver.com/PostView.naver?blogId=zzxx2424&logNo=224428663444&redirect=Dlog",
+    "components": 88,
+    "types": {
+      "se-sticker": 4,
+      "se-text": 35,
+      "se-imageStrip": 7,
+      "se-quotation": 5,
+      "se-placesMap": 1,
+      "se-image": 29,
+      "se-table": 1,
+      "se-video": 1,
+      "se-imageGroup": 1,
+      "se-oglink": 3,
+      "se-horizontalLine": 1
+    },
+    "images": 47,
+    "boldCharacterPercentExcludingTags": 0.99,
+    "paragraphs": 371,
+    "blankParagraphs": 211,
+    "medianManualParagraphCharsExcludingTags": 16,
+    "emojiAndPictographicSymbols": {
+      "▶": 1,
+      "◀": 1
+    },
+    "manualUnderlineRuns": 5,
+    "linkUnderlineRuns": 2,
+    "italicRuns": 0,
+    "strikeRuns": 0
+  },
+  "festival": {
+    "title": "'제주 도민 총출동' 제주광어대축제 2026 일정 먹거리 체험 주차 가볼만한곳",
+    "url": "https://blog.naver.com/PostView.naver?blogId=zzxx2424&logNo=224432361689&redirect=Dlog",
+    "components": 37,
+    "types": {
+      "se-text": 15,
+      "se-horizontalLine": 3,
+      "se-image": 8,
+      "se-placesMap": 1,
+      "se-quotation": 8,
+      "se-oglink": 2
+    },
+    "images": 8,
+    "boldCharacterPercentExcludingTags": 13.73,
+    "paragraphs": 165,
+    "blankParagraphs": 58,
+    "medianManualParagraphCharsExcludingTags": 11,
+    "emojiAndPictographicSymbols": {
+      "🐟": 1,
+      "🌊": 1
+    },
+    "manualUnderlineRuns": 0,
+    "linkUnderlineRuns": 0,
+    "italicRuns": 7,
+    "strikeRuns": 0
+  }
+}
