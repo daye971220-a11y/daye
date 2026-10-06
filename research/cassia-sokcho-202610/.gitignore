@@ -1,0 +1,9 @@
+photos/
+*.jpg
+*.png
+*.zip
+asset-manifest.json
+facilities-manifest.json
+room-manifest.json
+extra-manifest.json
+dining-manifest.json
