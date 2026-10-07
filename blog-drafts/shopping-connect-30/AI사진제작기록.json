@@ -9,7 +9,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "washed olive cotton overshirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/01-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: An open white wireless earbud charging case with BOTH white open-fit earbuds resting inside, on a normal train fold-down table beside a used travel pouch. Female hand steadies the case, sleeve is a soft sage-gray ribbed cotton top. No face. New close overhead angle, distinct from ear wearing photo.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 2,
@@ -21,7 +32,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "dusty rose long-sleeve T-shirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/02-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Korean marbled beef gift set being opened on an ordinary kitchen table before a parent's birthday dinner. Use actual reference for tray/cuts, plain realistic gift packaging, not invented printed text. Female hand lifts the lid from the side, sleeve powder-blue light cotton cardigan. Packaging scene, distinct from grilling.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 3,
@@ -33,7 +55,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "dark navy knit cardigan",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/03-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: An opened Korean marbled beef gift tray placed on a family dining table with empty small plates ready to divide the cuts. Overhead casual tabletop overview, no person or hands, no invented package printing. Ordinary family meal preparation, distinct from carrying a plate.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 4,
@@ -45,7 +78,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "rust orange checked cotton shirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/04-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The cream tilted automatic stirring roll-pan from product reference on an ordinary home induction hob before cooking. Its proper central stirring part is visible; small bowls of diced vegetables and cooked rice sit beside it. No human. New product setup shot, not the existing stirring action. Ignore every person and every printed word in first catalog reference, use device only.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 5,
@@ -57,7 +101,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "faded burgundy sweatshirt",
     "person": "한국 여성, 사용자 승인 예시의 자연스러운 인물 사용 구도. 얼굴 노출·비노출을 일괄 강제하지 않음.",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/05-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The black Philips Fidelio X2HR wired openback headphones resting naturally beside a laptop on a used home desk, visible cable and black mesh earcups. Female hand sets headphones down, sleeve muted red fine-knit cardigan. No face, new desk product view rather than wearing headphones.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 6,
@@ -69,7 +124,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "slate blue nylon windbreaker",
     "person": "한국 여성, 사용자 승인 예시의 자연스러운 인물 사용 구도. 얼굴 노출·비노출을 일괄 강제하지 않음.",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/06-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Folded Qfold MAX platform cart standing compactly beside camping boxes in the rear trunk of a car. Show correct collapsible trolley geometry and wheels from reference, distinct from pulling it open. Female hands lean folded cart into trunk, sleeve pale beige canvas camping jacket. Face need not be visible; practical action only.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 7,
@@ -81,7 +147,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "pale yellow homewear with tiny checks",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/07-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Unseasoned cross-cut LA beef ribs spread on a normal cutting board, with soy sauce and onion ready in separate small bowls before marinating. New raw preparation view, no human or hands. Short rib bones and meat shape accurate, no fancy food styling, no pretend label.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 8,
@@ -93,7 +170,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "muted purple cotton cardigan",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/08-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Cutlassfish portions laid on a plain home plate next to a simple frying pan before cooking, showing silvery skin. Female hand moves one portion with chopsticks, sleeve aqua blue thin-striped cotton shirt. No face. New preparation image, not plated rice/eating scene.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 9,
@@ -105,7 +193,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "charcoal thin striped lounge top",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/09-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: One cooked steamed barley-aged yellow croaker served whole on a plain ceramic dish with a small bowl of tea and rice, ordinary everyday meal photographed from above. No person, no ornate feast, distinct from breaking fish apart with chopsticks.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 10,
@@ -117,7 +216,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "denim blue chambray shirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/10-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: A modest mixed-cut Korean marbled beef assortment on a plain home plate next to mushrooms and garlic, before weekend grilling. Casual overhead table photograph, no human. Cuts varied in size with believable marbling, not identical repeated patterns.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 11,
@@ -129,7 +239,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "black light rain jacket cuff",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/11-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The silver Jupajip CWC08 magnetic car charger already installed on a parked car's vent, phone attached upright displaying an indistinct map screen. Female hand reaches to its side, sleeve faded indigo denim jacket. No face, new wider installed setup shot rather than approaching phone to mount.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 12,
@@ -141,7 +262,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "mint green short sleeve T-shirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/12-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The white Pludic press with blue droplet logo on a home counter, lid/press raised beside its clear vessel with pressed cucumber pieces and a normal kitchen bowl. Female hand lifts lid, sleeve apricot thin cotton cardigan. No face. Accurate device shape from reference; new after-press preparation shot, not pressing down.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 13,
@@ -153,7 +285,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "dark brown corduroy jacket",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/13-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Black Edifier X2 Pro charging case open with both BLACK stem earbuds, placed on a scratched ordinary desk beside transit card and a plain pouch. Female fingers take one earbud out, sleeve deep plum knit. No face. Accurate openfit earbud geometry, new close product overview distinct from wearing.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 14,
@@ -165,7 +308,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "light blue collared blouse",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/14-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: WHITE Edifier X2 Pro charging case open with both WHITE stem earbuds next to a plain fabric pouch inside an open everyday bag. Female hand holds pouch edge, sleeve faded coral cotton shirt. No face. New packing/overview photo distinct from existing ear wearing scene.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 15,
@@ -177,7 +331,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "khaki camping fleece",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/15-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Australian beef rib meat cut into irregular bite-size pieces on a plain tray beside a small portable camp stove before cooking. Overhead casual campsite table view with ordinary plastic food container edge, no person. No fake country label, distinct from meat already grilling.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 16,
@@ -189,7 +354,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "peach cotton sweatshirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/16-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: A home freezer drawer holding several chicken breast meal packs, female hand takes one pack out for meal preparation. Keep packaging form from seller reference, do not fabricate prominent readable brand copy or imply all 40 packs fit visibly. Sleeve subdued maroon plaid home shirt. No face, new storage/prep scene rather than cooked salad.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 17,
@@ -201,7 +377,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "oatmeal linen shirt with blue kitchen apron",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/17-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Two small plain home plates of raw Korean beef, one ribeye and one flat-iron cut, beside tongs on a kitchen table before cooking. New overhead product choice scene, no hands or person, varied natural cut outlines and believable fat distribution.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 18,
@@ -213,7 +400,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "moss green long-sleeve shirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/18-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Vendict Luna Aero Qi2 black circular magnetic car mount fitted in a parked car, seen from passenger side with smartphone already attached. Female hand adjusts mount angle, sleeve sand-colored light trench cuff. No face, new installed angle distinct from attaching phone to bare mount.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 19,
@@ -225,7 +423,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "loose navy exercise hoodie and loose gray joggers with socks",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/19-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The dark woven Balancecode Komi stretch strap with its orange sewn section folded loosely on a normal yoga mat beside socks and a water bottle at home. Female fingers pick up one end, sleeve dusty teal loose hoodie. No face. Proper woven strap, not rubber resistance band; new equipment setup, not stretching posture. Extract only woven strap from first catalog reference, ignore the model entirely.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 20,
@@ -237,7 +446,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "light pink pajama top with narrow white stripes",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/20-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Two intact potato-shaped Gamjabat bread rolls on a plain small plate beside an ordinary mug on a home table. Slightly uneven surface and irregular organic forms, no human, no hand tearing bread, new whole-roll snack setup rather than split bread closeup.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 21,
@@ -249,7 +469,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "teal sports long-sleeve top",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/21-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Two Binggrae The Protein 250ml cartons of different flavors on a kitchen counter next to a plain lunch bag, product packaging from seller reference. Female hand puts one carton into bag, sleeve mustard-yellow cotton sweatshirt. No face. Keep brand/package shape plausible and no invented nutrition text, new packing shot rather than opening spout.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 22,
@@ -261,7 +492,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "gray cotton tee with lilac checked robe",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/22-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Two Mynoxell scalp ampoule bottles 60ml standing on a normal slightly used bathroom shelf beside a plain comb and hair clip. Accurate green bottle design from seller reference, ordinary mirror edge, no reflected face or human. New product setup picture rather than scalp application.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 23,
@@ -274,7 +516,18 @@
     "clothing": "black-and-white small-check overshirt",
     "person": "한국 여성, 사용자 승인 예시의 자연스러운 인물 사용 구도. 얼굴 노출·비노출을 일괄 강제하지 않음.",
     "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
-    "correction": "접힌 휴대폰 뒷면 한 면만 보이도록 AI 편집해 불가능한 앞뒤 조합을 수정함."
+    "correction": "접힌 휴대폰 뒷면 한 면만 보이도록 AI 편집해 불가능한 앞뒤 조합을 수정함.",
+    "titlePhoto": {
+      "file": "photos/23-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: CLOSED black folding phone in the iMall LAB slim hinge-protecting case rests face-down on a normal cafe table, three rear camera circles and hinge side clearly visible. Female hand lifts its edge, sleeve dark cobalt cotton shirt. No face. Preserve single closed rectangular phone geometry, new product detail image distinct from woman holding it.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 24,
@@ -286,7 +539,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "dark red kitchen apron over cream tee",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/24-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Seasoned LA short ribs with marinade in a plain home food container beside a grill before cooking, natural onion strips in sauce. Female hand uses tongs to lift one rib, sleeve muted terracotta short sleeve tee. No face. New raw seasoned meal-prep scene, distinct from browned ribs on grill.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 25,
@@ -298,7 +562,25 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "pale lavender knit pullover",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/25-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: A small open natto pack with fermented soybeans, its ordinary 70g portion beside a rice bowl on a breakfast table. Female hand gently stirs beans with chopsticks, sleeve pale steel-gray thin cotton top. No face. New simple pack-level preparation rather than holding bowl at meal table.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    },
+    "additionalDetailPhoto": {
+      "file": "photos/25-detail-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: New distinct detail scene: fermented natto already transferred into a tiny plain side-dish bowl beside grilled egg and rice, no package, no hands, no chopsticks stirring, casual ordinary breakfast overhead close detail. Accurate small soybean shapes and delicate sticky strands, avoid glossy ad lighting.",
+      "method": "built-in image_gen",
+      "reason": "반복 판매자 사진을 서로 다른 장면으로 교체",
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 26,
@@ -310,7 +592,25 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "dark green gingham shirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/26-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Fresh pork neck slices on a plain cutting board beside an ordinary kitchen knife and a empty plate, visible natural fat and meat grain. No human, no studio styling, new raw ingredient photo rather than grilling cooked pork.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    },
+    "additionalDetailPhoto": {
+      "file": "photos/26-detail-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: New distinct preparation scene: pork neck slices half cooked in a normal home frying pan, a spatula rests at edge, no people or hands, natural patchy browning, normal kitchen hob. Neither raw cutting board nor charcoal grill. Product is pork neck with realistic irregular fatty texture.",
+      "method": "built-in image_gen",
+      "reason": "반복 판매자 사진을 서로 다른 장면으로 교체",
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 27,
@@ -322,7 +622,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "light orange cotton blouse",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/27-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: Raw whiteleg shrimp in a normal kitchen colander beside running-free sink, wet natural shells, no human or hands. Casual overhead preparation picture, distinct from cooked orange shrimp on grill. No invented size-count labels.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 28,
@@ -334,7 +645,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "washed black sweatshirt",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/28-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The clear Freemove Minix appliance caster base is visible under the lower edge of the white appliance on a normal kitchen counter; female hand points to a small caster at its corner without lifting appliance. Sleeve dusty pink-and-gray checked cotton cuff. New close-up base detail, distinct from wiping and sliding appliance. Power cord unplugged, no water.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 29,
@@ -346,7 +668,18 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "red-and-navy striped long-sleeve top",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/29-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: The gray PastelColorIn inner bag compatible with Heliad15 is sitting separately beside an open black backpack on an ordinary desk, compartments filled with a cable and small battery. No person. New clear organizer overview rather than inserting objects into fitted inner bag, no counterfeit official logo.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   },
   {
     "number": 30,
@@ -358,6 +691,17 @@
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "soft blue pajama top",
     "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
-    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
+    "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
+    "titlePhoto": {
+      "file": "photos/30-title-ai.png",
+      "prompt": "Use case: photorealistic-natural. Create ONE NEW distinct everyday snapshot to place immediately BELOW the blog title, not a graphic thumbnail. FIRST reference: specific product identity/geometry only. SECOND reference: existing product use photo, for object consistency, do NOT duplicate its shot, posture or composition. THIRD reference: actual user's phone snapshot, for ordinary low-detail texture and incidental lighting only, do NOT copy its subject or clothes. New scene follows below. Quality: casual iPhone 17 shared JPEG look, deliberately soft moderate detail approximately 650-750px-detail feeling, mild grain/compression, slight handheld tilt, neutral realistic colors, ordinary uneven daylight/ceiling light, wide phone-camera depth of field. No glossy advertising, staged decorative plants, studio lighting, waxy skin, extreme sharpness, cinematic portrait bokeh. Ordinary lived-in space. Any person or hand belongs to an adult Korean woman; choose product/action-centered composition, never force a face into the shot or force it out when naturally framed. No readable invented text, no text overlay, collage or watermark. Product must remain physically plausible, faithful to references and not invent features. No added claims of actual testing. Scene: A small serving plate of cooked spicy abalone and baby octopus stir-fry beside two rice bowls, ordinary home dinner table, natural sauce not glossy advertisement. No human, no chopsticks lifting food, new two-serving meal overview distinct from existing close eating shot.",
+      "method": "built-in image_gen",
+      "referenceUsed": [
+        "판매자 제품 원형",
+        "기존 AI 사용 장면",
+        "사용자의 실제 생활 사진 질감"
+      ],
+      "label": "AI로 제작한 상품 장면 예시 · 실제 촬영·사용 후기 사진이 아닙니다."
+    }
   }
 ]

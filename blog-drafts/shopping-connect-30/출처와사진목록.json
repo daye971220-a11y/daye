@@ -38,7 +38,17 @@
     ],
     "aiUsagePhoto": "photos/01-usage-ai.png",
     "revisionReason": "오픈형 선호와 ANC 욕구를 첫머리에 연결. 모델번호·충전 방식으로 구매 결정을 구체화.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/01-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/01-title-ai.png",
+      "photos/01-04.png",
+      "photos/01-usage-ai.png",
+      "photos/01-03.png",
+      "photos/01-02.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 2,
@@ -75,7 +85,17 @@
     ],
     "aiUsagePhoto": "photos/02-usage-ai.png",
     "revisionReason": "생신 선물의 감정과 포장 역할 강화. 가족 식사용 3번과 구분.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/02-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/02-title-ai.png",
+      "photos/02-03.png",
+      "photos/02-usage-ai.png",
+      "photos/02-02.jpg",
+      "photos/02-04.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 3,
@@ -112,7 +132,17 @@
     ],
     "aiUsagePhoto": "photos/03-usage-ai.png",
     "revisionReason": "선물 감성 반복을 가족 식사 준비·양 선택으로 변경.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/03-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/03-title-ai.png",
+      "photos/03-02.jpg",
+      "photos/03-usage-ai.png",
+      "photos/03-03.jpg",
+      "photos/03-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 4,
@@ -149,7 +179,17 @@
     ],
     "aiUsagePhoto": "photos/04-usage-ai.png",
     "revisionReason": "회전 기능→반복 조리 동작 감소로 전환. 자동조리 과장 없이 구매 이유 강화.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/04-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/04-title-ai.png",
+      "photos/04-04.jpg",
+      "photos/04-usage-ai.png",
+      "photos/04-02.jpg",
+      "photos/04-03.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 5,
@@ -186,7 +226,17 @@
     ],
     "aiUsagePhoto": "photos/05-usage-ai.png",
     "revisionReason": "억지 여행 연결 삭제. 유선·오픈형이 맞는 감상 환경과 예산 제시.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/05-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/05-title-ai.png",
+      "photos/05-02.jpg",
+      "photos/05-usage-ai.png",
+      "photos/05-03.jpg",
+      "photos/05-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 6,
@@ -223,7 +273,17 @@
     ],
     "aiUsagePhoto": "photos/06-usage-ai.png",
     "revisionReason": "짐 이동의 불편과 보관 제약을 묶어 결정 기준 명확화.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/06-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/06-title-ai.png",
+      "photos/06-04.png",
+      "photos/06-usage-ai.png",
+      "photos/06-03.png",
+      "photos/06-02.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 7,
@@ -260,7 +320,17 @@
     ],
     "aiUsagePhoto": "photos/07-usage-ai.png",
     "revisionReason": "양념갈비24번과 대비되는 직접 양념 욕구를 중심축으로 구성.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/07-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/07-title-ai.png",
+      "photos/07-03.jpg",
+      "photos/07-usage-ai.png",
+      "photos/07-02.jpg",
+      "photos/07-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 8,
@@ -274,7 +344,7 @@
     "bodyPhotos": [
       "photos/08-02.jpg",
       "photos/08-03.jpg",
-      "photos/08-02.jpg"
+      "photos/08-01.jpg"
     ],
     "thumbnail": "thumbnails/08.jpg",
     "photos": [
@@ -293,7 +363,17 @@
     ],
     "aiUsagePhoto": "photos/08-usage-ai.png",
     "revisionReason": "추상적 제주 여행 감성보다 부모님 식사 취향·혼합 구성 차이에 집중.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/08-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/08-title-ai.png",
+      "photos/08-02.jpg",
+      "photos/08-usage-ai.png",
+      "photos/08-03.jpg",
+      "photos/08-01.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 9,
@@ -330,7 +410,17 @@
     ],
     "aiUsagePhoto": "photos/09-usage-ai.png",
     "revisionReason": "찐 상품의 준비 방식과 세트 마릿수를 실제 구매 이유에 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/09-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/09-title-ai.png",
+      "photos/09-02.jpg",
+      "photos/09-usage-ai.png",
+      "photos/09-03.jpg",
+      "photos/09-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 10,
@@ -367,7 +457,17 @@
     ],
     "aiUsagePhoto": "photos/10-usage-ai.png",
     "revisionReason": "2번 선물세트와 달리 식사용 모둠·예산·주말 한 상으로 차별화.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/10-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/10-title-ai.png",
+      "photos/10-03.jpg",
+      "photos/10-usage-ai.png",
+      "photos/10-04.jpg",
+      "photos/10-02.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 11,
@@ -404,7 +504,17 @@
     ],
     "aiUsagePhoto": "photos/11-usage-ai.png",
     "revisionReason": "25W 최대출력의 조건을 정확히 두면서 도착 후 배터리 욕구 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/11-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/11-title-ai.png",
+      "photos/11-03.jpg",
+      "photos/11-usage-ai.png",
+      "photos/11-02.jpg",
+      "photos/11-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 12,
@@ -441,7 +551,17 @@
     ],
     "aiUsagePhoto": "photos/12-usage-ai.png",
     "revisionReason": "물기 제거 동작의 번거로움·다용도·세척을 하나의 구매 판단으로 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/12-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/12-title-ai.png",
+      "photos/12-03.jpg",
+      "photos/12-usage-ai.png",
+      "photos/12-04.jpg",
+      "photos/12-02.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 13,
@@ -455,7 +575,7 @@
     "bodyPhotos": [
       "photos/13-02.jpg",
       "photos/13-03.jpg",
-      "photos/13-02.jpg"
+      "photos/13-01.jpg"
     ],
     "thumbnail": "thumbnails/13.jpg",
     "photos": [
@@ -474,7 +594,17 @@
     ],
     "aiUsagePhoto": "photos/13-usage-ai.png",
     "revisionReason": "예산 중심 블랙 구매자 설정. 가격으로 성능까지 보장하는 표현 배제.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/13-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/13-title-ai.png",
+      "photos/13-02.jpg",
+      "photos/13-usage-ai.png",
+      "photos/13-03.jpg",
+      "photos/13-01.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 14,
@@ -511,7 +641,17 @@
     ],
     "aiUsagePhoto": "photos/14-usage-ai.png",
     "revisionReason": "블랙13번은 예산·출퇴근, 화이트14번은 디자인·휴대 장면으로 분리.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/14-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/14-title-ai.png",
+      "photos/14-03.jpg",
+      "photos/14-usage-ai.png",
+      "photos/14-02.jpg",
+      "photos/14-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 15,
@@ -548,7 +688,17 @@
     ],
     "aiUsagePhoto": "photos/15-usage-ai.png",
     "revisionReason": "원산지·100g단가와 캠핑 예산 연결. 근거 없는 최저가 주장 없이 가격 이유 제시.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/15-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/15-title-ai.png",
+      "photos/15-02.jpg",
+      "photos/15-usage-ai.png",
+      "photos/15-03.jpg",
+      "photos/15-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 16,
@@ -585,7 +735,17 @@
     ],
     "aiUsagePhoto": "photos/16-usage-ai.png",
     "revisionReason": "여행 뒤라는 억지 연결 제거. 반복 식단의 지루함·골라담기·단가 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/16-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/16-title-ai.png",
+      "photos/16-02.jpg",
+      "photos/16-usage-ai.png",
+      "photos/16-03.jpg",
+      "photos/16-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 17,
@@ -622,7 +782,17 @@
     ],
     "aiUsagePhoto": "photos/17-usage-ai.png",
     "revisionReason": "선물세트2·3과 구분하여 소량 부위 선택 중심으로 구성.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/17-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/17-title-ai.png",
+      "photos/17-02.jpg",
+      "photos/17-usage-ai.png",
+      "photos/17-03.png",
+      "photos/17-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 18,
@@ -659,7 +829,17 @@
     ],
     "aiUsagePhoto": "photos/18-usage-ai.png",
     "revisionReason": "주파집11은 출력·쿨링, 벤딕트18은 장착·호환 조합으로 차별화.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/18-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/18-title-ai.png",
+      "photos/18-02.jpg",
+      "photos/18-usage-ai.png",
+      "photos/18-03.jpg",
+      "photos/18-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 19,
@@ -673,7 +853,7 @@
     "bodyPhotos": [
       "photos/19-02.png",
       "photos/19-04.jpg",
-      "photos/19-04.jpg"
+      "photos/19-01.jpg"
     ],
     "thumbnail": "thumbnails/19.jpg",
     "photos": [
@@ -696,7 +876,17 @@
     ],
     "aiUsagePhoto": "photos/19-usage-ai.png",
     "revisionReason": "신체 효과·과격한 자세 보장 없이 도구의 실제 보조 동작과 시작 장면 강조.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/19-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/19-title-ai.png",
+      "photos/19-02.png",
+      "photos/19-usage-ai.png",
+      "photos/19-04.jpg",
+      "photos/19-01.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 20,
@@ -733,7 +923,17 @@
     ],
     "aiUsagePhoto": "photos/20-usage-ai.png",
     "revisionReason": "맛 경험을 꾸미지 않고 지역 간식 접근성·모양·개당가격으로 설득.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/20-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/20-title-ai.png",
+      "photos/20-02.jpg",
+      "photos/20-usage-ai.png",
+      "photos/20-03.jpg",
+      "photos/20-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 21,
@@ -770,7 +970,17 @@
     ],
     "aiUsagePhoto": "photos/21-usage-ai.png",
     "revisionReason": "혼합 맛의 망설임 해결·팩당 가격·바로 마시는 편의로 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/21-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/21-title-ai.png",
+      "photos/21-03.png",
+      "photos/21-usage-ai.png",
+      "photos/21-02.png",
+      "photos/21-04.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 22,
@@ -784,7 +994,7 @@
     "bodyPhotos": [
       "photos/22-04.jpg",
       "photos/22-02.jpg",
-      "photos/22-04.jpg"
+      "photos/22-01.jpg"
     ],
     "thumbnail": "thumbnails/22.jpg",
     "photos": [
@@ -803,7 +1013,17 @@
     ],
     "aiUsagePhoto": "photos/22-usage-ai.png",
     "revisionReason": "두피 효능·사용 결과를 만들지 않고 용량·도포·관리 루틴 중심.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/22-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/22-title-ai.png",
+      "photos/22-04.jpg",
+      "photos/22-usage-ai.png",
+      "photos/22-02.jpg",
+      "photos/22-01.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 23,
@@ -817,7 +1037,7 @@
     "bodyPhotos": [
       "photos/23-03.jpg",
       "photos/23-02.jpg",
-      "photos/23-03.jpg"
+      "photos/23-01.jpg"
     ],
     "thumbnail": "thumbnails/23.jpg",
     "photos": [
@@ -844,7 +1064,17 @@
     ],
     "aiUsagePhoto": "photos/23-usage-ai.png",
     "revisionReason": "힌지 보호 vs 두께라는 구매 고민을 해결하는 기능 조합 제시.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/23-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/23-title-ai.png",
+      "photos/23-03.jpg",
+      "photos/23-usage-ai.png",
+      "photos/23-02.jpg",
+      "photos/23-01.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 24,
@@ -881,7 +1111,17 @@
     ],
     "aiUsagePhoto": "photos/24-usage-ai.png",
     "revisionReason": "생갈비7번과 다른 시간 절약 욕구. 양념 포함 중량·갈비 함량 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/24-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/24-title-ai.png",
+      "photos/24-02.jpg",
+      "photos/24-usage-ai.png",
+      "photos/24-03.jpg",
+      "photos/24-04.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 25,
@@ -894,8 +1134,8 @@
     ],
     "bodyPhotos": [
       "photos/25-08.gif",
-      "photos/25-08.gif",
-      "photos/25-08.gif"
+      "photos/25-01.jpg",
+      "photos/25-detail-ai.png"
     ],
     "thumbnail": "thumbnails/25.jpg",
     "photos": [
@@ -910,7 +1150,17 @@
     ],
     "aiUsagePhoto": "photos/25-usage-ai.png",
     "revisionReason": "국산콩·소분·개당 가격을 일상의 아침 준비에 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/25-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/25-title-ai.png",
+      "photos/25-08.gif",
+      "photos/25-usage-ai.png",
+      "photos/25-01.jpg",
+      "photos/25-detail-ai.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 26,
@@ -923,8 +1173,8 @@
     ],
     "bodyPhotos": [
       "photos/26-02.jpg",
-      "photos/26-02.jpg",
-      "photos/26-02.jpg"
+      "photos/26-01.jpg",
+      "photos/26-detail-ai.png"
     ],
     "thumbnail": "thumbnails/26.jpg",
     "photos": [
@@ -939,7 +1189,17 @@
     ],
     "aiUsagePhoto": "photos/26-usage-ai.png",
     "revisionReason": "국내산·냉장·100g 단가와 구이/수육 옵션 선택을 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/26-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/26-title-ai.png",
+      "photos/26-02.jpg",
+      "photos/26-usage-ai.png",
+      "photos/26-01.jpg",
+      "photos/26-detail-ai.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 27,
@@ -976,7 +1236,17 @@
     ],
     "aiUsagePhoto": "photos/27-usage-ai.png",
     "revisionReason": "10월 실제 개체상태 단정 없이 가을 식사 장면·규격·예산 제시.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/27-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/27-title-ai.png",
+      "photos/27-03.jpg",
+      "photos/27-usage-ai.png",
+      "photos/27-04.jpg",
+      "photos/27-02.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 28,
@@ -990,7 +1260,7 @@
     "bodyPhotos": [
       "photos/28-03.jpg",
       "photos/28-02.jpg",
-      "photos/28-02.jpg"
+      "photos/28-01.png"
     ],
     "thumbnail": "thumbnails/28.png",
     "photos": [
@@ -1009,7 +1279,17 @@
     ],
     "aiUsagePhoto": "photos/28-usage-ai.png",
     "revisionReason": "본체/액세서리 구분과 청소 동작의 불편을 구매 이유로 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/28-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/28-title-ai.png",
+      "photos/28-03.jpg",
+      "photos/28-usage-ai.png",
+      "photos/28-02.jpg",
+      "photos/28-01.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 29,
@@ -1023,7 +1303,7 @@
     "bodyPhotos": [
       "photos/29-02.png",
       "photos/29-03.png",
-      "photos/29-02.png"
+      "photos/29-01.png"
     ],
     "thumbnail": "thumbnails/29.png",
     "photos": [
@@ -1042,7 +1322,17 @@
     ],
     "aiUsagePhoto": "photos/29-usage-ai.png",
     "revisionReason": "기존 가방 유지·찾는 동작 개선을 중심으로 호환품 정체 명확화.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/29-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/29-title-ai.png",
+      "photos/29-02.png",
+      "photos/29-usage-ai.png",
+      "photos/29-03.png",
+      "photos/29-01.png"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   },
   {
     "number": 30,
@@ -1056,7 +1346,7 @@
     "bodyPhotos": [
       "photos/30-02.png",
       "photos/30-03.jpg",
-      "photos/30-02.png"
+      "photos/30-01.jpg"
     ],
     "thumbnail": "thumbnails/30.jpg",
     "photos": [
@@ -1075,6 +1365,16 @@
     ],
     "aiUsagePhoto": "photos/30-usage-ai.png",
     "revisionReason": "전복 포함 차별점·2인분 예산·집밥 준비 편의를 연결.",
-    "revisedOn": "2026-10-07"
+    "revisedOn": "2026-10-07",
+    "aiTitlePhoto": "photos/30-title-ai.png",
+    "bodyImageCount": 5,
+    "bodyImageFiles": [
+      "photos/30-title-ai.png",
+      "photos/30-02.png",
+      "photos/30-usage-ai.png",
+      "photos/30-03.jpg",
+      "photos/30-01.jpg"
+    ],
+    "imageUpdatedOn": "2026-10-07"
   }
 ]
