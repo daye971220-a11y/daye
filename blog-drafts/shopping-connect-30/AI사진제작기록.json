@@ -50,25 +50,25 @@
   {
     "number": 5,
     "file": "photos/05-usage-ai.png",
-    "prompt": "Create a substantially more ordinary snapshot by editing FIRST reference, keeping the specific product accurate and the practical use action. SECOND and THIRD references are genuine handheld phone photos and define imperfect everyday texture, uneven exposure, casual framing. Do not copy their subjects. FINAL IMAGE: deliberately mundane low-quality shared smartphone JPEG look, roughly 600-750px-detail quality, mild optical softness and tiny handheld motion, low local contrast, subtle uneven sensor noise and natural compression, nothing crisp or ultra detailed. Normal overhead room light or incidental daylight, not evenly lit. Wide phone-camera depth of field, background stays ordinary and recognizable, no professional portrait bokeh. Break perfect staging: crop objects casually, slight tilted framing, naturally occupied lived-in surroundings, no styled plant collection or decorative staged props. All foreground users are adult Korean women. FACE MUST BE OUT OF FRAME: show hands, forearms, back of head or body cropped below chin depending on product. Hands natural, not meticulously manicured advertisement hands. No model posing or looking at viewer. Different clothes specified below must visibly replace original clothes. Only ONE photo, no collage, no added text/watermark. Keep correct product form, logos and safely plausible action. Do not blur so much that product type is unrecognizable. Do not introduce TV from references. Clothes: faded burgundy sweatshirt. Face and all facial features outside frame, show headphones from BACK of woman's dark hair only with burgundy shoulder.",
+    "prompt": "Edit the supplied user-approved photo into ONE rectangular photograph without rounded card border or white screenshot margins. Preserve her recognizable natural appearance, expression, activity and ordinary composition. Keep the same natural side/back head angle and headphones use at the desk. Replace clothing with a faded burgundy sweatshirt, no vest or striped white shirt. Face is allowed naturally within activity, no portrait posing or added direct-camera gaze. Preserve product geometry. Keep the low-detail ordinary iPhone snapshot feel, slightly soft shared-JPEG texture and incidental lighting. Do not sharpen skin, airbrush face, glamourize or make a polished advertisement. No text overlays.",
     "method": "built-in image_gen",
     "referenceUsed": true,
-    "comparison": "사용자 제공 실내 거울 사진 및 케넨 생활 사용 사진의 질감·구도 비교. 비교 사진은 최종 원고에 재사용하지 않음.",
+    "comparison": "사용자가 자연스럽다고 승인한 카트·휴대폰·헤드폰 사진 예시를 참조해 인물 구도를 보완. 옷은 상품별 서로 다른 기존 색·종류 유지.",
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "faded burgundy sweatshirt",
-    "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
+    "person": "한국 여성, 사용자 승인 예시의 자연스러운 인물 사용 구도. 얼굴 노출·비노출을 일괄 강제하지 않음.",
     "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
   },
   {
     "number": 6,
     "file": "photos/06-usage-ai.png",
-    "prompt": "Create a substantially more ordinary snapshot by editing FIRST reference, keeping the specific product accurate and the practical use action. SECOND and THIRD references are genuine handheld phone photos and define imperfect everyday texture, uneven exposure, casual framing. Do not copy their subjects. FINAL IMAGE: deliberately mundane low-quality shared smartphone JPEG look, roughly 600-750px-detail quality, mild optical softness and tiny handheld motion, low local contrast, subtle uneven sensor noise and natural compression, nothing crisp or ultra detailed. Normal overhead room light or incidental daylight, not evenly lit. Wide phone-camera depth of field, background stays ordinary and recognizable, no professional portrait bokeh. Break perfect staging: crop objects casually, slight tilted framing, naturally occupied lived-in surroundings, no styled plant collection or decorative staged props. All foreground users are adult Korean women. FACE MUST BE OUT OF FRAME: show hands, forearms, back of head or body cropped below chin depending on product. Hands natural, not meticulously manicured advertisement hands. No model posing or looking at viewer. Different clothes specified below must visibly replace original clothes. Only ONE photo, no collage, no added text/watermark. Keep correct product form, logos and safely plausible action. Do not blur so much that product type is unrecognizable. Do not introduce TV from references. Clothes: slate blue nylon windbreaker. Woman pulls folding cart, photographed from waist down with slate windbreaker, her face outside frame.",
+    "prompt": "Edit the supplied user-approved photo into ONE rectangular photograph without rounded card border or white screenshot margins. Preserve her recognizable natural appearance, expression, activity and ordinary composition. Keep the Korean woman looking down naturally while pulling the folding cart at the campsite, full body including face as the reference. Replace clothing with a slate blue lightweight nylon windbreaker and dark charcoal hiking trousers. Face is allowed naturally within activity, no portrait posing or added direct-camera gaze. Preserve product geometry. Keep the low-detail ordinary iPhone snapshot feel, slightly soft shared-JPEG texture and incidental lighting. Do not sharpen skin, airbrush face, glamourize or make a polished advertisement. No text overlays.",
     "method": "built-in image_gen",
     "referenceUsed": true,
-    "comparison": "사용자 제공 실내 거울 사진 및 케넨 생활 사용 사진의 질감·구도 비교. 비교 사진은 최종 원고에 재사용하지 않음.",
+    "comparison": "사용자가 자연스럽다고 승인한 카트·휴대폰·헤드폰 사진 예시를 참조해 인물 구도를 보완. 옷은 상품별 서로 다른 기존 색·종류 유지.",
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "slate blue nylon windbreaker",
-    "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
+    "person": "한국 여성, 사용자 승인 예시의 자연스러운 인물 사용 구도. 얼굴 노출·비노출을 일괄 강제하지 않음.",
     "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다."
   },
   {
@@ -266,13 +266,13 @@
   {
     "number": 23,
     "file": "photos/23-usage-ai.png",
-    "prompt": "Create a substantially more ordinary snapshot by editing FIRST reference, keeping the specific product accurate and the practical use action. SECOND and THIRD references are genuine handheld phone photos and define imperfect everyday texture, uneven exposure, casual framing. Do not copy their subjects. FINAL IMAGE: deliberately mundane low-quality shared smartphone JPEG look, roughly 600-750px-detail quality, mild optical softness and tiny handheld motion, low local contrast, subtle uneven sensor noise and natural compression, nothing crisp or ultra detailed. Normal overhead room light or incidental daylight, not evenly lit. Wide phone-camera depth of field, background stays ordinary and recognizable, no professional portrait bokeh. Break perfect staging: crop objects casually, slight tilted framing, naturally occupied lived-in surroundings, no styled plant collection or decorative staged props. All foreground users are adult Korean women. FACE MUST BE OUT OF FRAME: show hands, forearms, back of head or body cropped below chin depending on product. Hands natural, not meticulously manicured advertisement hands. No model posing or looking at viewer. Different clothes specified below must visibly replace original clothes. Only ONE photo, no collage, no added text/watermark. Keep correct product form, logos and safely plausible action. Do not blur so much that product type is unrecognizable. Do not introduce TV from references. Clothes: black-and-white small-check overshirt. Only female hands and partial torso below chin, sleeves visibly match specified different clothes. The black folding phone remains FULLY CLOSED, only rear rectangle and triple cameras/hinge case visible; no front display or open phone.",
+    "prompt": "Edit the supplied user-approved photo into ONE rectangular photograph without rounded card border or white screenshot margins. Preserve her recognizable natural appearance, expression, activity and ordinary composition. Keep the Korean woman casually using the CLOSED black folding phone at a cafe, natural face like reference. Replace clothes with a black-and-white small-check cotton overshirt, no vest or white stripe shirt. Phone shows only closed rear case with triple vertical cameras, correct hinge geometry. Face is allowed naturally within activity, no portrait posing or added direct-camera gaze. Preserve product geometry. Keep the low-detail ordinary iPhone snapshot feel, slightly soft shared-JPEG texture and incidental lighting. Do not sharpen skin, airbrush face, glamourize or make a polished advertisement. No text overlays.",
     "method": "built-in image_gen",
     "referenceUsed": true,
-    "comparison": "사용자 제공 실내 거울 사진 및 케넨 생활 사용 사진의 질감·구도 비교. 비교 사진은 최종 원고에 재사용하지 않음.",
+    "comparison": "사용자가 자연스럽다고 승인한 카트·휴대폰·헤드폰 사진 예시를 참조해 인물 구도를 보완. 옷은 상품별 서로 다른 기존 색·종류 유지.",
     "comparisonSource": "https://blog.naver.com/teemogogo/224417741509",
     "clothing": "black-and-white small-check overshirt",
-    "person": "한국 여성, 얼굴을 화면 밖에 둔 손·제품 중심 구도",
+    "person": "한국 여성, 사용자 승인 예시의 자연스러운 인물 사용 구도. 얼굴 노출·비노출을 일괄 강제하지 않음.",
     "label": "AI로 제작한 사용 장면 예시 · 실제 사용 후기 사진이 아닙니다.",
     "correction": "접힌 휴대폰 뒷면 한 면만 보이도록 AI 편집해 불가능한 앞뒤 조합을 수정함."
   },
