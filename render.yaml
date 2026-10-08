@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: daye-blog-studio
+    runtime: docker
+    plan: 0.5c-512mb
+    dockerfilePath: ./Dockerfile.workshop
+    healthCheckPath: /api/workshop/session
+    autoDeployTrigger: off
+    disk:
+      name: studio-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: WORKSHOP_DATA_DIR
+        value: /data/workshop
+      - key: WORKSHOP_PASSWORD
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-6.1-sol

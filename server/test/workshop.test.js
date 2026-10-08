@@ -1,0 +1,62 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const express = require('express');
+const { openStore } = require('../src/workshop/store');
+const { createWorkshop } = require('../src/workshop/router');
+const { loadGuidelines, checks, genres } = require('../src/workshop/guidelines');
+const render = require('../../public/workshop-render');
+
+test('private storage, conflict protection, photos, durable AI queue, restart and logout', async t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(),'daye-studio-test-'));
+  const store = openStore(dir); let calls = 0, release;
+  const gate = new Promise(resolve => release = resolve);
+  const generator = async () => { calls++; await gate; return { title:'새 제목',body:'## 1. 일정\n\n검증한 내용',hook:'후킹',photoPlan:'사진 계획',reviewNote:'검수 안내',sources:[{url:'https://example.com',title:'공식 출처'}] }; };
+  const app = express(); app.use('/api/workshop',createWorkshop({store,generator}));
+  const server = app.listen(0,'127.0.0.1'); await new Promise(resolve => server.once('listening',resolve));
+  const origin = `http://127.0.0.1:${server.address().port}`; let cookie = '';
+  async function req(route,method='GET',body,extra={}) { const res=await fetch(origin+'/api/workshop'+route,{method,headers:{Origin:origin,Cookie:cookie,'Content-Type':'application/json',...extra},body:body ? JSON.stringify(body) : undefined}); return { status:res.status,headers:res.headers,data:await res.json().catch(()=>null) }; }
+  t.after(() => { server.close(); store.db.close(); fs.rmSync(dir,{recursive:true,force:true}); });
+  assert.equal((await req('/documents')).status,401);
+  assert.equal((await req('/setup','POST',{password:'a-long-test-password'},{Origin:'https://foreign.example'})).status,403);
+  assert.equal((await req('/setup','POST',{password:'a-long-test-password'})).status,200);
+  const login=await req('/login','POST',{password:'a-long-test-password'}); cookie=login.headers.get('set-cookie').split(';')[0];
+  assert.match(login.headers.get('set-cookie'),/HttpOnly; SameSite=Strict/);
+  assert.equal((await req('/settings','PUT',{apiKey:'sk-test-private-key',model:'gpt-6.1-sol',guidelines:'괄호 2개'})).status,200);
+  assert.equal(store.decrypt(store.get('api_key')),'sk-test-private-key');
+  assert.ok(!store.get('api_key').includes('sk-test'));
+  assert.ok(!JSON.stringify((await req('/settings')).data).includes('sk-test'));
+  const created=(await req('/documents','POST',{title:'빵축제',genre:'festival',brief:'체험'})).data;
+  const input={title:'수정 제목',body:'## 1. 날짜\n\n본문',hook:'후킹',brief:'체험',status:'draft',revision:1};
+  assert.equal((await req('/documents/'+created.id,'PUT',input)).status,200);
+  assert.equal((await req('/documents/'+created.id,'PUT',input)).status,409);
+  assert.equal(store.document(created.id).title,'수정 제목');
+  assert.equal((await req('/documents/'+created.id+'/photos','POST',{mime:'image/png',data:'YWJj',section:'thumbnail',caption:'허위 파일'})).status,400);
+  const png='iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a5V8AAAAASUVORK5CYII=';
+  assert.equal((await req('/documents/'+created.id+'/photos','POST',{mime:'image/png',data:png,section:'thumbnail',caption:'테스트'})).status,201);
+  const payload={prompt:'작성해줘',requestId:'unique-test',revision:2};
+  assert.equal((await req('/documents/'+created.id+'/generate','POST',payload)).status,202);
+  assert.equal((await req('/documents/'+created.id+'/generate','POST',payload)).status,200);
+  assert.equal((await req('/documents/'+created.id,'PUT',{...input,revision:2})).status,409);
+  release();
+  for(let i=0;i<100 && store.document(created.id).revision===2;i++) await new Promise(r=>setTimeout(r,10));
+  assert.equal(calls,1); assert.equal(store.document(created.id).revision,3);
+  const final=(await req('/documents/'+created.id)).data;
+  assert.equal(final.jobs[0].state,'done'); assert.equal(final.messages.length,2); assert.equal(final.sources.length,1);
+  await req('/seed-cpa','POST',{}); await req('/seed-cpa','POST',{});
+  assert.equal((await req('/documents')).data.length,11);
+  await req('/logout','POST',{}); assert.equal((await req('/documents')).status,401);
+  const restarted=openStore(dir); assert.equal(restarted.document(created.id).body,'## 1. 일정\n\n검증한 내용'); assert.equal(restarted.decrypt(restarted.get('api_key')),'sk-test-private-key'); restarted.db.close();
+});
+
+test('all genre analysis files exist; prose count and safely rendered previews', () => {
+  for(const genre of Object.keys(genres)) assert.ok(loadGuidelines(genre).files.every(f=>!f.missing),genre);
+  const doc={body:'## 1. 소제목\n\n'+ '가'.repeat(1001)+'\n\n| 표 |\n|---|\n| 내용 |\n#태그',photos:[{id:'one',section:'1. 소제목',caption:'본문'},{id:'two',section:'thumbnail',caption:'썸네일'}]};
+  assert.equal(checks(doc,doc.photos).chars,1001);
+  const html=render.render(doc); assert.ok(html.includes('/photos/one')); assert.ok(!html.includes('/photos/two')); assert.ok(html.includes('<table>'));
+  const attack=render.render({body:'<script>alert(1)</script>\n\n[링크](javascript:alert(1))\n\n**222,000원**'});
+  assert.ok(!attack.includes('<script>')); assert.ok(!attack.includes('href="javascript:')); assert.ok(attack.includes('class="price"'));
+  assert.ok(!render.render({body:'[링크](https://example.com/**222원**)'}).includes('href="https://example.com/<strong'));
+});

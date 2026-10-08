@@ -1,0 +1,11 @@
+require('dotenv').config();
+if (!process.env.WORKSHOP_PUBLIC_URL && process.env.RENDER_EXTERNAL_URL) process.env.WORKSHOP_PUBLIC_URL = process.env.RENDER_EXTERNAL_URL;
+const express = require('express');
+const path = require('node:path');
+const { createWorkshop } = require('./workshop/router');
+const app = express();
+app.use('/api/workshop', createWorkshop());
+app.get('/', (req, res) => res.redirect('/workshop.html'));
+app.use(express.static(path.join(__dirname, '../../public')));
+const port = process.env.PORT || 4010;
+app.listen(port, '0.0.0.0', () => console.log(`Blog studio ready on port ${port}`));

@@ -1,0 +1,12 @@
+.git
+**/node_modules
+**/.env
+server/data
+output
+tmp
+delivery
+blog-drafts
+research/daye-image-reference-local
+delivery/personal-image-reference
+notion_check
+*.pdf
