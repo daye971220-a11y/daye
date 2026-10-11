@@ -1,0 +1,598 @@
+블로그 GPT 설정본 자료 열람 기록
+확인일: 2026-10-11 (한국 시간)
+
+완료 범위
+사용자가 지정한 SNS 노션 자료실의 관련 블로그·여행·CPA 자료 및 벤치마킹 목록을 확인하고, 접근 가능한 본문·메모와 아래 자료의 작성 원리를 공용 지침에 반영했습니다. 특정인의 이름·계정·얼굴·경험은 공용 설정에서 제거했습니다. 유료 원문·타인 원고·사진을 배포 파일에 복제하지 않았습니다. 자료 읽기는 모델 자체의 영구 재학습을 뜻하지 않습니다.
+
+수집과 실제 읽기를 구분합니다
+자료실 전체 목록 218항목을 조회하고, 관련 페이지 178개와 추가 8개의 본문·메모를 확보했습니다. 여기에는 벤치마킹 60개가 포함됩니다. 아래 부록은 페이지별 확인 목록이며, 해당 페이지의 모든 외부 링크·첨부·영상까지 완독했다는 표시는 아닙니다. 블로그와 무관한 도구 강의 및 운영 안내는 공용 글쓰기 지침에 포함하지 않았습니다.
+
+주요 본문 검토
+- 여행 예시 원고 합본: 424쪽 PDF의 추출/OCR 본문을 전체 읽음. 사진과 화면의 모든 세부를 시각 검수했다는 의미는 아님.
+- 쇼핑 원고 자료: 162쪽의 추출 본문 전체 읽음.
+- 사진 전자책: 100쪽 웹 이미지 OCR 본문 전체 읽음. 별도 102쪽 PDF는 동일 책을 포함하는 중복 자료로 대조함.
+- 카페 자료 47쪽, 후쿠오카 자료 21쪽, 여행 강의 자료 107쪽, 공부 자료 95쪽, 피드백 자료 23쪽·12쪽 및 접근 가능한 웨비나·키워드·사진·예약 자료의 추출 본문을 읽음.
+- FAQ 75문항과 별도 84문항의 확보된 텍스트 전체 읽음.
+- 벤치마킹 60개 페이지의 메모·확보 가능한 첨부 텍스트/OCR을 검토함. 연결된 네이버 원문이 빈 화면으로만 반환되는 사례는 원문 완독으로 처리하지 않음.
+- 키워드·제목 자료: 여행/경제 TOP100과 제목 예시, 선물 키워드 300개, 1000개 키워드 보고서의 키워드 전체와 산출기준을 검토함. 1000개 보고서의 모든 수치 셀·편집 평가 행·월별 추이 및 모든 첨부 엑셀의 모든 셀을 일일이 읽었다는 의미는 아님. 과거 수치는 공용 GPT의 현재 사실로 넣지 않음.
+- 숙소·여행·상품·경제·대학교·연예·공연/전시의 기존 분석과 최신 문체·사실 확인·사진 시점·배치 교정 지침을 대조함.
+
+추가 영상의 실제 확인 방식
+다음 5개 영상은 확보한 자막 텍스트를 전체 읽었습니다. 영상 전체를 시청하거나 모든 화면·시연을 관찰한 것은 아닙니다. 자동 자막 오인식 가능성이 있어 현재 사실의 유일한 근거로 사용하지 않습니다.
+https://www.youtube.com/watch?v=89XX5ombFjY
+https://www.youtube.com/watch?v=cvqRKClsSTU
+https://www.youtube.com/watch?v=dJ4TCVPRICM
+https://www.youtube.com/watch?v=lfiPiYqQ1ZI
+https://www.youtube.com/watch?v=PFoCmEQ84EM
+
+접근 제한·부분 확인
+- Claude 로그인으로 막힌 SNS 노트 227개: 사용자 요청에 따라 제외. 읽지 않음.
+- 로그인 요구 6월 외부 노션 자료: 읽지 못함. https://app.notion.com/p/6-32faaa38604580a094d6ea04ecf981d5
+- 삭제/접근 실패 외부 페이지 및 일부 네이버·카페 링크: 확보한 메모와 실제 원문 읽기를 구분함.
+- 마이리얼트립 파트너 가이드는 본문을 읽었으나, 쿠폰 안내 모달의 이미지 속 조건 전체는 확인하지 못함.
+- TOP50·여름 여행·클룩 안내·입문 가이드의 접근 가능한 본문은 읽었으나, 연결된 모든 상품 상세·접힌 데이터베이스·파트너 운영 페이지를 재귀적으로 전부 읽지는 않음.
+- 블로그와 무관한 AI 도구 강의 120쪽: 일부 본문만 검토, 공용 블로그 지식에서 제외.
+- 자막 확보에 실패한 영상: ohVXddmHDnM, 66M0M6YU3G8, jZZuiQOGa1Q, jm28YEqGcQg, s8a1PCKur2U, m8bCrO2WDDw, ZbjkRDUEbr8, ugCGK11ZZQU, EuwHvCNnpgc. 영상 전체 내용은 미열람.
+따라서 자료실의 모든 외부 자료를 하나도 빠짐없이 읽었다고 주장할 수 없습니다. 이 기록은 실제 확인된 범위를 밝히는 문서입니다.
+
+제작과 검증
+00 설정 안내, 01 실행 지침, 02 장르별 지식, 03 사진 프롬프트, 04 미리보기 검수 요청을 제작했습니다. 사진 생성 도구가 있는 환경에서 사진 요청 시 실제 생성하도록 설정했으며 도구가 없으면 완성 프롬프트를 전달합니다. 사진 품질은 실제 생성 결과를 보면서 검수해야 합니다. GPT 편집 URL에서 입력 가능한 화면을 확인하지 못하여 계정 등록·저장·공개와 GPT 미리보기 실행은 완료하지 못했습니다. 이 기록은 공용 지식 파일로 업로드할 필요가 없습니다.
+
+페이지 단위 확인 목록 (본문·메모 확보 기준)
+1. 🌟 네이버 공식: AI 시대 콘텐츠 작성 가이드 (셀프 체크리스트)
+https://app.notion.com/3eb6647267c4810d9b3be6a2fcee84f1
+
+2. AI로 벤치마킹 계정 찾는 법
+https://app.notion.com/3eb6647267c4810e893bf2d4a2a4ff0c
+
+3. [케넨 라이브] 3주차 - 홈피드 & 피드메이커 편
+https://app.notion.com/3eb6647267c4810e8d44de3e5770cf4c
+
+4. 📺 강의 다시보기 모음 (1~4주차, 카페 공지)
+https://app.notion.com/3eb6647267c48110a794e6b16bf71a34
+
+5. 망한 사진 살리는 법 (인스타 게시물)
+https://app.notion.com/3eb6647267c4811493d5f105120ee88d
+
+6. 케넨 여행블로그 육성 무료 특강 안내
+https://app.notion.com/3eb6647267c481158e52c33ad988ec0d
+
+7. 여행상품 판매형 블로그 참고 PDF 18개 통합본
+https://app.notion.com/3eb6647267c48115ac2be9352c1b150a
+
+8. 네이버 클립 크리에이터 상시모집 공지
+https://app.notion.com/3eb6647267c481169a59e369481c2d16
+
+9. 쇼핑커넥트 카테고리별 키워드 인기순위 / 10만원 이상 리빙·IT·육아
+https://app.notion.com/3eb6647267c48116bb5af4397aa47bdb
+
+10. 살블챌(살구언니 블로그 챌린지) 12기 안내
+https://app.notion.com/3eb6647267c481198af2f4409d000e07
+
+11. 마리트 단독 숙소 프로모션 페이지 (찐 단독 특가)
+https://app.notion.com/3eb6647267c4811ab5bec9ed2f4be547
+
+12. 오사카 맛집 협찬 연락처 (카카오 채널)
+https://app.notion.com/3eb6647267c481248b57f066a1c67e78
+
+13. 6월 여행 콘텐츠 방향 ('지금 예약해야겠다')
+https://app.notion.com/3eb6647267c4812b8d64faf70d30b9a3
+
+14. 네이버 추석쇼핑 카테고리별 상품목록
+https://app.notion.com/3eb6647267c4812c8a1bf309734cfa20
+
+15. 29CM/무신사 큐레이터 신청
+https://app.notion.com/3eb6647267c4812c9f14e1670e9a69c9
+
+16. 오픈채팅: 마이리얼트립 프로모션 공지방
+https://app.notion.com/3eb6647267c4812cbc2afeb5a8d36c7c
+
+17. ✍️ 돈이 흘러들어오는 '길'을 만드셨나요? (자산 vs 부채)
+https://app.notion.com/3eb6647267c48137842bc4ec76bdc3db
+
+18. 릴스 유가협업 단가 정리 (인스타 게시물)
+https://app.notion.com/3eb6647267c481379a65e642b7afc407
+
+19. 사진보정 가이드 PDF
+https://app.notion.com/3eb6647267c48138b8ecfab718ca9a2d
+
+20. DJ트립 여행 블로그 VOD (스터디원 6만원 할인)
+https://app.notion.com/3eb6647267c4813dbbe4d798bf0f6fd7
+
+21. [유료 혜택] 카테고리별·연령대별 황금 키워드
+https://app.notion.com/3eb6647267c4814094bceb1bc1cc9f2a
+
+22. [케넨 라이브] 1주차 - 검색 알고리즘 + GPTS 사용법
+https://app.notion.com/3eb6647267c48140bcddda5139be453b
+
+23. 네이버 클립 크리에이터 프로모션
+https://app.notion.com/3eb6647267c48144bedbd5eeaca73d96
+
+24. 쇼핑커넥트 리빙 인기 키워드 (수수료·리뷰·상품링크)
+https://app.notion.com/3eb6647267c48147918ee26740301bf4
+
+25. 고단가 투어 & 패키지 리스트 (여기어때 TOP50)
+https://app.notion.com/3eb6647267c481479ba0cb3fe706ddb3
+
+26. 홈페이지형 블로그 스킨 제작 (크몽)
+https://app.notion.com/3eb6647267c481489775db68f28ad236
+
+27. 오늘의집 큐레이터 제휴링크 안내
+https://app.notion.com/3eb6647267c48149aaa9c04b97d0a836
+
+28. 여름 성수기 인사이트 정리 (4주차)
+https://app.notion.com/3eb6647267c48149ada5f4f08bc7f5ac
+
+29. 브랜딩형(팬이 찾아오는) 블로그 예시 - balahk
+https://app.notion.com/3eb6647267c4814a82c5c086ca3bd521
+
+30. 케넨 3월 챌린지 모집요강
+https://app.notion.com/3eb6647267c4814d8eaedc399675c708
+
+31. 홈판용 포스팅 실험 자료
+https://app.notion.com/3eb6647267c481528ec8df709215d0fb
+
+32. 후쿠오카 3일 온천+힐튼 패키지 상품 상세 (예시)
+https://app.notion.com/3eb6647267c48154b184cef2db1eef45
+
+33. DJ트립 라이브 강의 1주차 — 실전 포스팅 방법
+https://app.notion.com/3eb6647267c481569bc9e46efa881d8b
+
+34. 여행사 프로모션 활용법 (마리트 할인페이지·클룩 딜)
+https://app.notion.com/3eb6647267c48156a3cbd2bb44e86e96
+
+35. 쇼핑커넥트 품목별 키워드 경쟁률
+https://app.notion.com/3eb6647267c481579695c4d31b6b8aca
+
+36. 올리브영 CPA (큐레이터)
+https://app.notion.com/3eb6647267c4815ca281f71d81ca7079
+
+37. 케넨 블로그 도우미 GPTS + 사용법 문서
+https://app.notion.com/3eb6647267c4815e8920e9348750d8fd
+
+38. 살구언니 자료 모음집
+https://app.notion.com/3eb6647267c4816383a8e8bfc6f2ed09
+
+39. 네이버 여행 CPA 오픈 (프로모션 수수료 7%)
+https://app.notion.com/3eb6647267c48165a841f49416d14709
+
+40. GPT 질의응답 → 블로그 포스팅 변환 프롬프트 (업데이트판)
+https://app.notion.com/3eb6647267c4816a9bbccaae22f4090a
+
+41. 여행·경제 핵심 키워드 TOP100 (내 사이트 추출)
+https://app.notion.com/3eb6647267c4816aa907d7691ab8343e
+
+42. 마리트 할인쿠폰 페이지 (제휴링크로 변환)
+https://app.notion.com/3eb6647267c4816c988ff75e12e9e3fe
+
+43. 📘 다예 SNS 노트 (자주 묻는 질문·꿀팁 227개)
+https://app.notion.com/3eb6647267c481768fa1e8e627b8cafb
+
+44. [케넨 라이브] 2주차 - CPA & 체험단 편
+https://app.notion.com/3eb6647267c4817cb48ad5fe2706932a
+
+45. 오픈채팅: 마리트 광고매칭플러스 (협찬·원고료)
+https://app.notion.com/3eb6647267c4817cb516e4ea463d1316
+
+46. 블로그 사진 촬영+보정 전자책 (사이에 저)
+https://app.notion.com/3eb6647267c48180ab05f8d2029c0491
+
+47. ✍️ 마케팅 천재 되는 법 (퍼플 카우)
+https://app.notion.com/3eb6647267c48182b14bcad841caf2bf
+
+48. 부킹닷컴 어필리에이트
+https://app.notion.com/3eb6647267c48183886eecad16822c06
+
+49. VOD 클래스 - SNS 퍼스널 브랜딩 & 수익화
+https://app.notion.com/3eb6647267c481869fd2f3e2727e25d8
+
+50. 오픈채팅: 세시간전 소통방
+https://app.notion.com/3eb6647267c4818997fbd7cd898242c3
+
+51. 클룩 제휴 파트너 가이드라인 (쿠폰·커미션 이벤트 상시 업뎃)
+https://app.notion.com/3eb6647267c481899880ec656ff3b54b
+
+52. 공정위 문구 스티커 (OGQ 마켓)
+https://app.notion.com/3eb6647267c4818b8141f0a2c4dcd625
+
+53. 감성 소개글 예시 - sallysnote
+https://app.notion.com/3eb6647267c4818e90dee8442b1f8b25
+
+54. 마리트 투어·티켓 프로모션 페이지 (즐겨찾기 추천)
+https://app.notion.com/3eb6647267c481928f2bfa7f61ffef91
+
+55. 3주완성반 네이버 카페 (비공개)
+https://app.notion.com/3eb6647267c48192b9fdddc39bc8a89c
+
+56. 월간검색량 확인 (카카오 채널)
+https://app.notion.com/3eb6647267c48194ae2ad6f4645e6f8d
+
+57. 마리트 파트너 범용 할인쿠폰팩 (노션)
+https://app.notion.com/3eb6647267c48197ba23e569ec9ba2e3
+
+58. [3기] 케넨 마지막 라이브 (여행 외 CPA · 홈피드 · 피드백)
+https://app.notion.com/3eb6647267c48198ab77f80a9f40fbe2
+
+59. 유럽 지역 CPA 포스팅 자료
+https://app.notion.com/3eb6647267c4819b9d6cefac07e2fe89
+
+60. 내 음식 사진 자가 분석 (살아있네 여의도점 원고)
+https://app.notion.com/3eb6647267c4819bb485f0d3462bf08a
+
+61. 인스타 교육자료 모음 (벤치마킹 분석 시트 포함)
+https://app.notion.com/3eb6647267c4819c9cf5d122cedc099e
+
+62. 쿠팡파트너스를 네이버 블로그에서 하면 안 되는 이유 (기사)
+https://app.notion.com/3eb6647267c4819da331dcebbe9d6e6e
+
+63. [3기] 카페 강의자료 + 유럽·일본 CPA 팁 영상 (초보반 카페)
+https://app.notion.com/3eb6647267c4819e8553d762d79f1768
+
+64. 케넨 앱소개 포스팅 예시 5개 (실사+캡쳐)
+https://app.notion.com/3eb6647267c4819f9eb8c1ba486cc3ce
+
+65. 🧾 여행정보 프롬프트 (항공권·패스·입장권 CPA용)
+https://app.notion.com/3eb6647267c481a1a978e996c8746689
+
+66. 케넨 사례글: 홈판 리빙 글 (반나절 유입 2만)
+https://app.notion.com/3eb6647267c481a1b5daf7a4d569a913
+
+67. 세시간전 특가·쿠폰 페이지 (여기어때 특가 모음, 클룩 쿠폰)
+https://app.notion.com/3eb6647267c481a6825fe33fd334d5a6
+
+68. DJ트립이 수강생 블로그 보고 느낀 점 (방향성 총평)
+https://app.notion.com/3eb6647267c481a69f3de58bd6d73d83
+
+69. 🌟 케넨 Q&A 핵심 팁 모음 (3주완성 단톡방)
+https://app.notion.com/3eb6647267c481abb52afa1577ef69cb
+
+70. 안경점 체험단 상시모집 정보
+https://app.notion.com/3eb6647267c481b090fef17f833a96ed
+
+71. [3기] DJ트립 1주차 라이브 (1부 수익구조·소재 / 2부 카테고리별 글쓰기)
+https://app.notion.com/3eb6647267c481b38b38ec78e5d3f31d
+
+72. 🧾 투어 리뷰 프롬프트 (CPA용)
+https://app.notion.com/3eb6647267c481b897e2e1ac9da6ba4a
+
+73. 주언규: 쿠팡 수수료 3% 받아서 언제 부자돼요?
+https://app.notion.com/3eb6647267c481bda96aed6a97f99dc2
+
+74. 일본 협업: 식당 예약 파트너 jameat · 일본 체험단 monitabi
+https://app.notion.com/3eb6647267c481bfaf7bf5e57c502bd2
+
+75. 모찌앤잡(경은님) 블로그 - 여행 CPA 벤치마킹
+https://app.notion.com/3eb6647267c481c2b1b6e9f19a27d4b5
+
+76. 홈판 제목 후킹 — 원래 제목 vs 피드백 후 제목
+https://app.notion.com/3eb6647267c481c3b20ef1ac249bead8
+
+77. 케넨 광고 포스팅 예시 (샤크 청소기)
+https://app.notion.com/3eb6647267c481c6ad27d34599608cd9
+
+78. [3기] DJ트립 8/14 라이브 (소재 응용·홈피드·국가별 팁 + 피드백)
+https://app.notion.com/3eb6647267c481c7a0bee4fa75845cd0
+
+79. 미리캔버스 공유양식 (전자책 첨부)
+https://app.notion.com/3eb6647267c481cab34cc0a25d093841
+
+80. 스카이스캐너 어필리에이트 가입 (추천 링크)
+https://app.notion.com/3eb6647267c481cab5d1e573fda1b60a
+
+81. [3기] 케넨 8/18 라이브 (초반 1시간 필수)
+https://app.notion.com/3eb6647267c481ceadd8c9927c0ca46a
+
+82. ❓ 긴가민가 링크 모음 (3기)
+https://app.notion.com/3eb6647267c481d49c2fc94464fb444e
+
+83. [리치파카 줌] 6/22 2회차 - 모임 운영 인사이트
+https://app.notion.com/3eb6647267c481d58521f377840542ef
+
+84. 동은부부 <인스타로 월100> 프로그램
+https://app.notion.com/3eb6647267c481d69700ca3115a30111
+
+85. [3기] 기초 학습 라이브 (2시간, 사전강의)
+https://app.notion.com/3eb6647267c481d9af24cde399d783d8
+
+86. 케넨 홈판 글 1년 만에 랭커 노출 사례 (방자 10만)
+https://app.notion.com/3eb6647267c481ddbdace132699a3d4a
+
+87. 챌린지 Q&A 사이트 (자주 묻는 질문 75개)
+https://app.notion.com/3eb6647267c481e2a9f4ef36e3385a21
+
+88. 🧾 숙소 리뷰 프롬프트 (CPA용)
+https://app.notion.com/3eb6647267c481e2bb23f7fcfa7eb73c
+
+89. 🌟 3주차 과제 방향: 안 가봐도 쓰는 여행 CPA 3종 (정보성·티켓·항공)
+https://app.notion.com/3eb6647267c481e9a3c8ef17a4308dcc
+
+90. 책: 마케팅 설계자
+https://app.notion.com/3eb6647267c481eaa7eece49bf830493
+
+91. 상업용 무료 이미지 사이트 4곳
+https://app.notion.com/3eb6647267c481eaad35e6ce8b65bbb1
+
+92. 여행 CPA 3기 자주묻는질문 사이트
+https://app.notion.com/3eb6647267c481eb9d5fd31a73b444bb
+
+93. 세시간전 추천인 가입 링크
+https://app.notion.com/3eb6647267c481ee8201e78799817cd3
+
+94. 여기어때 제휴(어필리에이트) 로그인
+https://app.notion.com/3eb6647267c481f091e2ec440d59d721
+
+95. 블로그 활용 가이드 (초보용)
+https://app.notion.com/3eb6647267c481f1bafde3e1e04d2fc3
+
+96. 주제별 가입해두어야 할 CPA 사이트 모음 (구글시트)
+https://app.notion.com/3eb6647267c481f281f8fe306365c702
+
+97. AI 게시글 종류별 질문 프롬프트 총정리
+https://app.notion.com/3eb6647267c481f38495cee30c7cb5e3
+
+98. 🌟 여행 인플루언서 선정 블로그 모음 (케넨 추천)
+https://app.notion.com/3eb6647267c481f3b0b0fb4edafe2c4d
+
+99. 마리트 마케팅파트너 블로그 (특가 링크 공지)
+https://app.notion.com/3eb6647267c481f58c76e5c446e40097
+
+100. 📖 나는 주말마다 10억 버는 비즈니스를 한다 (6월 도서)
+https://app.notion.com/3eb6647267c481f6bae9c48e1bd7dd4c
+
+101. 역제안 첨삭 공통 안내 (협찬 역제안 하는 법)
+https://app.notion.com/3eb6647267c481f8a9e0d2b47fd98a42
+
+102. 네이버 쇼핑커넥트 수익화 all-in-one (전자책)
+https://app.notion.com/3eb6647267c481fd9222e1ac8b5f6c2a
+
+103. 4기 1주차 과제 종합 피드백 레포트
+https://app.notion.com/3f36647267c4810cb471cf3318565ffe
+
+104. 네이버 키워드 기회 보고서 1000 (10개 주제, 24개월 추이)
+https://app.notion.com/3f36647267c4811e9435fecacf8a919d
+
+105. 토스 핫딜 판매 사이트 가입·세팅 가이드
+https://app.notion.com/3f36647267c4811f92cde46d46c82ab0
+
+106. 네이버 검색 변화 웨비나 (32쪽, 리디자인판)
+https://app.notion.com/3f36647267c481229d6ccb5f3d045923
+
+107. GOMGOM 쇼핑릴스 해부노트 (실전 심화편)
+https://app.notion.com/3f36647267c4812b90e7ed016f771abd
+
+108. 홈판 다음 스튜디오 — 카테고리별 다음 채널 링크
+https://app.notion.com/3f36647267c481348f8ef565db336b1f
+
+109. 서아빠의 체험단 블로그 운영팁
+https://app.notion.com/3f36647267c48136a966c6c97f1b7fb0
+
+110. 마이리얼트립 x 바나나푸딩 x 케넨 무료 웨비나 PPT
+https://app.notion.com/3f36647267c48154a007da91afb892f9
+
+111. 오리나 네이버 홈판 수강생 Q&A 총정리
+https://app.notion.com/3f36647267c4815884becd53bd264d4a
+
+112. 추석 선물 추천 키워드 300개 (쇼핑커넥트)
+https://app.notion.com/3f36647267c4815f8114e5e729516de5
+
+113. 장기챌린지반 여행 공부자료 (케넨 스터디북, 강의 화면판)
+https://app.notion.com/3f36647267c4818e99fde7c75c774e6c
+
+114. 오리나 홈판 챌린지 1~5주 강의 정리본 (메모장)
+https://app.notion.com/3f36647267c48192a056d50124ab75eb
+
+115. 케넨 블로그 스터디 노트 (영상 학습노트 전자책)
+https://app.notion.com/3f36647267c48196a740c4e59e9cbbae
+
+116. 4기 라이브강의 2주차 (바나나푸딩)
+https://app.notion.com/3f36647267c4819e9f4fc6dc19d38aa9
+
+117. 네이버 클립 크리에이터 조사 목록 (2026-09-14)
+https://app.notion.com/3f36647267c481a88cf5cca5a2cc4be3
+
+118. 만들면 팔릴 거라는 착각 — 스몰브랜드를 위한 안내서 (마케팅루틴 김현주)
+https://app.notion.com/3f36647267c481cdbb51d5e2c89ca96d
+
+119. 일산호수공원 불꽃축제 9월에 가볼만한곳 가을 나들이 장소
+https://app.notion.com/3eb6647267c48103b701d07cd488ae7c
+
+120. 상하이 항공권 추천 아시아나 터미널 기내식 티켓 예약
+https://app.notion.com/3eb6647267c4810c91eac17084ca0039
+
+121. 그랜드캐년 1박2일 투어 당일 보다 추천 및 코스 비교 LV 추천
+https://app.notion.com/3eb6647267c4810f8700f2d955cd203b
+
+122. 안면도 아일랜드 리솜 태안 조식 수영장 객실 찐후기
+https://app.notion.com/3eb6647267c481118c36cb941169f6ea
+
+123. 2026 화담숲 예약 일정 떴다! 예매 방법 취소표 성공 꿀팁
+https://app.notion.com/3eb6647267c48117a0f0e9602c286f7b
+
+124. 트래블카드 4종 비교 트래블월렛,트래블로그,쏠트래블,토스 뭐가 좋을까
+https://app.notion.com/3eb6647267c481218e3ec129b8f76b7f
+
+125. 나트랑 시내투어 일정 가격 후기 베트남 나트랑 여행 코스
+https://app.notion.com/3eb6647267c48124b2cdf9266d376be9
+
+126. 후쿠오카 2박3일 여행 코스 하카타 텐진 시내 가볼만한곳 일정
+https://app.notion.com/3eb6647267c48128ba03e6448f200a75
+
+127. 전라도 여행지 추천 지리산 구례 천은사 전남 구례 가볼만한곳
+https://app.notion.com/3eb6647267c4812a8c20dd7af222d684
+
+128. 푸꾸옥 우기 기간 및 그랜드월드 빈펄사파리 가족 여행 숙소 추천
+https://app.notion.com/3eb6647267c48130a798c1fe92b83337
+
+129. 글로스터호텔 함덕 후기, 제주 함덕해수욕장 오션뷰 조식 더블할인 특가
+https://app.notion.com/3eb6647267c481348cecea80cd7af162
+
+130. 상하이 호텔 추 천상해 난징동루 위치 가성비 래디슨 컬렉션 하이랜드 숙소
+https://app.notion.com/3eb6647267c48137ae73dd480932dd02
+
+131. 부산 가을 가볼만한곳 대저생태공우너 화명생태공원 9월 꽃구경
+https://app.notion.com/3eb6647267c4814f9a2ee41d834b9173
+
+132. 드디어 만개 시기구나! 고창 선운사 꽃무릇 구경 꿀팁top3
+https://app.notion.com/3eb6647267c48158b754e4815d436c6c
+
+133. 경주 소노벨 감 포수영장 스위트 호텔 예약 할인 후기
+https://app.notion.com/3eb6647267c4815b9604f3786ed273da
+
+134. 일본여행 이때 가시면 후회합니다 비행기표 예약 전 확인
+https://app.notion.com/3eb6647267c4816384aec7b2522c97a1
+
+135. 6000원에 이뷰를 살 수 있다고 북한산 숲뷰 카페 더숲아카데미하우스
+https://app.notion.com/3eb6647267c4816594cfc9f068cdf39f
+
+136. 애월 스테이 인 제주 후기, 오션뷰 석양 해루질 조식 취사 할인 꿀팁
+https://app.notion.com/3eb6647267c481699aa2eba362fb7b62
+
+137. 10월부터 후쿠오카 숙박비 지원 미쳤다 근데 이숙소들도 포함이래요
+https://app.notion.com/3eb6647267c4816c8511e4b210758c8d
+
+138. 60대 부모님이 여긴 또 가자 매일 말씀하는 온천 여행지 TOP3
+https://app.notion.com/3eb6647267c4817aa5cad22cc79a7753
+
+139. 한국인이 먹여살리는 일본 소도시 공항 TOP10 일본 관광청 통계로 봤습니다
+https://app.notion.com/3eb6647267c481829539ed5b66091e77
+
+140. 카자흐스탄 키르기스스탄 여행 알마티 송쿨호수 중앙아시아 국가 패키지
+https://app.notion.com/3eb6647267c48183a62ada72a5132ad3
+
+141. 경남합천영상테마파크 추석에 가볼만한곳 9월 추석 여행지 추천
+https://app.notion.com/3eb6647267c4818b88accea86524e543
+
+142. 더현대서울 팝업 9월 뭐 볼까 7곳 정리
+https://app.notion.com/3eb6647267c481978db7cb5b8e5e2921
+
+143. 속초 호텔 더 블루테라 객실 솔직후기
+https://app.notion.com/3eb6647267c4819d9d2fe724abe83809
+
+144. 엔 호텔 하카타 후기 하카타역 도보 캐너시티 텐진 캐리어 보관 꿀팁
+https://app.notion.com/3eb6647267c481a697e6c295aa07d329
+
+145. 그리스 아테네 아라호바 가는법 맛집 투어 여행코스 후기
+https://app.notion.com/3eb6647267c481a9a3f9c94be0e9a1f6
+
+146. 비짓재팬 웹 등록방법, 동반가족 QR 일본 입국심사 입국신고서 작성
+https://app.notion.com/3eb6647267c481aba103dd642ea5adef
+
+147. 추석이면 해외여행 갈 줄 알았는데.. 올해 사람들이 선택한 곳은 의외였습니다
+https://app.notion.com/3eb6647267c481af9ad7ead16d707531
+
+148. 공주 솔향펜션 바베큐 동학사 한옥스테이 숙소 예약팁
+https://app.notion.com/3eb6647267c481b08fd3c43949ed973e
+
+149. 경주 코오롱호텔 조식 사우나 수영장 온돌 키즈룸 할인 예약 후기
+https://app.notion.com/3eb6647267c481b2b379d5d479798884
+
+150. 국내보다 가까운 해외 당일치기로 가능한 여행지 TOP3
+https://app.notion.com/3eb6647267c481b49726f37f175de1c5
+
+151. 아일랜드리솜 태안 안면도 스파 조식 수영장 콘도형 S30 가족여행 후기
+https://app.notion.com/3eb6647267c481b89b4fca0a53c9eca8
+
+152. 캠핑 4년차가 되니 결국 이렇게 바뀐 캠핑용품
+https://app.notion.com/3eb6647267c481c193eef1b81fbdc8ba
+
+153. 일본 규슈 여행 숙박비 지원 최대 60%,후쿠오카 구마모토 할인 예약은 언제부터
+https://app.notion.com/3eb6647267c481c48a3fd87819d0e420
+
+154. 롯데리조트 부여 아쿠아가든 워터파크 조식 사우나 객실 정보 꿀팁 후기
+https://app.notion.com/3eb6647267c481c49ad4c921704a50c9
+
+155. 한때 국민 휴양지였는데.. 한국인 64만명이 떠난 세부
+https://app.notion.com/3eb6647267c481c4a5f6eef4ab456889
+
+156. 남산골 한옥마을 가을 축제 남산달빛마당 서울 추석연휴 가볼만한곳
+https://app.notion.com/3eb6647267c481d5aa86e6a4041c8144
+
+157. 상하이 디즈니랜드 티켓 DPA 가격 상해 놀이기구 불꽃놀이 시간
+https://app.notion.com/3eb6647267c481d89566fbc480b3e705
+
+158. 강릉 라카이 샌드파인 조식 수영장 사우나 듀오 트리오 리조트 예약 후기
+https://app.notion.com/3eb6647267c481df8ec0c1a3a598e13b
+
+159. 이때부터 노들섬이 확 바뀐다니 미쳤다 벌써 재개장 반응이 심상치 않아요
+https://app.notion.com/3eb6647267c481dfaa9fd2cbd70033ab
+
+160. 사진으로는 절대 안담겨요 압도적인 풍경 여행지 TOP3
+https://app.notion.com/3eb6647267c481e18d8efa291005ba9c
+
+161. 경주 샵앤플랫호텔 수영장 스탠다드 오션뷰 풀빌라 후기
+https://app.notion.com/3eb6647267c481ed94eeee1d736c72d0
+
+162. 캠린이에서 캠핑 4년차, 타프쉘부터 에어텐트까지 텐트 변천사
+https://app.notion.com/3eb6647267c481ee8238e42b8a9244fa
+
+163. 100만원 이하로 다녀올 수 있는 가성비 해외여행지 best3
+https://app.notion.com/3eb6647267c481f38ef6c18a14c01abe
+
+164. 서울 다음 여기 요즘 외국인 몰리는 국내 여행지
+https://app.notion.com/3eb6647267c481f7b244fd6e2da78a3f
+
+165. 오사카 자유여행 주간일기 9월 오사카 날씨 옷차림 투어스 일본 고베 콘서트
+https://app.notion.com/3eb6647267c481f99546e086a13f3a5a
+
+166. 일본 우버 할인코드 사용방법 9월 10월 여행 택시 타자!
+https://app.notion.com/3eb6647267c481fc8989ce64a9b911a7
+
+167. 90%가 몰라서 실패한다는 곤지암 화담숲 예약 꿀팁 TOP4
+https://app.notion.com/3f66647267c48102ba54f90d3a31a98e
+
+168. '모르고 가면 손해' 과천 경마장 경마공원 렛츠런 파크 서울 꿀팁 TOP3
+https://app.notion.com/3f66647267c4810b9749d0e0f17415d8
+
+169. 남겨서 뭐하게
+https://app.notion.com/3f66647267c4811193f1c134de5b8e97
+
+170. 아난티 앳 부산 코브 뷔페 조식 수영장 워터하우스 기장 아기랑 가기 좋은 호텔 추천
+https://app.notion.com/3f66647267c4811daed2d12582d26b68
+
+171. 지드래곤 맥도날드
+https://app.notion.com/3f66647267c48142966dee639a4da657
+
+172. 아난티 앳 부산 코브 조식 수영장 라운지 할인 꿀팁 기장 호텔 추천
+https://app.notion.com/3f66647267c481519c0de80c2b9be4a7
+
+173. 서울 올림픽공원 나홀로나무 피크닉 주차 송파 놀거리
+https://app.notion.com/3f66647267c48185b9c9c5fe2749dcd7
+
+174. 2026 의왕백운호수축제 일정 공연 불꽃놀이 주차 셔틀버스 총정리
+https://app.notion.com/3f66647267c481a7a8a3f9ecfb4f68e6
+
+175. 추석 연휴 어디 갈까 서울 근교 가볼만한곳 BEST
+https://app.notion.com/3f66647267c481ab8f86db993f303c33
+
+176. 2026 서리풀뮤직페스티벌 출연진 불꽃놀이 일정 교통통제 총정리
+https://app.notion.com/3f66647267c481cba7b4c165061e84a7
+
+177. 손예지 돼지감자빵
+https://app.notion.com/3f66647267c481ce981ef4221279672c
+
+178. 다낭 미카즈키 리조트 워터파크 조식 식당 가족여행 숙소 추천
+https://app.notion.com/3f66647267c481d09774d96f687bf1d4
+
+179. 네이버 블로그 3000개 전수분석 전자책
+https://app.notion.com/3f36647267c481df8a57f19609ceb187
+
+180. DJ트립 라이브 1주차 실전 포스팅 (4기, 9/14) — 1부·2부
+https://app.notion.com/3f36647267c481e99f28e33c40f7f2c8
+
+181. 쿠팡체험단 꿀팁
+https://app.notion.com/3f36647267c481ed8255c2efbc88d8bc
+
+182. 10월 5일 특별라이브 — 월별 출국 트렌드와 나라별 CPA 발행 시기
+https://app.notion.com/3f66647267c481408ca2fc12496562bb
+
+183. Golden Season 포스팅이 중요한 이유 (8~9월 CPA 집중)
+https://app.notion.com/3f66647267c48163aaa7c5bd07f393d3
+
+184. 처음 시작해도 수익이 나는 네이버 카페 공식 (전자책, 수미새)
+https://app.notion.com/3f66647267c481699feae500e428ac0e
+
+185. MUA CLASS 마스터 클래스 전자책 + 콘텐츠 수익화 프롬프트 12가지
+https://app.notion.com/3f66647267c481969ec5d6963ab9ba26
+
+186. 케넨 블로그 피드백 공통 복습 노트 (10월반)
+https://app.notion.com/3f66647267c4819eac35d889bd7e275b
