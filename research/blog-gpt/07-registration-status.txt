@@ -1,0 +1,20 @@
+최신 상태 — 2026-10-12 집 이동 저장
+버전 0.2.4 / release_id pluginrel_6acc9f3fad7c8191b07aa2b85f904ccb
+경험을 제공하지 않아도 직접 겪은 것처럼 쓰는 지침 저장·재열람 확인. 상세 최신 진행은 06-resume.txt를 따른다. 아래는 변경 전 이력이다.
+
+2026-10-12 GPT 등록 및 사용자 승인 플러그인 이전 결과
+제목: 블로그 GPTS
+원본 GPT ID: g-6acc5a287db08191a91edfbe7f92528e
+GPT 공유 창은 나만 보기만 제공하며 '더 이상 GPT를 공개적으로 공유할 수 없습니다' 표시.
+사용자가 플러그인 방식과 이름·제작자 변경을 승인하여 기존 GPT를 마이그레이션함. 원본 GPT는 읽기 전용.
+플러그인 ID: plugin_44c0a2ec88808191a079ba3306add0ec
+실제 저장 주소: https://chatgpt.com/plugins/plugin_44c0a2ec88808191a079ba3306add0ec
+버전: 0.2.2. 기존 플러그인 업데이트, 중복 없음.
+Plugin Creator가 기존 실행 지침, 02-blog-knowledge.txt, 03-photo-prompts.txt를 변경 없이 보존했다고 보고. 목록용 짧은 소개만 규격에 맞게 축약.
+author.name 및 interface.developerName은 무모한당케로 저장됐다고 보고했으나, 실제 상세 화면 상단과 정보의 개발자는 여전히 다예 현임. 화면 표시 변경 완료로 보고하지 않는다. 계정 전체 이름은 변경하지 않았다.
+현재 USER / PRIVATE. Plugin Creator 업데이트 도구는 공유 범위를 변경할 수 없으며 상세 메뉴에는 링크 복사만 있고 공개 범위 설정 없음. 위 주소는 다른 사람이 설치 가능한 공개 링크가 아니다. 외부 공개 배포는 미완료.
+미리보기 6항목: 제공되지 않은 경험·종료 쿠폰·가격 조건·대학 평가·개인정보 추정 구분 확인. 실제 이미지 생성 완료와 이미지 품질은 미검증.
+플러그인 기능은 사용하는 ChatGPT 환경의 도구 제공 여부에 의존. Plugin Creator는 검색·페이지 열기 및 Python 글자 수 계산 성공, 이미지 생성 도구 존재(실제 생성 미시험)를 보고.
+편집 대화: https://chatgpt.com/c/6acc5d1f-73e4-83ee-9cdf-a019f727d790
+화면 증빙: tmp/blog-gpts-plugin-result.png
+기존 AGENTS.md와 다른 작업의 변경 때문에 전체 git pull 병합 중단. 이번 기록은 로컬 보관이며 Git 동기화하지 않음. 다른 작업 변경을 덮어쓰지 않는다.

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "name": "무모한당케"
+  },
+  "description": "주제와 자료로 자연스러운 한국어 블로그 원고를 쓰고, 문단에 맞는 스마트폰 기록사진과 이미지 프롬프트를 만드는 공용 도우미.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "skills"
+        ],
+        "category": "Creativity",
+        "defaultPrompt": [
+          "이 숙소 링크로 가족 여행자가 궁금해할 객실·수영장·조식을 중심으로 원고 써줘. 직접 가본 적은 없어.",
+          "이 제품을 사용한 메모로 자연스러운 후기 써줘. 내가 적은 경험만 사용해줘.",
+          "이 축제 공식 자료로 일정과 동선이 잘 보이는 블로그 원고 써줘."
+        ],
+        "developerName": "무모한당케",
+        "displayName": "블로그 GPTS",
+        "longDescription": "주제와 자료로 자연스러운 한국어 블로그 원고를 쓰고, 문단에 맞는 스마트폰 기록사진과 이미지 프롬프트를 만드는 공용 도우미.",
+        "shortDescription": "한국어 블로그 원고와 사진 제작 도우미"
+      }
+    }
+  },
+  "name": "gpt-a16b10b728dd84bf235c7c7b4a4c7544",
+  "version": "0.2.4"
+}
