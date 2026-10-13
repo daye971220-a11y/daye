@@ -170,10 +170,10 @@ html,body{width:1080px;height:1920px;background:transparent}.stack{zoom:1.3}</st
     const fadeOut = (s.t / sp - 0.25).toFixed(2);
     execFileSync('ffmpeg', ['-v', 'error', '-y', '-ss', String(s.ss), '-t', String(s.t),
       '-i', `${videoSrc}/KakaoTalk_20261013_${s.video}.mp4`, '-i', png, ...(latePng ? ['-i', latePng] : []),
-      '-filter_complex', `[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,setpts=PTS/${sp},fps=30[v];[v][1:v]overlay=0:0` +
-        (latePng ? `[a];[a][2:v]overlay=0:0:enable='gte(t,${late.from})'[o]` : '[o]'),
+      '-filter_complex', `[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,setpts=PTS/${sp},fps=30[v];[v]format=yuv444p[v4];[v4][1:v]overlay=0:0:format=yuv444` +
+        (latePng ? `[a];[a][2:v]overlay=0:0:format=yuv444:enable='gte(t,${late.from})'[o]` : '[o]'),
       '-map', '[o]', '-map', '0:a?', '-af', `${sp !== 1 ? 'atempo=' + sp + ',' : ''}loudnorm=I=-18:TP=-1.5:LRA=11,afade=t=in:d=0.15,afade=t=out:st=${fadeOut}:d=0.25`,
-      '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p',
+      '-c:v', 'libx264', '-preset', 'slow', '-crf', '15', '-tune', 'film', '-pix_fmt', 'yuv420p',
       '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', join(root, 'out', `story_${n}.mp4`)]);
   } else {
     const html = `<!doctype html><html><head><meta charset="utf-8"><style>${css}
