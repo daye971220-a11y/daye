@@ -151,9 +151,9 @@ slides.forEach((s, i) => {
   const n = String(i + 1).padStart(2, '0');
   const htmlPath = join(root, 'html', `slide_${n}.html`);
   if (s.video) {
-    // 영상은 1080×1920 전체 화면이라 사진 기준(966) 글씨를 키워서 읽기 쉽게
+    // 영상은 압축되면 얇은 글씨가 뭉개져서 사진 기준(966)보다 크게 (2026-10-13 다예님 확인: 굵게 X, 크게 O → zoom 1.6)
     const html = `<!doctype html><html><head><meta charset="utf-8"><style>${css}
-html,body{width:1080px;height:1920px;background:transparent}.stack{zoom:1.3}</style></head>
+html,body{width:1080px;height:1920px;background:transparent}.stack{zoom:1.6}</style></head>
 <body>${body(s)}</body></html>`;
     writeFileSync(htmlPath, html, 'utf8');
     const png = join(root, 'tmp', `overlay_${n}.png`);
