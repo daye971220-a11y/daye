@@ -22,7 +22,7 @@ const slides = [
   ]},
   // 2 허리 (블로그: 바닥까지 허리 숙이고 안아 올리기 힘듦 / 어른 허리 높이)
   { src: 71, groups: [
-    g(7, 'r', ['box', '출산하고 나니 바닥까지 허리 숙였다<br>안아 올리는 게 생각보다 힘들더라고요 🥲'], ['box', '갈이대 높이가 딱 허리라<br>엄마 아빠 허리 지켜줘요 🙌']),
+    g(7, 'r', ['box', '출산하고 나니 바닥까지 허리 숙였다<br>안아 올리는 게 생각보다 힘들더라고요 <span class="emo">🥲</span>'], ['box', '갈이대 높이가 딱 허리라<br>엄마 아빠 허리 지켜줘요 🙌']),
   ]},
   // 3 버둥 (블로그: 얌전히 누워있을 줄 알았는데 전혀 / 휘청거림 적음)
   { src: 63, groups: [
@@ -35,11 +35,11 @@ const slides = [
   ]},
   // 5 오염 (블로그: 새 기저귀 꺼내는 찰나에 또 / 천 커버 비위생, 슥 닦기 / 패드 번갈아)
   { src: 70, groups: [
-    g(32, 'c', ['box', '새 기저귀 꺼내는 그 찰나에<br>또 싸요 ㅠㅠ'], ['box', '천 커버가 아니라 <b>슥 닦으면 끝!</b><br>방수패드는 번갈아 쓰기 좋아요']),
+    g(32, 'c', ['box', '새 기저귀 꺼내는 그 찰나에<br>아기가 또 쌀 때 있죠 <span class="emo">🥲</span>'], ['box', '방수패드 덕분에 갈이대는 늘 깨끗하고<br>패드만 <b>쏙 빼서 빨면</b> 끝!']),
   ]},
   // 6 걸이형 정리함 (블로그: 한 손으로 아기 잡고 물티슈 찾기)
   { src: 62, groups: [
-    g(7, 'l', ['box', '한 손으로 아기 잡고<br>"물티슈 어디 갔지?" 😵'], ['box', '기저귀 · 크림 · 손수건<br><b>손만 뻗으면</b> 바로!']),
+    g(7, 'l', ['box', '한 손으로 아기 잡고 있으면<br>필요한 게 꼭 멀리 있더라고요 <span class="emo">🥲</span>'], ['box', '갈이대 옆 정리함에 기저귀 · 크림 · 손수건<br><b>손만 뻗으면</b> 바로 꺼내요 🙌']),
   ]},
   // 7 수납 (맘카페 망설임: 뒤집기 전까지만 / 공식: 졸업 후 수납장)
   { src: 68, groups: [
@@ -63,6 +63,8 @@ const slides = [
 
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=block');
+.emo{font-family:'Noto Color Emoji'}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-family:'Noto Sans KR','Malgun Gothic',sans-serif}
 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}

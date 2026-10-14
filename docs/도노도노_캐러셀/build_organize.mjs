@@ -22,7 +22,7 @@ const slides = [
   ]},
   // 2 문제 (블로그: 한 손으로 아기 잡고 물티슈 찾으면 난이도 두 배)
   { src: 71, groups: [
-    g(7, 'r', ['box', '기저귀 갈 땐 한 손으로<br>아기를 잡고 있을 때가 많아요 🥲'], ['box', '그때 물티슈 찾기 시작하면<br>난이도가 <b>두 배</b>가 돼요 ㅠㅠ']),
+    g(7, 'r', ['box', '기저귀 갈 땐 한 손으로<br>아기를 잡고 있을 때가 많아요 <span class="emo">🥲</span>'], ['box', '그때 물티슈 찾기 시작하면<br>난이도가 <b>두 배</b>가 돼요 ㅠㅠ']),
   ]},
   // 3 걸이형 정리함 — 기저귀·손수건
   { src: 62, groups: [
@@ -54,6 +54,8 @@ const slides = [
 
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=block');
+.emo{font-family:'Noto Color Emoji'}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-family:'Noto Sans KR','Malgun Gothic',sans-serif}
 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
