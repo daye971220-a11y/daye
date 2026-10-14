@@ -31,9 +31,12 @@ const slides = [
     g(84, 'c', ['box', '그래도 갈이대는 같이 안 흔들려요 👌']),
   ]},
   // 4 트롤리형 선택 (블로그: X자형 고민 → 트롤리, 접을 일 없음)
-  { src: 56, groups: [
-    g(6, 'c', ['box', '원래 X자형 사려다<br>트롤리형으로 바꿨어요']),
-    g(80, 'c', ['box', '하루에도 몇 번씩 쓰는데<br>접을 일이 한 번도 없더라고요 😅']),
+  // → 피드백 반영: X자형(AI 예시 이미지) vs 도노도노 트롤리형 비교 한 장
+  { vs: {
+      left: { src: 'xtype_ai', name: 'X자형', pros: ['버둥거리면 같이<br>흔들려서 불안', '천 커버라 오염되면<br>매번 세탁', '수납은 작은<br>옆주머니뿐'] },
+      right: { src: 56, name: '도노도노 트롤리형', pros: ['3면 통판이라<br><b>흔들림 적음</b>', '플라스틱이라<br><b>슥 닦으면 끝</b>', '정리함 + 선반<br><b>2단 수납</b>'] },
+    }, groups: [
+    g(4, 'c', ['title', '원래 X자형 사려다 트롤리형으로 바꿨어요']),
   ]},
   // 5 오염 (블로그: 새 기저귀 꺼내는 찰나에 또 / 천 커버 비위생, 슥 닦기 / 패드 번갈아)
   { src: 70, groups: [
@@ -104,6 +107,18 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
 .gift .g2{font-size:34px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
 .gift .g3{font-size:27px;color:#555;margin-top:4px;letter-spacing:-0.5px}
+.vsimg{position:absolute;top:150px;width:456px;height:560px;overflow:hidden;background:#fff}
+.vsimg img{width:100%;height:100%;object-fit:cover}
+.vsname{position:absolute;left:0;right:0;bottom:0;background:#fff;text-align:center;font-size:32px;font-weight:500;padding:8px 0;color:#555;letter-spacing:-0.5px}
+.vsname.ok{color:#E0337A;font-weight:700}
+.vsbadge{position:absolute;left:443px;top:400px;width:80px;height:80px;border-radius:50%;background:#1e1a18;color:#fff;font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:-1px}
+.vslist{position:absolute;top:730px;width:456px;background:#fff;padding:14px 22px}
+.vsrow{display:flex;align-items:center;gap:14px;font-size:30px;line-height:1.32;letter-spacing:-0.5px;color:#222;padding:12px 0;border-bottom:1px solid #eee}
+.vsrow:last-child{border-bottom:none}
+.vsrow b{color:#E0337A;font-weight:700}
+.mk{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fff}
+.mk.no{background:#9b948c}.mk.ok{background:#E0337A}
+.vsnote{position:absolute;left:0;right:0;top:1198px;text-align:center;font-size:22px;color:#6f675e;letter-spacing:-0.3px}
 .cell{position:absolute;overflow:hidden;border:6px solid #fff;background:#fff}
 .cell img{width:100%;height:100%;object-fit:cover}
 .cell .cap{position:absolute;left:0;right:0;bottom:0;background:#fff;font-size:28px;font-weight:500;text-align:center;padding:8px 0;letter-spacing:-0.5px;color:#111}
@@ -118,6 +133,16 @@ const item = ([k, t]) => k === 'price' ? priceCard : `<div class="${k}">${t}</di
 const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%${gr.x != null ? (gr.align === 'r' ? ';right:' : ';left:') + gr.x + 'px' : ''}">${gr.items.map(item).join('')}</div>`).join('');
 
 const bg = (s) => {
+  if (s.vs) {
+    const col = (side, k) => {
+      const x = 18 + k * 474, ok = k === 1;
+      const rows = side.pros.map((p) => `<div class="vsrow"><span class="mk ${ok ? 'ok' : 'no'}">${ok ? '✓' : '✕'}</span><span>${p}</span></div>`).join('');
+      return `<div class="vsimg" style="left:${x}px"><img src="../src/${side.src}.jpg"><div class="vsname ${ok ? 'ok' : ''}">${side.name}</div></div>`
+        + `<div class="vslist" style="left:${x}px">${rows}</div>`;
+    };
+    return '<div style="position:absolute;inset:0;background:#e6ddd1"></div>' + col(s.vs.left, 0) + col(s.vs.right, 1)
+      + '<div class="vsbadge">VS</div><div class="vsnote">※ X자형은 이해를 돕기 위한 AI 예시 이미지예요</div>';
+  }
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
   const W = 445, H = 400, x0 = 26, y0 = 182, gap = 22;
