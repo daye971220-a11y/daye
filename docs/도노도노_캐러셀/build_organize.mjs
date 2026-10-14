@@ -18,7 +18,7 @@ const g = (top, align, ...items) => ({ top, align, items });
 const slides = [
   // 1 표지 — 상황 훅 (케넨홈 표지 형식: 흰 띠 + 큰 흰 글씨)
   { src: 66, soft: true, groups: [
-    g(6, 'c', ['label', '<b>도노도노</b> 기저귀갈이대 정리법'], ['cover', '"물티슈 어디 갔지?"<br>이제 그만!']),
+    g(33, 'c', ['label', '<b>도노도노</b> 기저귀갈이대'], ['cover', '뽕 뽑는<br>활용법 5가지']),
   ]},
   // 2 문제 (블로그: 한 손으로 아기 잡고 물티슈 찾으면 난이도 두 배)
   { src: 71, groups: [
@@ -74,7 +74,7 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .big-box b{color:#E0337A}
 .dark{background:rgba(30,26,24,.86);color:#fff;font-size:37px;padding:14px 32px;letter-spacing:-0.5px;font-weight:500}
 .dark b{color:#FFD84D;font-weight:900}
-.soft{position:absolute;left:0;right:0;top:0;height:32%;background:radial-gradient(ellipse at center,rgba(0,0,0,.28),rgba(0,0,0,0) 70%)}
+.soft{position:absolute;left:0;right:0;top:26%;height:42%;background:radial-gradient(ellipse at center,rgba(0,0,0,.28),rgba(0,0,0,0) 70%)}
 .label{background:#fff;font-size:36px;font-weight:500;padding:10px 28px;letter-spacing:-0.5px;color:#1a1a1a}
 .label b{color:#E0337A;font-weight:500}
 .cover{color:#fff;font-size:100px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
