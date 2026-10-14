@@ -22,15 +22,18 @@ const slides = [
   ]},
   // 2 문제 (블로그: 한 손으로 아기 잡고 물티슈 찾으면 난이도 두 배)
   { src: 71, groups: [
-    g(7, 'r', ['box', '기저귀 갈 땐 한 손으로<br>아기를 잡고 있을 때가 많아요 <span class="emo">🥲</span>'], ['box', '그때 물티슈 찾기 시작하면<br>난이도가 <b>두 배</b>가 돼요 ㅠㅠ']),
+    g(7, 'r', ['box', '기저귀 갈 땐 한 손으로<br>아기를 잡고 있을 때가 많아요 <span class="emo">🥲</span>']),
+    g(80, 'l', ['box', '그때 물티슈 찾기 시작하면<br>난이도가 <b>두 배</b>가 돼요 ㅠㅠ']),
   ]},
   // 3 걸이형 정리함 — 기저귀·손수건
   { src: 62, groups: [
-    g(7, 'l', ['box', '① 걸이형 정리함엔<br>기저귀 · 손수건'], ['box', '갈다가 <b>손만 뻗으면</b> 바로 🙌']),
+    g(7, 'l', ['box', '① 걸이형 정리함엔<br>기저귀 · 손수건']),
+    g(82, 'r', ['box', '갈다가 <b>손만 뻗으면</b> 바로 🙌']),
   ]},
   // 4 크림 세워 꽂기
   { src: 67, groups: [
-    g(6, 'c', ['box', '② 크림 · 로션은 세워서 쏙'], ['box', '뚜껑만 열고 바로 발라요']),
+    g(6, 'c', ['box', '② 크림 · 로션은 세워서 쏙']),
+    g(84, 'c', ['box', '뚜껑만 열고 바로 발라요']),
   ]},
   // 5 칸 나누기
   { src: 64, groups: [
@@ -95,7 +98,7 @@ const priceCard = `<div class="price">
   <div class="perks"><div>+ ${DEAL.gift} <b>증정</b></div><div><b>${DEAL.limit}</b></div></div>
 </div>`;
 const item = ([k, t]) => k === 'price' ? priceCard : `<div class="${k}">${t}</div>`;
-const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%">${gr.items.map(item).join('')}</div>`).join('');
+const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%${gr.x != null ? (gr.align === 'r' ? ';right:' : ';left:') + gr.x + 'px' : ''}">${gr.items.map(item).join('')}</div>`).join('');
 
 const bg = (s) => {
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;

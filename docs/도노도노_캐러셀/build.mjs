@@ -22,7 +22,8 @@ const slides = [
   ]},
   // 2 허리 (블로그: 바닥까지 허리 숙이고 안아 올리기 힘듦 / 어른 허리 높이)
   { src: 71, groups: [
-    g(7, 'r', ['box', '출산하고 나니 바닥까지 허리 숙였다<br>안아 올리는 게 생각보다 힘들더라고요 <span class="emo">🥲</span>'], ['box', '갈이대 높이가 딱 허리라<br>엄마 아빠 허리 지켜줘요 🙌']),
+    g(7, 'r', ['box', '출산하고 나니 바닥까지 허리 숙였다<br>안아 올리는 게 생각보다 힘들더라고요 <span class="emo">🥲</span>']),
+    g(80, 'l', ['box', '갈이대 높이가 딱 허리라<br>엄마 아빠 허리 지켜줘요 🙌']),
   ]},
   // 3 버둥 (블로그: 얌전히 누워있을 줄 알았는데 전혀 / 휘청거림 적음)
   { src: 63, groups: [
@@ -31,15 +32,18 @@ const slides = [
   ]},
   // 4 트롤리형 선택 (블로그: X자형 고민 → 트롤리, 접을 일 없음)
   { src: 56, groups: [
-    g(6, 'c', ['box', '원래 X자형 사려다<br>트롤리형으로 바꿨어요'], ['box', '하루에도 몇 번씩 쓰는데<br>접을 일이 한 번도 없더라고요 😅']),
+    g(6, 'c', ['box', '원래 X자형 사려다<br>트롤리형으로 바꿨어요']),
+    g(80, 'c', ['box', '하루에도 몇 번씩 쓰는데<br>접을 일이 한 번도 없더라고요 😅']),
   ]},
   // 5 오염 (블로그: 새 기저귀 꺼내는 찰나에 또 / 천 커버 비위생, 슥 닦기 / 패드 번갈아)
   { src: 70, groups: [
-    g(32, 'c', ['box', '새 기저귀 꺼내는 그 찰나에<br>아기가 또 쌀 때 있죠 <span class="emo">🥲</span>'], ['box', '방수패드 덕분에 갈이대는 늘 깨끗하고<br>패드만 <b>쏙 빼서 빨면</b> 끝!']),
+    g(30, 'c', ['box', '새 기저귀 꺼내는 그 찰나에<br>아기가 또 쌀 때 있죠 <span class="emo">🥲</span>']),
+    g(76, 'c', ['box', '방수패드 덕분에 갈이대는 늘 깨끗하고<br>패드만 <b>쏙 빼서 빨면</b> 끝!']),
   ]},
   // 6 걸이형 정리함 (블로그: 한 손으로 아기 잡고 물티슈 찾기)
   { src: 62, groups: [
-    g(7, 'l', ['box', '한 손으로 아기 잡고 있으면<br>필요한 게 꼭 멀리 있더라고요 <span class="emo">🥲</span>'], ['box', '갈이대 옆 정리함에 기저귀 · 크림 · 손수건<br><b>손만 뻗으면</b> 바로 꺼내요 🙌']),
+    g(7, 'l', ['box', '한 손으로 아기 잡고 있으면<br>필요한 게 꼭 멀리 있더라고요 <span class="emo">🥲</span>']),
+    g(80, 'r', ['box', '갈이대 옆 정리함에<br>기저귀 · 크림 · 손수건<br><b>손만 뻗으면</b> 바로 꺼내요 🙌']),
   ]},
   // 7 수납 (맘카페 망설임: 뒤집기 전까지만 / 공식: 졸업 후 수납장)
   { src: 68, groups: [
@@ -47,7 +51,9 @@ const slides = [
   ]},
   // 8 목욕 후 + 바퀴 (블로그: 목욕 후 자지러지게 울 때 한자리에서 / 바퀴로 욕실 동선)
   { src: 59, groups: [
-    g(7, 'c', ['box', '목욕하고 나오면 자지러지게 우는데 ㅠㅠ'], ['box', '욕실 옆으로 쓱 밀고 와서<br>기저귀 · 크림 · 옷까지 한 번에!']),
+    g(6, 'c', ['box', '목욕 끝나고 옷을 빨리 안 입히면<br>자지러지게 울어요 <span class="emo">🥲</span>']),
+    { ...g(36, 'l', ['box', '그래서 목욕할 땐<br>바퀴로 욕실 앞까지 <b>쓱</b>']), x: 40 },
+    g(80, 'c', ['box', '발로 <b>딸깍</b> 고정하고<br>기저귀 · 크림 · 옷까지 바로 한 번에!']),
   ]},
   // 9 세트 구성
   { collage: [56, 66, 74, 'blanket_official'], groups: [
@@ -109,7 +115,7 @@ const priceCard = `<div class="price">
   <div class="perks"><div>+ ${DEAL.gift} <b>증정</b></div><div><b>${DEAL.limit}</b></div></div>
 </div>`;
 const item = ([k, t]) => k === 'price' ? priceCard : `<div class="${k}">${t}</div>`;
-const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%">${gr.items.map(item).join('')}</div>`).join('');
+const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%${gr.x != null ? (gr.align === 'r' ? ';right:' : ';left:') + gr.x + 'px' : ''}">${gr.items.map(item).join('')}</div>`).join('');
 
 const bg = (s) => {
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
