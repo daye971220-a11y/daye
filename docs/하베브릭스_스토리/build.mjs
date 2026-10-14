@@ -10,7 +10,7 @@ const videoSrc = 'C:/Users/user/Downloads/육아 공구/모빌';
 const chrome = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 for (const d of ['html', 'out', 'tmp']) mkdirSync(join(root, d), { recursive: true });
 // 폴더가 탐색기에 열려 있어도 되도록 폴더 대신 안의 파일만 비움
-for (const f of readdirSync(join(root, 'out'))) rmSync(join(root, 'out', f), { force: true });
+if (!process.argv.includes('--video')) for (const f of readdirSync(join(root, 'out'))) rmSync(join(root, 'out', f), { force: true });
 
 // 공구 조건 (공구 제안서 기준)
 const PRICE = { list: '299,000', deal: '157,000', rate: '47%', perItem: '약 7만 8천원', gift: '올리브영 5천원' };
@@ -25,8 +25,8 @@ const slides = [
     g(42, 'c', ['box', '흑백 모빌 보면서 눈맞춤 시작하고<br>엄마 손도 자유로워졌어요! 🙌']),
   ]},
   { video: '093703050', ss: 4.5, t: 6, groups: [
-    g(12, 'c', ['box', '어제는 무려 1시간을 모빌만 보며<br>혼자 놀았어요!']),
-    g(63, 'c', ['box', '양방향으로 크게 도는 와이드 모션'], ['box', '회전 반경이 40.5cm라<br>누워서 보기 딱 좋아요']),
+    g(12, 'c', ['box', '어제는 무려 1시간을<br>모빌만 보며 혼자 놀았어요!']),
+    g(62, 'c', ['box', '양방향 와이드 모션 🔄<br>회전 반경 40.5cm라<br>누워서 보기 딱 좋아요']),
   ]},
   { video: '093610405', ss: 8.5, t: 7, groups: [
     g(12, 'c', ['box', '인형 따라 눈이 쭉~ 따라가요 👀']),
@@ -41,21 +41,21 @@ const slides = [
     g(40, 'c', ['box', '흑백 인형 → 컬러 인형<br>시기 따라 바꿔 달아요 🧸'], ['box', '3개월까지는 흑백 인형<br>3개월 이후엔 컬러 인형<br><b>인형 10종 전부</b> 보내드려요!']),
   ]},
   { video: '093758644', ss: 20, t: 8, groups: [
-    g(12, 'c', ['box', '동요·클래식 29곡에 백색소음까지 🎶'], ['box', '엄마도 매일 듣다 보니<br>엄마가 더 신나해요 ㅋㅋㅋ']),
+    g(12, 'c', ['box', '동요·클래식 29곡에<br>백색소음까지 🎶'], ['box', '엄마도 매일 듣다 보니<br>엄마가 더 신나해요 ㅋㅋㅋ']),
     // 아기 얼굴 아래(배 쪽), 인스타 하단 메시지창에 안 걸리게 80% 안쪽 + 글씨 살짝 작게
-    g(67, 'c', ['box sm', '백색소음기 따로 안 사도<br>쉬~~ 소리가 나오니까<br>잘 때도 침대에 모빌 부착해 사용 가능!']),
+    g(60, 'c', ['box sm', '백색소음기 따로 안 사도<br>쉬~~ 소리가 나오니까<br>잘 때도 침대에 달아서 사용 가능!']),
   ]},
   // 표지 바로 뒤에 올 장: 1.5배속, 번호 제목 + 자막 처음부터 (위쪽 모빌은 비우고 가운데 울타리 쪽)
   { video: '093909163', ss: 0.3, t: 9.5, speed: 1.5, groups: [
-    g(43, 'c', ['title', '1. 흑백/컬러 모빌'], ['box', '밥 한 끼 편하게 먹는 게<br>이렇게 소중할 줄이야 <span class="emo">😄</span>']),
-    g(70, 'c', ['box', '아기는 모빌 보고<br>엄마는 편하게 밥 먹고 🥄']),
+    g(38, 'c', ['title', '1. 흑백/컬러 모빌'], ['box', '밥 한 끼 편하게 먹는 게<br>이렇게 소중할 줄이야 <span class="emo">😄</span>']),
+    g(64, 'c', ['box', '아기는 모빌 보고<br>엄마는 편하게 밥 먹고 🥄']),
   ]},
   { src: 33, groups: [
     g(8, 'c', ['title', '2. 손 뻗기 시작하면 아기체육관 ✋'], ['box', '딸랑이 한번 잡으면 안 놔줘요 ㅋㅋ']),
     g(66, 'l', ['box', '손 뻗고, 잡고, 흔들고<br>혼자서도 잘 놀아요']),
   ]},
   { video: '093624634', ss: 22, t: 7, groups: [
-    g(70, 'c', ['box', '모빌 + 손놀이 장난감까지<br>체육관 하나로 다 돼요']),
+    g(66, 'c', ['box', '모빌 + 손놀이 장난감까지<br>체육관 하나로 다 돼요']),
   ]},
   { src: 31, groups: [
     g(8, 'r', ['box', '딸랑이 · 비즈 · 거울까지<br>손놀이 장난감이 한가득']),
@@ -69,7 +69,7 @@ const slides = [
     g(76, 'c', ['box', '누워서 보는 시기엔 모빌<br>손발 뻗는 시기엔 아기체육관'], ['box', '신생아부터 뒤집기까지 이 세트로 쭉 💛']),
   ]},
   { video: '093738892', ss: 41, t: 5, groups: [
-    g(12, 'c', ['box', '보다가 방긋 😊<br>이 표정 보려고 매일 틀어줘요']),
+    g(12, 'c', ['box', '보다가 방긋 😊<br>이 표정 보려고<br>매일 틀어줘요']),
   ]},
   { src: 23, groups: [
     g(8, 'c', ['title', '그래서 가격은요? 👀']),
@@ -80,7 +80,10 @@ const slides = [
   { src: 32, cover: true },
 ];
 
+// 영상 자막 배율 (사진 966px 기준 대비). 2026-10-14: 1.6 → 1.8
+const VZOOM = 1.8;
 const css = `
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=block');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=block');
 /* 윈도우 기본 이모지는 입이 진분홍이라 화나 보여서, 필요한 곳만 노란 얼굴(노토) 이모지로 */
@@ -141,6 +144,7 @@ const body = (s) => s.cover
      <div class="stack c" style="top:91%"><div class="sub">댓글에 ‘모빌’ 남겨주시면 10.22 오픈 때 DM 드릴게요 💌</div></div>`
   : s.groups.filter((gr) => (gr.from ?? 0) === (s.only ?? 0)).map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%${gr.x != null ? (gr.align === 'r' ? ';right:' : ';left:') + gr.x + 'px' : ''}">${gr.items.map(item).join('')}</div>`).join('');
 
+const ONLY_VIDEO = process.argv.includes('--video');
 const shot = (htmlPath, w, h, out, transparent) => execFileSync(chrome, [
   '--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
   `--window-size=${w},${h}`, '--virtual-time-budget=8000',
@@ -149,11 +153,14 @@ const shot = (htmlPath, w, h, out, transparent) => execFileSync(chrome, [
 
 slides.forEach((s, i) => {
   const n = String(i + 1).padStart(2, '0');
+  if (ONLY_VIDEO && !s.video) return;
   const htmlPath = join(root, 'html', `slide_${n}.html`);
   if (s.video) {
     // 영상은 압축되면 얇은 글씨가 뭉개져서 사진 기준(966)보다 크게 (2026-10-13 다예님 확인: 굵게 X, 크게 O → zoom 1.6)
     const html = `<!doctype html><html><head><meta charset="utf-8"><style>${css}
-html,body{width:1080px;height:1920px;background:transparent}.stack{zoom:1.6}</style></head>
+html,body{width:1080px;height:1920px;background:transparent}.stack{zoom:${VZOOM}}
+/* 영상 전용: 압축에 강하게 — 획이 단순한 고딕(Pretendard) + 살짝 도톰한 500 굵기 */
+body,.box,.title{font-family:'Pretendard','Noto Sans KR',sans-serif}.box,.title{font-weight:500;letter-spacing:-0.8px}</style></head>
 <body>${body(s)}</body></html>`;
     writeFileSync(htmlPath, html, 'utf8');
     const png = join(root, 'tmp', `overlay_${n}.png`);
