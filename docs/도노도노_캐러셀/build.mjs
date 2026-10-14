@@ -17,8 +17,9 @@ const DEAL = { list: '354,000', price: '209,000', rate: '41%', gift: '기저귀 
 const g = (top, align, ...items) => ({ top, align, items });
 const slides = [
   // 1 표지 — 하베브릭스 공구예고와 같은 시리즈 형식
-  { src: 72, soft: true, groups: [
-    g(6, 'c', ['label', '<b>도노도노</b> 트롤리 기저귀갈이대'], ['cover', '최저가 공구예고']),
+  // 썸네일 통일 위치(27%)에 아기 얼굴이 걸리지 않게 사진을 1.4배 키워 아래 기준으로 맞춤
+  { src: 72, soft: true, zoom: 1.28, groups: [
+    g(27, 'c', ['label', '<b>도노도노</b> 트롤리 기저귀갈이대'], ['cover', '최저가 공구예고']),
   ]},
   // 2 허리 (블로그: 바닥까지 허리 숙이고 안아 올리기 힘듦 / 어른 허리 높이)
   { src: 71, groups: [
@@ -93,12 +94,13 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .big-box b{color:#E0337A}
 .dark{background:rgba(30,26,24,.86);color:#fff;font-size:37px;padding:14px 32px;letter-spacing:-0.5px;font-weight:500}
 .dark b{color:#FFD84D;font-weight:900}
-.soft{position:absolute;left:0;right:0;top:0;height:32%;background:radial-gradient(ellipse at center,rgba(0,0,0,.28),rgba(0,0,0,0) 70%)}
-.label{background:#fff;font-size:36px;font-weight:500;padding:10px 28px;letter-spacing:-0.5px;color:#1a1a1a}
+.label{background:#fff;font-size:44px;font-weight:500;padding:10px 26px;letter-spacing:-0.5px;color:#1a1a1a}
 .label b{color:#E0337A;font-weight:500}
-.cover{color:#fff;font-size:124px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
+.cover{color:#fff;font-size:100px;font-weight:900;letter-spacing:-2px;line-height:1.16;text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
-.tag{background:#E0337A;color:#fff;font-size:34px;font-weight:700;padding:10px 30px;letter-spacing:-0.5px}
+.tag{background:rgba(30,26,24,.86);color:#fff;font-size:32px;font-weight:500;padding:9px 26px;letter-spacing:-0.5px;margin-top:6px}
+.zoom{transform:scale(var(--z));transform-origin:center bottom}
+.soft{position:absolute;left:0;right:0;top:20%;height:34%;background:radial-gradient(ellipse at center,rgba(0,0,0,.30),rgba(0,0,0,0) 70%)}
 .shade{position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.3) 55%,rgba(0,0,0,0))}
 .price{background:#fff;width:720px;padding:24px 36px;text-align:center;color:#111;letter-spacing:-0.5px}
 .price .row{font-size:30px;color:#888}.price .row s{color:#999}
@@ -156,7 +158,7 @@ const bg = (s) => {
       + '<div class="vsbadge">VS</div>';
 
   }
-  if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
+  if (!s.collage) return `<img class="bg${s.zoom ? ' zoom' : ''}" style="--z:${s.zoom || 1}" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
   const W = 445, H = 400, x0 = 26, y0 = 182, gap = 22;
   return `<div style="position:absolute;inset:0;background:#e6ddd1"></div>` + s.collage.map((src, k) => {
