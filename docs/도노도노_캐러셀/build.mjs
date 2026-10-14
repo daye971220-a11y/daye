@@ -33,10 +33,10 @@ const slides = [
   // 4 트롤리형 선택 (블로그: X자형 고민 → 트롤리, 접을 일 없음)
   // → 피드백 반영: X자형(AI 예시 이미지) vs 도노도노 트롤리형 비교 한 장
   { vs: {
-      left: { src: 'xtype_ai3', name: 'X자형', pros: ['버둥거리면 같이<br>흔들려서 불안', '천 커버라 디자인이<br>지저분해 보임', '수납공간 없음'] },
+      left: { src: 'xtype_ai3', name: 'X자형', pros: ['<b>흔들려서 불안</b><small>버둥거리면 같이 흔들려요</small>', '<b>지저분해 보이는 천 커버</b><small>오염되면 매번 세탁해야 해요</small>', '<b>수납공간 없음</b><small>기저귀 · 크림 둘 곳이 따로 필요</small>'] },
       right: { src: 56, name: '도노도노 트롤리형', pros: ['<b>튼튼함</b><small>3면 통판 · 최대 60kg 하중</small>', '<b>플라스틱이라 세척 용이</b><small>오염돼도 닦아주기만 하면 끝</small>', '<b>든든한 수납공간</b><small>걸이형 정리함 + 대용량 선반</small>'] },
     }, groups: [
-    g(4, 'c', ['title', '원래 X자형 사려다 트롤리형으로 바꿨어요']),
+    g(4, 'c', ['title', 'X자형 대신 트롤리형을 고른 이유']),
   ]},
   // 5 오염 (블로그: 새 기저귀 꺼내는 찰나에 또 / 천 커버 비위생, 슥 닦기 / 패드 번갈아)
   { src: 70, groups: [
@@ -107,15 +107,16 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
 .gift .g2{font-size:34px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
 .gift .g3{font-size:27px;color:#555;margin-top:4px;letter-spacing:-0.5px}
-.vsimg{position:absolute;top:150px;width:456px;height:470px;overflow:hidden;background:#fff}
+.vsimg{position:absolute;top:150px;width:456px;height:600px;overflow:hidden;background:#fff}
 .vsimg img{width:100%;height:100%;object-fit:cover}
 .vsname{position:absolute;left:0;right:0;bottom:0;background:#fff;text-align:center;font-size:32px;font-weight:500;padding:8px 0;color:#555;letter-spacing:-0.5px}
 .vsname.ok{color:#E0337A;font-weight:700}
-.vsbadge{position:absolute;left:443px;top:345px;width:80px;height:80px;border-radius:50%;background:#1e1a18;color:#fff;font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:-1px}
-.vslist{position:absolute;top:638px;width:456px;background:#fff;padding:14px 22px}
-.vsrow{display:flex;align-items:center;gap:14px;font-size:29px;line-height:1.3;letter-spacing:-0.5px;color:#222;padding:9px 0;border-bottom:1px solid #eee}
+.vsbadge{position:absolute;left:443px;top:410px;width:80px;height:80px;border-radius:50%;background:#1e1a18;color:#fff;font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:-1px}
+.vslist{position:absolute;top:772px;width:456px;background:#fff;padding:14px 22px}
+.vsrow{display:flex;align-items:center;gap:14px;font-size:30px;line-height:1.3;letter-spacing:-0.5px;color:#222;height:118px;padding:0;border-bottom:1px solid #eee}
 .vsrow:last-child{border-bottom:none}
 .vsrow b{color:#E0337A;font-weight:700;display:block}
+.vslist:first-of-type .vsrow b,.vsrow:has(.no) b{color:#4a4440}
 .vsrow small{display:block;font-size:23px;color:#777;margin-top:2px;letter-spacing:-0.4px}
 .mk{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fff}
 .mk.no{background:#9b948c}.mk.ok{background:#E0337A}
@@ -148,9 +149,8 @@ const bg = (s) => {
         + `<div class="vslist" style="left:${x}px">${rows}</div>`;
     };
     return '<div style="position:absolute;inset:0;background:#e6ddd1"></div>' + col(s.vs.left, 0) + col(s.vs.right, 1)
-      + '<div class="vsbadge">VS</div>'
-      + '<div class="cards">' + [['card_panel', '다리 대신 3면 통판'], ['card_clean', '물 · 오염은 슥 닦기'], ['card_storage', '대용량 수납 선반']]
-        .map(([src, cap]) => `<div class="card"><img src="../src/${src}.jpg"><div>${cap}</div></div>`).join('') + '</div>';
+      + '<div class="vsbadge">VS</div>';
+
   }
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
