@@ -51,7 +51,7 @@ const slides = [
   ]},
   // 9 세트 구성
   { collage: [56, 66, 74, 'blanket_official'], groups: [
-    g(4, 'c', ['title', '이번 공구 구성']),
+    g(4, 'c', ['title', '이번 공구 구성 🎁']),
   ], gift: { src: 'creamstick_official', name: '보타니컬테라피 시카 기저귀 크림스틱 (17g)', desc: '기저귀 갈 때 엉덩이에 쓱 바르는 스틱형 크림' }, labels: ['트롤리 기저귀갈이대', '걸이형 정리함', '방수패드', '리틀드리머 블랭킷'] },
   // 10 마지막 — 하베브릭스 공구예고 마지막 장과 같은 구성 (가격 비공개, 할인율 + 알람)
   { src: 60, groups: [
@@ -93,8 +93,8 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .price .perks{margin-top:10px;display:flex;justify-content:center;gap:12px}
 .price .perks div{background:#1e1a18;color:#fff;font-size:28px;font-weight:500;padding:8px 18px}
 .price .perks b{color:#FFD84D}
-.gift{position:absolute;left:26px;right:26px;top:1006px;height:206px;background:#fff;border:6px solid #fff;display:flex;align-items:center;gap:26px;padding-right:20px}
-.gift img{height:192px;width:120px;object-fit:cover}
+.gift{position:absolute;left:26px;right:26px;top:1028px;height:200px;background:#fff;border:6px solid #fff;display:flex;align-items:center;gap:26px;padding-right:20px}
+.gift img{height:186px;width:120px;object-fit:cover}
 .gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
 .gift .g2{font-size:34px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
 .gift .g3{font-size:27px;color:#555;margin-top:4px;letter-spacing:-0.5px}
@@ -114,8 +114,8 @@ const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style
 const bg = (s) => {
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
-  const W = 445, H = 420, x0 = 26, y0 = 140, gap = 18;
-  return `<div style="position:absolute;inset:0;background:#f4f1ec"></div>` + s.collage.map((src, k) => {
+  const W = 445, H = 400, x0 = 26, y0 = 182, gap = 22;
+  return `<div style="position:absolute;inset:0;background:#e6ddd1"></div>` + s.collage.map((src, k) => {
     const x = x0 + (k % 2) * (W + gap), y = y0 + Math.floor(k / 2) * (H + gap);
     return `<div class="cell" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px"><img src="../src/${src}.jpg" style="object-position:center ${src === 'blanket_official' ? '60%' : '50%'}"><div class="cap">${s.labels[k]}</div></div>`;
   }).join('') + (s.gift ? `<div class="gift"><img src="../src/${s.gift.src}.jpg"><div><div class="g1">+ 증정 🎁</div><div class="g2">${s.gift.name}</div><div class="g3">${s.gift.desc}</div></div></div>` : '');
