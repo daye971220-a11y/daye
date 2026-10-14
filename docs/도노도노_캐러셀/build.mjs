@@ -33,7 +33,7 @@ const slides = [
   // 4 트롤리형 선택 (블로그: X자형 고민 → 트롤리, 접을 일 없음)
   // → 피드백 반영: X자형(AI 예시 이미지) vs 도노도노 트롤리형 비교 한 장
   { vs: {
-      left: { src: 'xtype_ai', name: 'X자형', pros: ['버둥거리면 같이<br>흔들려서 불안', '천 커버라 오염되면<br>매번 세탁', '수납은 작은<br>옆주머니뿐'] },
+      left: { src: 'xtype_ai2', name: 'X자형', pros: ['버둥거리면 같이<br>흔들려서 불안', '천 커버라 디자인이<br>지저분해 보임', '수납공간 없음'] },
       right: { src: 56, name: '도노도노 트롤리형', pros: ['3면 통판이라<br><b>흔들림 적음</b>', '플라스틱이라<br><b>슥 닦으면 끝</b>', '정리함 + 선반<br><b>2단 수납</b>'] },
     }, groups: [
     g(4, 'c', ['title', '원래 X자형 사려다 트롤리형으로 바꿨어요']),
@@ -141,7 +141,7 @@ const bg = (s) => {
         + `<div class="vslist" style="left:${x}px">${rows}</div>`;
     };
     return '<div style="position:absolute;inset:0;background:#e6ddd1"></div>' + col(s.vs.left, 0) + col(s.vs.right, 1)
-      + '<div class="vsbadge">VS</div><div class="vsnote">※ X자형은 이해를 돕기 위한 AI 예시 이미지예요</div>';
+      + '<div class="vsbadge">VS</div>';
   }
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
