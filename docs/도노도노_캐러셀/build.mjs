@@ -93,8 +93,8 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .price .perks{margin-top:10px;display:flex;justify-content:center;gap:12px}
 .price .perks div{background:#1e1a18;color:#fff;font-size:28px;font-weight:500;padding:8px 18px}
 .price .perks b{color:#FFD84D}
-.gift{position:absolute;left:26px;right:26px;top:1048px;height:214px;background:#fff;border:6px solid #fff;display:flex;align-items:center;gap:26px;padding-right:20px}
-.gift img{height:200px;width:120px;object-fit:cover}
+.gift{position:absolute;left:26px;right:26px;top:1006px;height:206px;background:#fff;border:6px solid #fff;display:flex;align-items:center;gap:26px;padding-right:20px}
+.gift img{height:192px;width:120px;object-fit:cover}
 .gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
 .gift .g2{font-size:34px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
 .gift .g3{font-size:27px;color:#555;margin-top:4px;letter-spacing:-0.5px}
@@ -114,7 +114,7 @@ const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style
 const bg = (s) => {
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
-  const W = 445, H = 440, x0 = 26, y0 = 140, gap = 20;
+  const W = 445, H = 420, x0 = 26, y0 = 140, gap = 18;
   return `<div style="position:absolute;inset:0;background:#f4f1ec"></div>` + s.collage.map((src, k) => {
     const x = x0 + (k % 2) * (W + gap), y = y0 + Math.floor(k / 2) * (H + gap);
     return `<div class="cell" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px"><img src="../src/${src}.jpg" style="object-position:center ${src === 'blanket_official' ? '60%' : '50%'}"><div class="cap">${s.labels[k]}</div></div>`;
