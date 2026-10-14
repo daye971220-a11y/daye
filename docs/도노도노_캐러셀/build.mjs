@@ -62,7 +62,7 @@ const slides = [
     g(80, 'c', ['box', '물기 닦고 · 로션 바르고 · 옷 입히고<br>기저귀 장착까지! <b>매일 루틴</b>이에요 💛']),
   ]},
   // 9 세트 구성
-  { collage: [56, 66, 74, 'blanket_official'], groups: [
+  { collage: [56, 66, 'pad', 'blanket_official'], groups: [
     g(4, 'c', ['title', '이번 공구 구성 🎁']),
   ], gift: { src: 'creamstick_official', name: '보타니컬테라피 시카 기저귀 크림스틱 (17g)', desc: '기저귀 갈 때 엉덩이에 쓱 바르는 스틱형 크림' }, labels: ['트롤리 기저귀갈이대', '걸이형 정리함', '방수패드', '리틀드리머 블랭킷'] },
   // 10 마지막 — 하베브릭스 공구예고 마지막 장과 같은 구성 (가격 비공개, 할인율 + 알람)
