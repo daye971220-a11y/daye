@@ -16,47 +16,48 @@ const DEAL = { list: '354,000', price: '209,000', rate: '41%', gift: '기저귀 
 // 글씨 묶음: g(top%, 정렬, 항목...) / 항목: title, box, sm(작은 상자), big-box, dark
 const g = (top, align, ...items) => ({ top, align, items });
 const slides = [
-  // 1 표지 — 상황 질문
-  { src: 72, shade: true, groups: [
-    g(7, 'c', ['label', '<b>도노도노</b> 트롤리 기저귀갈이대'], ['cover', '기저귀 갈 때마다<br>허리 숙이고 계세요?'], ['tag', '공구 오픈 예정']),
+  // 1 표지 — 하베브릭스 공구예고와 같은 시리즈 형식
+  { src: 72, soft: true, groups: [
+    g(6, 'c', ['label', '<b>도노도노</b> 트롤리 기저귀갈이대'], ['cover', '최저가 공구예고']),
   ]},
-  // 2 높이 — 허리
+  // 2 허리 (블로그: 바닥까지 허리 숙이고 안아 올리기 힘듦 / 어른 허리 높이)
   { src: 71, groups: [
-    g(7, 'r', ['box', '바닥에서 갈면<br>숙였다, 안아 올렸다… 하루에도 몇 번씩'], ['box', '상판까지 <b>83cm</b><br>서서 바로 갈 수 있어요']),
+    g(7, 'r', ['box', '출산하고 나니 바닥까지 허리 숙였다<br>안아 올리는 게 생각보다 힘들더라고요 🥲'], ['box', '갈이대 높이가 딱 허리라<br>엄마 아빠 허리 지켜줘요 🙌']),
   ]},
-  // 3 버둥 — 안전 가드
+  // 3 버둥 (블로그: 얌전히 누워있을 줄 알았는데 전혀 / 휘청거림 적음)
   { src: 63, groups: [
-    g(7, 'c', ['box', '신생아도 기저귀 갈 땐<br>다리 차고 몸을 비틀어요']),
-    g(84, 'c', ['box', '최대 <b>14cm</b> 3면 안전 가드가<br>버둥거려도 감싸줘요']),
+    g(7, 'c', ['box', '신생아라 얌전히 누워 있을 줄 알았는데<br>전혀요! 다리 차고 용쓰고 ㅋㅋ']),
+    g(84, 'c', ['box', '그래도 갈이대는 같이 안 흔들려요 👌']),
   ]},
-  // 4 구조 — 통판, 접이식·X자형과 차이
+  // 4 트롤리형 선택 (블로그: X자형 고민 → 트롤리, 접을 일 없음)
   { src: 56, groups: [
-    g(6, 'c', ['box', '접이식·X자형은 가볍지만<br>버둥거릴 때 같이 휘청여요'], ['box', '다리 대신 <b>3면 통판</b>이라 덜 흔들리고<br>최대 60kg 하중까지 버텨요'], ['sm', 'KC 어린이 가구 안전기준 통과']),
+    g(6, 'c', ['box', '원래 X자형 사려다<br>트롤리형으로 바꿨어요'], ['box', '하루에도 몇 번씩 쓰는데<br>접을 일이 한 번도 없더라고요 😅']),
   ]},
-  // 5 오염 — 닦기 + 방수패드
+  // 5 오염 (블로그: 새 기저귀 꺼내는 찰나에 또 / 천 커버 비위생, 슥 닦기 / 패드 번갈아)
   { src: 70, groups: [
-    g(32, 'c', ['box', '새 기저귀 꺼내는 찰나에<br>또 쌀 때 있죠'], ['box', '상판은 <b>닦기만 하면 끝</b><br>위엔 방수패드 한 장'], ['sm', '방수패드: 순면 겉감 · 뒷면 실리콘 논슬립 · 80×53cm']),
+    g(32, 'c', ['box', '새 기저귀 꺼내는 그 찰나에<br>또 싸요 ㅠㅠ'], ['box', '천 커버가 아니라 <b>슥 닦으면 끝!</b><br>방수패드는 번갈아 쓰기 좋아요']),
   ]},
-  // 6 걸이형 정리함 — 한 손 케어
+  // 6 걸이형 정리함 (블로그: 한 손으로 아기 잡고 물티슈 찾기)
   { src: 62, groups: [
-    g(7, 'l', ['box', '한 손으로 아기 잡고<br>"물티슈 어디 갔지?"'], ['box', '기저귀 · 크림 · 손수건<br><b>손만 뻗으면</b> 바로']),
+    g(7, 'l', ['box', '한 손으로 아기 잡고<br>"물티슈 어디 갔지?" 😵'], ['box', '기저귀 · 크림 · 손수건<br><b>손만 뻗으면</b> 바로!']),
   ]},
-  // 7 선반 수납 — 졸업 후에도
+  // 7 수납 (맘카페 망설임: 뒤집기 전까지만 / 공식: 졸업 후 수납장)
   { src: 68, groups: [
-    g(46, 'c', ['box', '대용량 기저귀팩 · 물티슈까지<br>아래 선반에 넉넉하게'], ['box', '기저귀갈이대 졸업해도<br><b>수납장으로 계속</b> 써요']),
+    g(46, 'c', ['box', '뒤집기 전까지만 쓰는 거 아니냐고요?'], ['box', '기저귀갈이대 졸업해도<br><b>수납장으로 계속</b> 써요 💛']),
   ]},
-  // 8 바퀴 — 동선
+  // 8 목욕 후 + 바퀴 (블로그: 목욕 후 자지러지게 울 때 한자리에서 / 바퀴로 욕실 동선)
   { src: 59, groups: [
-    g(7, 'c', ['box', '거실에서 쓰다가 목욕 후엔 욕실 옆으로'], ['box', '쓸 땐 발로 <b>딸깍</b><br>바퀴가 고정돼요']),
+    g(7, 'c', ['box', '목욕하고 나오면 자지러지게 우는데 ㅠㅠ'], ['box', '욕실 옆으로 쓱 밀고 와서<br>기저귀 · 크림 · 옷까지 한 번에!']),
   ]},
   // 9 세트 구성
   { collage: [56, 66, 74, 'blanket_official'], groups: [
-    g(4, 'c', ['title', '이번 공구 구성']),
+    g(4, 'c', ['title', '이번 공구 구성 + 크림스틱까지 🎁']),
   ], labels: ['트롤리 기저귀갈이대', '걸이형 정리함', '방수패드', '리틀드리머 블랭킷'] },
-  // 10 공구 조건 + 알림
-  { src: 61, shade: true, groups: [
-    g(8, 'c', ['label', '<b>도노도노</b> 기저귀갈이대 세트'], ['cover', '공구 오픈 예정'], ['price', '']),
-    g(78, 'c', ['box', `댓글에 <b>'${DEAL.keyword}'</b> 남겨주시면<br>오픈할 때 DM으로 링크 보내드려요`]),
+  // 10 마지막 — 하베브릭스 공구예고 마지막 장과 같은 구성 (가격 비공개, 할인율 + 알람)
+  { src: 60, groups: [
+    g(8, 'c', ['title', '그래서 가격은요? 👀']),
+    g(40, 'c', ['big-box', `<b class="pink">'${DEAL.keyword}'</b> 댓글 남기면<br>정가 대비 <b class="pink">${DEAL.rate} 할인</b> 링크<br>오픈 당일에 보내드려요!`], ['dark', `+ 구매하면 ${DEAL.gift} <b>증정</b> 🎁`]),
+    g(80, 'c', ['box', `<b>${DEAL.limit}</b>이라 알람 꼭 걸어두세요!`]),
   ]},
 ];
 
@@ -72,9 +73,15 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .box b,.title b{font-weight:700;color:#E0337A}
 .sm{font-size:26px;padding:8px 20px;color:#444}
 .title{font-size:44px;padding:16px 40px}
+.pink{color:#E0337A;font-weight:900}
+.big-box{background:#fff;color:#111;text-align:center;font-size:44px;font-weight:500;line-height:1.38;letter-spacing:-0.5px;padding:22px 46px}
+.big-box b{color:#E0337A}
+.dark{background:rgba(30,26,24,.86);color:#fff;font-size:37px;padding:14px 32px;letter-spacing:-0.5px;font-weight:500}
+.dark b{color:#FFD84D;font-weight:900}
+.soft{position:absolute;left:0;right:0;top:0;height:32%;background:radial-gradient(ellipse at center,rgba(0,0,0,.28),rgba(0,0,0,0) 70%)}
 .label{background:#fff;font-size:36px;font-weight:500;padding:10px 28px;letter-spacing:-0.5px;color:#1a1a1a}
 .label b{color:#E0337A;font-weight:500}
-.cover{color:#fff;font-size:84px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
+.cover{color:#fff;font-size:124px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
 .tag{background:#E0337A;color:#fff;font-size:34px;font-weight:700;padding:10px 30px;letter-spacing:-0.5px}
 .shade{position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.3) 55%,rgba(0,0,0,0))}
@@ -98,7 +105,7 @@ const item = ([k, t]) => k === 'price' ? priceCard : `<div class="${k}">${t}</di
 const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="top:${gr.top}%">${gr.items.map(item).join('')}</div>`).join('');
 
 const bg = (s) => {
-  if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}`;
+  if (!s.collage) return `<img class="bg" src="../src/${s.src}.${s.src === 65 ? 'png' : 'jpg'}">${s.shade ? '<div class="shade"></div>' : ''}${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 구성 그리드 (제목 아래)
   const W = 445, H = 540, x0 = 26, y0 = 150, gap = 24;
   return `<div style="position:absolute;inset:0;background:#f4f1ec"></div>` + s.collage.map((src, k) => {
