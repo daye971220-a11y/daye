@@ -43,8 +43,8 @@ const slides = [
   ]},
   // 5 아기 눕힐 곳 (블로그) — 자막은 아기 얼굴 피해서 위·아래
   { src: 'p1', groups: [
-    g(2.5, 'c', ['box', `전엔 눕힐 데가 없어서 매번 아기침대까지 ${emo('😅')}`]),
-    g(85, 'c', ['box', `이젠 모빌 하나 두면 <b>거실 놀이 공간</b> 완성! ${emo('🙌')}`]),
+    g(5, 'c', ['box', `전엔 눕힐 데가 없어서<br>매번 아기침대까지 갔는데 ${emo('😅')}`]),
+    g(83, 'c', ['box', `이젠 모빌 하나 두면 <b>거실 놀이 공간</b> 완성! ${emo('🙌')}`]),
   ]},
   // 6 와이드뷰 (블로그 + 공식)
   { src: 'p5', groups: [
@@ -61,8 +61,8 @@ const slides = [
     foot: `<b>KC 인증</b> 받은 어린이제품이라 더 안심 ${emo('✔️')}` },
   // 8 강아지 (사진: 강아지는 밖, 아기는 안) — 위 자막은 한 줄로 아기 머리 위를 피함
   { src: 'p8', groups: [
-    g(2.5, 'c', ['box', '높이가 있어서 <b>댕댕이도 출입 금지</b> ㅋㅋ']),
-    { ...g(88, 'l', ['box', `강아지는 밖에서, 아기는 안에서 ${emo('🐶')}`]), x: 40 },
+    g(36, 'c', ['box', '높이가 있어서 <b>댕댕이도 출입 금지</b> ㅋㅋ']),
+    { ...g(84, 'l', ['box', `강아지는 밖에서, 아기는 안에서 ${emo('🐶')}`]), x: 40 },
   ]},
   // 9 형태 자유자재 (공식 상세페이지: 기본형·미로형·ㄷ자형·수면 공간 분리 / 블로그: 크기 조절, 커서는 주방 가드)
   { card: 'grid', title: `누워 있을 때부터 <b>걸음마 이후</b>까지 쭉 ${emo('💛')}`,
@@ -101,11 +101,12 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
 .soft{position:absolute;left:0;right:0;top:28%;height:44%;background:radial-gradient(ellipse at center,rgba(0,0,0,.30),rgba(0,0,0,0) 70%)}
 /* 카드형 장: 위아래 여백 52px, 칸 사이 간격 24px로 균일 */
-.card{position:absolute;left:26px;right:26px;top:52px;bottom:52px;display:flex;flex-direction:column;gap:24px}
+.card{position:absolute;left:26px;right:26px;top:60px;bottom:60px;display:flex;flex-direction:column;gap:24px}
 .card > .title,.card > .box{align-self:center}
 .chk{flex:1;background:#fff;display:flex;align-items:center;gap:30px;padding-right:30px;min-height:0;overflow:hidden}
-.chk img{height:100%;width:400px;object-fit:cover;flex:none;background:#fff}
-.chk img.contain{object-fit:contain}
+.chk .ph{height:100%;width:400px;flex:none;background:#f1ece5;border-right:3px solid #e6ddd1;overflow:hidden}
+.chk .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.chk .ph img.contain{object-fit:contain;mix-blend-mode:multiply;padding:18px}
 .chk .ct{font-size:36px;font-weight:700;color:#111;letter-spacing:-0.8px;display:flex;align-items:center;gap:12px}
 .chk .mk{flex:none;width:44px;height:44px;border-radius:50%;background:#E0337A;color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center}
 .chk .cd{font-size:29px;color:#555;margin-top:10px;padding-left:56px;letter-spacing:-0.5px}
@@ -128,7 +129,7 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
 .gift .g2{font-size:38px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
 .hero{position:absolute;left:0;top:0;width:966px;height:674px;object-fit:cover}
-.pricebox{position:absolute;left:26px;right:26px;top:626px;bottom:52px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.pricebox{position:absolute;left:26px;right:26px;top:626px;bottom:60px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
 .pricebox .mid{display:flex;flex-direction:column;align-items:center;gap:16px}
 `;
 
@@ -137,7 +138,7 @@ const groups = (s) => (s.groups || []).map((gr) => `<div class="stack ${gr.align
 
 const card = (s) => {
   if (s.card === 'checks') return `<div class="card"><div class="title">${s.title}</div>`
-    + s.rows.map((r) => `<div class="chk"><img class="${r.fit || ''}" src="../src/${r.src}.jpg"><div><div class="ct"><span class="mk">✓</span>${r.t}</div><div class="cd">${r.d}</div></div></div>`).join('')
+    + s.rows.map((r) => `<div class="chk"><div class="ph"><img class="${r.fit || ''}" src="../src/${r.src}.jpg"></div><div><div class="ct"><span class="mk">✓</span>${r.t}</div><div class="cd">${r.d}</div></div></div>`).join('')
     + `<div class="box">${s.foot}</div></div>`;
   if (s.card === 'grid') return `<div class="card"><div class="title">${s.title}</div><div class="grid">`
     + s.cells.map((c) => `<div class="cell"><img src="../src/${c.src}.jpg"><div class="cap">${c.cap}</div></div>`).join('')
