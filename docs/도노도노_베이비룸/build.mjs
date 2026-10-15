@@ -9,9 +9,11 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 
 const root = 'C:/Users/user/Desktop/daye/delivery/donodono_babyroom';
+const V = process.env.V || 'B';   // A안: 사용 이야기 한 장에 다 / B안: 두 장으로 나눔
+const OUT = 'out' + V;
 const chrome = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-for (const d of ['html', 'out']) mkdirSync(join(root, d), { recursive: true });
-for (const f of readdirSync(join(root, 'out'))) rmSync(join(root, 'out', f), { force: true });
+for (const d of ['html', OUT]) mkdirSync(join(root, d), { recursive: true });
+for (const f of readdirSync(join(root, OUT))) rmSync(join(root, OUT, f), { force: true });
 
 // 이번 공구 조건 (다예님 제공 표 옵션 C) — 할인율은 사이즈별 31·28·28·32·32% → "최대 32%"
 const DEAL = { maxRate: '32%', gift: '올리브영 1만원', keyword: '알람' };
@@ -32,30 +34,37 @@ const slides = [
   ]},
   // 2 이번 공구 구성 + 사이즈 5가지 + 증정
   { card: 'sizes', title: `이번 공구 구성 ${emo('🎁')}` },
-  // 3 그 전의 불편 (블로그) — 소파 옆 베이비룸이 보이는 사진
-  { src: 116, groups: [
-    g(4, 'c', ['box', '베이비룸은 아기가 기어 다닐 때부터<br>쓰는 거라고 생각했는데']),
-    g(82, 'c', ['box', `딱딱한 나무 바닥에<br><b>발목이 너무 아프더라고요</b> ${emo('🥲')}`]),
-  ]},
-  // 4 그래서 베이비룸 + 한판 매트 (블로그) — 가드·매트가 보이는 사진, 자막은 매트 위
+  // 3~ 사용 이야기 (다예님 제공 문구). A안: 소파 옆 사진 한 장에 다 / B안: 다른 사진 한 장 더 추가해서 나눔
+  ...(V === 'A' ? [
+    { src: 116, groups: [
+      g(4, 'c', ['box', `베이비룸은 아기가 기어 다닐 때부터<br>쓰는 거라고 생각했는데<br>딱딱한 나무 바닥에 <b>발목이 너무 아프더라고요</b> ${emo('🥲')}`]),
+      g(63, 'c', ['box', '처음엔 <b>발목 보호</b>하려고 쓰기 시작했는데<br>2개월 차 되니 깨어 있는 시간이 많아져서<br>주방·식탁에 있을 때 <b>아기 둘 공간</b>이 필요했어요'],
+        ['box', `어차피 나중에 들일 거 빨리 들였죠<br>결과는 <b>대만족!</b> ${emo('💛')}`]),
+    ]},
+  ] : [
+    { src: 116, groups: [
+      g(4, 'c', ['box', '베이비룸은 아기가 기어 다닐 때부터<br>쓰는 거라고 생각했는데']),
+      g(82, 'c', ['box', `딱딱한 나무 바닥에<br><b>발목이 너무 아프더라고요</b> ${emo('🥲')}`]),
+    ]},
+    { src: 'p4', groups: [
+      g(33, 'c', ['box', '처음엔 <b>발목 보호</b>하려고 쓰기 시작했는데<br>2개월 차 되니 깨어 있는 시간이 많아져서<br>주방·식탁에 있을 때 <b>아기 둘 공간</b>이 필요했어요']),
+      g(83, 'c', ['box', `어차피 나중에 들일 거 빨리 들였죠<br>결과는 <b>대만족!</b> ${emo('💛')}`]),
+    ]},
+  ]),
+  // 그래서 베이비룸 + 한판 매트 (블로그) — 가드·매트가 보이는 사진, 자막은 매트 위
   { src: 109, groups: [
-    g(60, 'c', ['box', '그래서 처음엔 <b>발목 보호</b>하려고<br>쓰기 시작했어요'],
-      ['box', `한판 매트가 <b>푹신한데 탄탄</b>해서<br>서 있어도 관절이 편하더라고요 ${emo('💛')}`]),
+    g(60, 'c', ['box', `매트 시공은 비싸고<br>이사도 가야 해서 패스 ${emo('🙅‍♀️')}`],
+      ['box', `베이비룸 + 한판 매트 깔았더니<br><b>푹신한데 탄탄</b>해서 관절이 편해요 ${emo('💛')}`]),
   ]},
-  // 5 아기 눕힐 곳 (블로그) — 자막은 아기 얼굴 피해서 위·아래
+  // 오피스텔도 쏙 (다예님 제공 문구) — 자막은 아기 얼굴 피해서 위·아래
   { src: 'p1', groups: [
-    g(5, 'c', ['box', '아기가 2개월 차에 접어드니<br>깨어 있는 시간이 많아져서']),
-    g(80, 'c', ['box', `주방에 있을 때나 식탁에서 밥 먹을 때<br><b>아기 둘 공간</b>이 필요했어요 ${emo('🥹')}`]),
+    g(5, 'c', ['box', '저희 집이 지금 오피스텔이라 너무 좁아서<br>베이비룸 설치가 가능할까? 걱정했거든요']),
+    g(80, 'c', ['box', `근데 <b>사이즈 커스텀</b>이 가능해서<br>거실에 쏙 들어가더라고요! ${emo('🙌')}`]),
   ]},
-  // 6 와이드뷰 (블로그 + 공식)
+  // 와이드뷰 (블로그 + 공식)
   { src: 'p5', groups: [
     g(4, 'c', ['box', '주방에 있어도, 소파에 있어도']),
     g(80, 'c', ['box', `와이드뷰라 가드 사이로<br>아기가 <b>한눈에 쏙</b> 보여요 ${emo('👀')}`]),
-  ]},
-  // 6-1 결론 (다예님 제공 문구 ④) — 아기 + 베이비룸이 같이 보이는 사진, 자막은 아기 얼굴 아래·가드 아래 바닥
-  { src: 'p4', groups: [
-    g(34, 'c', ['box', '어차피 나중에 들일 거<br>그냥 빨리 들였죠']),
-    g(84, 'c', ['box', `결과는 <b>대만족!</b> ${emo('💛')}`]),
   ]},
   // 7 튼튼 포인트 3가지 (공식 상세페이지 이미지: 두께 3.3cm, 흡착판+실리콘 패드 2중 논슬립, 66cm 하이가드)
   { card: 'checks', title: '괜히 <b>"튼튼 밀림방지"</b>가 아니에요',
@@ -166,9 +175,9 @@ const bg = (s) => s.card ? card(s) : `<img class="bg" src="../src/${s.src}.jpg">
 
 slides.forEach((s, i) => {
   const n = String(i + 1).padStart(2, '0');
-  const htmlPath = join(root, 'html', `slide_${n}.html`);
+  const htmlPath = join(root, 'html', `slide_${V}_${n}.html`);
   writeFileSync(htmlPath, `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${bg(s)}${groups(s)}</body></html>`, 'utf8');
   execFileSync(chrome, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
-    '--window-size=966,1288', '--virtual-time-budget=8000', `--screenshot=${join(root, 'out', `babyroom_${n}.png`)}`, 'file:///' + htmlPath], { stdio: 'ignore' });
+    '--window-size=966,1288', '--virtual-time-budget=8000', `--screenshot=${join(root, OUT, `babyroom_${n}.png`)}`, 'file:///' + htmlPath], { stdio: 'ignore' });
   console.log('done', n);
 });
