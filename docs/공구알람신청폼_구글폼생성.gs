@@ -63,3 +63,16 @@ function createAlarmForm() {
   Logger.log('짧은 링크 (프로필 링크에 걸기): ' + form.shortenFormUrl(form.getPublishedUrl()));
   Logger.log('편집용 링크: ' + form.getEditUrl());
 }
+
+// 2026-10-15 수정: 제목·안내 멘트·1번 질문 제목 (이미 만든 폼에 적용, 실행 완료)
+function updateAlarmForm() {
+  var form = FormApp.openById('1lVmzazz9luPcCtrL16f5fcr6V881GhYsQHf_gOflia0');
+  form.setTitle('국민육아브랜드 7종 할인대전 (10/22)');
+  form.setDescription(
+    '🛎️ 10/22(목)부터 단 3일간!\n' +
+    '육아용품 7종 공동구매 특가전을 진행해요.\n\n' +
+    '알림 신청해주시면 오픈 당일에 구매 링크를 문자로 보내드려요 :)'
+  );
+  form.getItems(FormApp.ItemType.CHECKBOX)[0].setTitle('알림신청 공구 선택(복수선택 가능)');
+  Logger.log('수정 완료: ' + form.getTitle());
+}
