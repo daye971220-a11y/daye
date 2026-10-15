@@ -26,39 +26,42 @@ const slides = [
   { src: 'pc', soft: true, groups: [
     { ...g(50, 'c', ['label', '<b>도노도노</b> 베이비룸 + 한판 매트'], ['cover', '최저가 공구예고']), mid: true },
   ]},
-  // 2 그 전의 불편 (블로그: 안아 재우느라 서 있는 시간, 출산 직후 관절, 딱딱한 나무바닥)
+  // 2 이번 공구 구성 + 사이즈 5가지 + 증정 (게시된 갈이대 공구예고처럼 표지 바로 뒤)
+  { sizes: true, groups: [
+    g(4, 'c', ['title', '이번 공구 구성 <span class="emo">🎁</span>']),
+  ]},
+  // 3 그 전의 불편 (블로그: 안아 재우느라 서 있는 시간, 딱딱한 나무바닥, 발목)
   { src: 'p2', groups: [
-    g(6, 'c', ['box', '아기 안고 재우다 보면<br>서 있는 시간이 정말 길어요 <span class="emo">🥲</span>']),
-    g(77, 'c', ['box', '출산 직후라 관절도 약한데<br>딱딱한 나무 바닥이라 <b>발목이 너무 아팠어요</b>']),
+    g(6, 'c', ['box', '출산하고 매일 아기 안고<br>서서 재우다 보니']),
+    g(78, 'c', ['box', '딱딱한 나무 바닥에<br><b>발목이 너무 아프더라고요</b> <span class="emo">🥲</span>']),
   ]},
-  // 3 그래서 베이비룸 (블로그: 매트 시공은 월세·비용 부담 → 베이비룸, 푹신+적당히 탄탄)
+  // 4 그래서 베이비룸 + 한판 매트 (블로그: 매트 시공은 비용·이사 때문에 X, 푹신+적당히 탄탄, 관절 안 아픔)
   { src: 116, groups: [
-    g(5, 'c', ['box', '매트 시공은 비싸고 곧 이사도 가야 해서<br><b>베이비룸 + 한판 매트</b>로 거실 한쪽을 바꿨어요']),
-    g(78, 'c', ['box', '푹신하면서도 적당히 탄탄해서<br>여기 있으면 관절이 안 아파요']),
+    g(5, 'c', ['box', '매트 시공은 비싸고<br>이사도 가야 해서 패스 <span class="emo">🙅‍♀️</span>']),
+    g(77, 'c', ['box', '베이비룸 + 한판 매트 깔았더니<br><b>푹신한데 탄탄</b>해서 관절이 편해요 <span class="emo">💛</span>']),
   ]},
-  // 4 아기 눕힐 곳 (블로그: 소파에서 안고 있다 매번 아기침대로 → 모빌·체육관 두고 깨어있는 시간 놀이 공간)
+  // 5 아기 눕힐 곳 (블로그: 눕힐 곳이 없어 매번 아기침대로 → 모빌 두고 깨어있는 시간 놀이 공간)
   { src: 'p1', groups: [
-    { ...g(43, 'r', ['box', '전엔 안고 있다가 눕히려면<br>매번 아기침대까지 갔는데']), x: 40 },
-    g(80, 'c', ['box', '이젠 모빌 두고<br><b>깨어 있는 시간 놀이 공간</b>이 됐어요']),
+    { ...g(42, 'r', ['box', '전엔 눕힐 데가 없어서<br>매번 아기침대까지 왔다 갔다 <span class="emo">😅</span>']), x: 40 },
+    g(80, 'c', ['box', '이젠 모빌 하나 두면<br><b>거실 놀이 공간</b> 완성! <span class="emo">🙌</span>']),
   ]},
-  // 5 와이드뷰 (블로그 + 공식)
+  // 6 와이드뷰 (블로그: 주방·소파에서도 가드 사이로 확인, 아기도 엄마아빠를 봄)
   { src: 'p5', groups: [
-    g(4, 'c', ['box', '주방이나 소파에 있어도<br>가드 사이로 아기가 다 보여요']),
-    g(80, 'c', ['box', '아기도 안에서 엄마 아빠를 볼 수 있는<br><b>와이드뷰 가드</b>예요']),
+    g(4, 'c', ['box', '주방에 있어도, 소파에 있어도']),
+    g(80, 'c', ['box', '와이드뷰라 가드 사이로<br>아기가 <b>한눈에 쏙</b> 보여요 <span class="emo">👀</span>']),
   ]},
-  // 6 소재·인증 (블로그: HDPE, 두께·마감, KC / 위틀스토어 후기: 튼튼하다는 말이 가장 많음)
-  { src: 'p3', groups: [
-    g(5, 'c', ['box', '매일 잡고 기대고 흔드는 거라<br><b>소재</b>부터 확인했어요']),
-    g(72, 'c', ['box', '무게감 있는 <b>HDPE</b> 소재 · <b>KC 인증</b> 어린이제품'], ['sm', '구매 후기에서도 "튼튼하다"는 말이 제일 많았어요']),
+  // 7 튼튼 포인트 3가지 (블로그 + 공식: HDPE, 2중 논슬립캡, 66cm·출입문, KC)
+  { checks: [
+      { src: 'p3', t: '두툼한 HDPE 통판', d: '잡고 기대는 시기까지 생각한 두께' },
+      { src: 123, pos: '50% 100%', t: '2중 논슬립캡', d: '바닥 흡착 + 밀림방지 패드로 꽉' },
+      { src: 118, t: '66cm 하이가드 · 잠금 출입문', d: '쉽게 못 넘고, 쉽게 못 열어요' },
+    ], groups: [
+    g(4, 'c', ['title', '괜히 <b>"튼튼 밀림방지"</b>가 아니에요']),
+    g(88, 'c', ['box', '<b>KC 인증</b> 받은 어린이제품이라 더 안심 <span class="emo">✔️</span>']),
   ]},
-  // 7 밀림방지 (블로그 + 공식: 2중 밀림방지 논슬립캡) — 자막은 논슬립캡 바로 위
-  { src: 123, groups: [
-    g(5, 'c', ['box', '잡고 일어서기 시작하면<br><b>안 밀리는 게</b> 제일 중요해요']),
-    g(63, 'c', ['box', '바닥 흡착 + 밀림방지 패드<br><b>2중 논슬립캡</b>이라 잘 안 밀려요']),
-  ]},
-  // 8 높이·출입문 + 강아지 (블로그: 66cm 하이가드, 쉽게 못 여는 출입문 / 사진: 강아지는 밖)
+  // 8 강아지 (사진: 강아지는 밖, 아기는 안)
   { src: 'p8', groups: [
-    g(4, 'c', ['box', '<b>66cm 하이가드</b>라 쉽게 못 넘어오고<br>출입문도 아기가 쉽게 못 열어요']),
+    g(4, 'c', ['box', '높이가 있어서<br><b>댕댕이도 출입 금지</b> ㅋㅋ']),
     { ...g(84, 'l', ['box', '강아지는 밖에서, 아기는 안에서 <span class="emo">🐶</span>']), x: 40 },
   ]},
   // 9 오래 쓰는 이유 (블로그: 크기 조절·볼풀장, 커서는 주방 가드, 놀이가드, 컬러 2종) — 공식 이미지
@@ -68,18 +71,14 @@ const slides = [
       { src: 114, cap: '놀이가드로 손 놀이', fit: 'contain' },
       { src: 111, cap: '퓨어밀크 · 오트밀', fit: 'contain' },
     ], groups: [
-    g(4, 'c', ['title', '누워 있을 때부터 <b>걸음마 이후</b>까지']),
-    g(84, 'c', ['box', '조립식이라 칸을 <b>더하고 빼서</b> 크기 조절해요']),
+    g(4, 'c', ['title', '누워 있을 때부터 <b>걸음마 이후</b>까지 쭉 <span class="emo">💛</span>']),
+    g(84, 'c', ['box', '조립식이라 칸 <b>넣었다 뺐다</b> 크기도 자유자재']),
   ]},
-  // 10 이번 공구 구성 + 사이즈 5가지 + 증정
-  { sizes: true, groups: [
-    g(4, 'c', ['title', '이번 공구 구성 <span class="emo">🎁</span>']),
-  ]},
-  // 11 마지막 — 갈이대·하베브릭스 공구예고 마지막 장과 같은 구성 (가격 비공개, 할인율 + 알람)
+  // 10 마지막 — 갈이대·하베브릭스 공구예고 마지막 장과 같은 구성 (가격 비공개, 할인율 + 알람)
   { src: 'p0', groups: [
     g(5, 'c', ['title', '그래서 가격은요? <span class="emo">👀</span>']),
     g(42, 'c', ['big-box', `<b class="pink">'${DEAL.keyword}'</b> 댓글 남기면<br>정가 대비 <b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크<br>오픈 당일에 보내드려요!`], ['dark', `+ 구매하면 ${DEAL.gift} <b>무조건 증정</b> <span class="emo">🎁</span>`]),
-    g(82, 'c', ['box', '사이즈 5가지 중 <b>우리 집에 맞게</b> 골라요']),
+    g(82, 'c', ['box', `${DEAL.gift}은 추첨 아니고 <b>전원 증정!</b>`]),
   ]},
 ];
 
@@ -122,6 +121,11 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
 .gift .won small{font-size:24px;color:#fff;font-weight:500}
 .gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
 .gift .g2{font-size:38px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
+.chk{position:absolute;left:26px;right:26px;height:276px;background:#fff;display:flex;align-items:center;gap:30px;padding:0 30px 0 0}
+.chk img{width:276px;height:276px;object-fit:cover;flex:none}
+.chk .ct{font-size:40px;font-weight:700;color:#111;letter-spacing:-0.8px;display:flex;align-items:center;gap:12px}
+.chk .mk{flex:none;width:44px;height:44px;border-radius:50%;background:#E0337A;color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center}
+.chk .cd{font-size:32px;color:#555;margin-top:10px;padding-left:56px;letter-spacing:-0.5px}
 .cell{position:absolute;overflow:hidden;border:6px solid #fff;background:#fff}
 .cell img{width:100%;height:calc(100% - 52px);object-fit:cover}
 .cell img.contain{object-fit:contain}
@@ -132,6 +136,8 @@ const item = ([k, t]) => `<div class="${k}">${t}</div>`;
 const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="${gr.mid ? 'top:50%;transform:translateY(-50%)' : 'top:' + gr.top + '%'}${gr.x != null ? (gr.align === 'r' ? ';right:' : ';left:') + gr.x + 'px' : ''}">${gr.items.map(item).join('')}</div>`).join('');
 
 const bg = (s) => {
+  if (s.checks) return '<div style="position:absolute;inset:0;background:#e6ddd1"></div>' + s.checks.map((c, k) =>
+    `<div class="chk" style="top:${150 + k * 300}px"><img src="../src/${c.src}.jpg" style="object-position:${c.pos || 'center'}"><div><div class="ct"><span class="mk">✓</span>${c.t}</div><div class="cd">${c.d}</div></div></div>`).join('');
   if (s.sizes) return '<div style="position:absolute;inset:0;background:#e6ddd1"></div>'
     + '<div class="setimg"><img src="../src/107.jpg"><div class="cap">튼튼 밀림방지 베이비룸 + <b>먼지제로 투톤 한판 매트</b></div></div>'
     + '<div class="sizes"><div class="hd">사이즈 5가지 · 베이비룸 + 매트 세트 (cm)</div>' + SIZES.map(([n, d]) => `<div class="row"><b>${n}</b><span>${d}</span></div>`).join('') + '</div>'
