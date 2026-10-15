@@ -69,7 +69,7 @@ function updateAlarmForm() {
   var form = FormApp.openById('1lVmzazz9luPcCtrL16f5fcr6V881GhYsQHf_gOflia0');
   form.setTitle('국민육아브랜드 7종 할인대전 (10/22)');
   form.setDescription(
-    '🛎️ 10/22(목)부터 단 3일간!\n' +
+    '🛎️ 10/22(목)부터 10/24(토) 단 3일간!\n' +
     '육아용품 7종 공동구매 특가전을 진행해요.\n\n' +
     '알림 신청해주시면 오픈 당일에 구매 링크를 문자로 보내드려요 :)'
   );
