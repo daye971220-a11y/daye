@@ -27,7 +27,8 @@ const emo = (e) => `<span class="emo">${e}</span>`;
 const slides = [
   // 1 표지 — 썸네일 통일 기준
   { src: 'pc', soft: true, groups: [
-    { ...g(50, 'c', ['label', '<b>도노도노</b> 베이비룸 + 한판 매트'], ['cover', '최저가 공구예고']), mid: true },
+    // 썸네일만 봐도 무슨 공구인지 보이게: 제품명을 '최저가 공구예고'만큼 크게(분홍 상자), 브랜드·구성은 위 라벨
+    { ...g(50, 'c', ['label', '<b>도노도노</b> 튼튼 밀림방지 · 한판 매트 세트'], ['prod', '베이비룸'], ['cover', '최저가 공구예고']), mid: true },
   ]},
   // 2 이번 공구 구성 + 사이즈 5가지 + 증정
   { card: 'sizes', title: `이번 공구 구성 ${emo('🎁')}` },
@@ -97,8 +98,9 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .dark b{color:#FFD84D;font-weight:900}
 .label{background:#fff;font-size:36px;font-weight:500;padding:10px 28px;letter-spacing:-0.5px;color:#1a1a1a}
 .label b{color:#E0337A;font-weight:500}
-.cover{color:#fff;font-size:124px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
+.cover{color:#fff;font-size:118px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
+.prod{background:#E0337A;color:#fff;font-size:118px;font-weight:900;letter-spacing:-2px;line-height:1.12;padding:6px 40px 12px;margin-top:4px}
 .soft{position:absolute;left:0;right:0;top:28%;height:44%;background:radial-gradient(ellipse at center,rgba(0,0,0,.30),rgba(0,0,0,0) 70%)}
 /* 카드형 장: 위아래 여백 52px, 칸 사이 간격 24px로 균일 */
 .card{position:absolute;left:26px;right:26px;top:60px;bottom:60px;display:flex;flex-direction:column;gap:24px}
