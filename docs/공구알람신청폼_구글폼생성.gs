@@ -4,6 +4,10 @@
  *         (처음 실행할 때 권한 허용 창이 뜨면 본인 계정으로 허용)
  * 실행이 끝나면 [실행 로그]에 응답용 짧은 링크(프로필 링크에 걸기)와 편집용 링크가 나와요.
  * 응답은 폼 [응답] 탭 → "Sheets에 연결"을 누르면 시트로 정리돼요.
+ *
+ * ✅ 2026-10-15 생성 완료 (daye971220@gmail.com 소유, Apps Script 프로젝트 "제목 없는 프로젝트")
+ *   응답용(프로필 링크에 걸기): https://forms.gle/iHeYbNgG98vaQpMr7
+ *   편집용: https://docs.google.com/forms/d/1lVmzazz9luPcCtrL16f5fcr6V881GhYsQHf_gOflia0/edit
  */
 
 // ── 품목이 바뀌면 여기만 고치면 돼요 ──
