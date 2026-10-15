@@ -32,14 +32,14 @@ function createAlarmForm() {
   form.setCollectEmail(false);
   form.setLimitOneResponsePerUser(false);   // 구글 로그인 없이도 신청할 수 있게
   form.setAllowResponseEdits(false);
-  form.setProgressBar(false);
+  form.setProgressBar(true);
   form.setShowLinkToRespondAgain(false);
   form.setConfirmationMessage(
     '알람 신청 완료! 🙌\n' + OPEN_DATE + ' 오픈 당일에 DM으로 링크 보내드릴게요.\n' +
     'DM이 안 보이면 [메시지 요청함]도 꼭 확인해주세요 💌'
   );
 
-  // 1. 꼭 필요한 것
+  // ── 1페이지: 꼭 필요한 것 ──
   form.addTextItem().setTitle('인스타그램 아이디')
     .setHelpText('DM으로 링크를 보내드려요. @ 없이 정확하게 적어주세요 (예: kennen.home)')
     .setValidation(FormApp.createTextValidation()
@@ -51,7 +51,25 @@ function createAlarmForm() {
     .setChoiceValues(PRODUCTS.concat(['앞으로 공개될 공구도 전부 받을래요']))
     .setRequired(true);
 
-  // 2. 공구 준비에 도움 되는 것 (선택)
+  var how = form.addMultipleChoiceItem().setTitle('알람은 어떻게 받을까요?')
+    .setHelpText('DM이 요청함에 묻힐까 걱정되면 문자도 같이 받아보세요')
+    .setRequired(true);
+
+  // ── 2페이지: 문자 알림 (문자를 고른 분만) ──
+  var smsPage = form.addPageBreakItem().setTitle('문자 알림 받을 번호');
+  form.addTextItem().setTitle('휴대폰 번호')
+    .setHelpText('오픈 당일 링크 문자 1번만 보내고, 보낸 뒤 바로 파기해요')
+    .setValidation(FormApp.createTextValidation()
+      .requireTextMatchesPattern('^01[016789]-?[0-9]{3,4}-?[0-9]{4}$')
+      .setHelpText('010-1234-5678 형식으로 적어주세요').build())
+    .setRequired(true);
+  form.addCheckboxItem().setTitle('문자 수신 동의 (필수)')
+    .setHelpText('공구 오픈 안내(광고성 정보)를 문자로 받는 데 동의해요. 이번 특가전 오픈 알림 외에는 보내지 않아요.')
+    .setChoiceValues(['문자로 공구 오픈 알림 받는 데 동의해요'])
+    .setRequired(true);
+
+  // ── 3페이지: 공구 준비에 도움 되는 것 (선택) + 동의 ──
+  var morePage = form.addPageBreakItem().setTitle('거의 다 왔어요!');
   form.addMultipleChoiceItem().setTitle('지금 어떤 시기세요?')
     .setChoiceValues(['임신 중이에요', '출산 후 0~6개월', '출산 후 7~12개월', '돌 지났어요', '선물하려고요'])
     .setRequired(false);
@@ -64,16 +82,21 @@ function createAlarmForm() {
   form.addParagraphTextItem().setTitle('궁금한 점이나 공구로 만나고 싶은 육아템이 있다면 적어주세요')
     .setRequired(false);
 
-  // 3. 동의
   form.addCheckboxItem().setTitle('개인정보 수집·이용 동의 (필수)')
     .setHelpText(
-      '· 수집 항목: 인스타그램 아이디, 시기·사이즈 응답\n' +
-      '· 수집 목적: 공구 오픈 알림 DM 발송, 공구 수량 준비\n' +
-      '· 보유 기간: 이번 특가전 종료 후 30일 이내 파기\n' +
-      '· 동의하지 않으실 수 있지만, 이 경우 알람 DM을 보내드릴 수 없어요.'
+      '· 수집 항목: 인스타그램 아이디, 휴대폰 번호(문자 알림을 고른 경우), 시기·사이즈 응답\n' +
+      '· 수집 목적: 공구 오픈 알림 발송(DM·문자), 공구 수량 준비\n' +
+      '· 보유 기간: 휴대폰 번호는 문자 발송 후 바로, 나머지는 이번 특가전 종료 후 30일 이내 파기\n' +
+      '· 동의하지 않으실 수 있지만, 이 경우 알람을 보내드릴 수 없어요.'
     )
     .setChoiceValues(['위 내용을 확인했고 동의해요'])
     .setRequired(true);
+
+  // 갈래: DM만 → 문자 페이지 건너뛰기 / 문자도 → 문자 페이지 거쳐서
+  how.setChoices([
+    how.createChoice('인스타 DM으로만 받을게요', morePage),
+    how.createChoice('DM + 문자 둘 다 받을래요', smsPage),
+  ]);
 
   Logger.log('응답용 링크 (프로필·스토리에 걸기): ' + form.getPublishedUrl());
   Logger.log('짧은 링크: ' + form.shortenFormUrl(form.getPublishedUrl()));
