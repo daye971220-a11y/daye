@@ -1,4 +1,5 @@
-// 도노도노 베이비룸 캐러셀: 신생아 때부터 베이비룸 쓴 이유 (생활 이야기형 → 실사용 리뷰형)
+// 도노도노 베이비룸 공구예고 캐러셀 (갈이대 공구예고와 같은 흐름: 표지 → 사용 이야기 → 구성·사이즈 → 가격 비공개 + 알람)
+// 공구 조건: 다예님 제공 표 옵션 C (2026-10-15)
 // 문구 출처: 케넨님 블로그 후기(2026-09-17) + 위틀스토어 공식 상품정보·구매 후기 / 사진: 케넨님 촬영(p*: 원본 밝고 뽀얗게 보정) + 공식 이미지
 // 디자인: 도노도노 갈이대 캐러셀과 동일 — 흰 각진 상자 + 검정 고딕, 표지는 썸네일 통일 기준(헤드카피 세로 정중앙)
 // 기획 원칙: docs/공구콘텐츠_기획원칙.md
@@ -13,10 +14,17 @@ for (const f of readdirSync(join(root, 'out'))) rmSync(join(root, 'out', f), { f
 
 // 글씨 묶음: g(top%, 정렬, 항목...) / 항목: title, box, sm(작은 상자), big-box, dark, label, cover, tag
 const g = (top, align, ...items) => ({ top, align, items });
+
+// 이번 공구 조건 (다예님 제공 표 옵션 C) — 할인율은 사이즈별 31·28·28·32·32% → "최대 32%"
+const DEAL = { maxRate: '32%', gift: '올리브영 1만원', keyword: '알람' };
+const SIZES = [
+  ['특대형', '216 × 143'], ['슈퍼특대형', '253 × 143'], ['자이언트', '290 × 180'],
+  ['슈퍼특대형 PLUS', '253 × 216'], ['자이언트 PLUS', '290 × 216'],
+];
 const slides = [
   // 1 표지 — 썸네일 통일 기준
   { src: 'pc', soft: true, groups: [
-    { ...g(50, 'c', ['label', '<b>도노도노</b> 베이비룸'], ['cover', '신생아 때부터<br>베이비룸 쓴 이유']), mid: true },
+    { ...g(50, 'c', ['label', '<b>도노도노</b> 베이비룸 + 한판 매트'], ['cover', '최저가 공구예고']), mid: true },
   ]},
   // 2 그 전의 불편 (블로그: 안아 재우느라 서 있는 시간, 출산 직후 관절, 딱딱한 나무바닥)
   { src: 'p2', groups: [
@@ -25,7 +33,7 @@ const slides = [
   ]},
   // 3 그래서 베이비룸 (블로그: 매트 시공은 월세·비용 부담 → 베이비룸, 푹신+적당히 탄탄)
   { src: 116, groups: [
-    g(5, 'c', ['box', '매트 시공은 비싸고 곧 이사도 가야 해서<br><b>베이비룸 + 매트</b>로 거실 한쪽을 바꿨어요']),
+    g(5, 'c', ['box', '매트 시공은 비싸고 곧 이사도 가야 해서<br><b>베이비룸 + 한판 매트</b>로 거실 한쪽을 바꿨어요']),
     g(78, 'c', ['box', '푹신하면서도 적당히 탄탄해서<br>여기 있으면 관절이 안 아파요']),
   ]},
   // 4 아기 눕힐 곳 (블로그: 소파에서 안고 있다 매번 아기침대로 → 모빌·체육관 두고 깨어있는 시간 놀이 공간)
@@ -63,10 +71,15 @@ const slides = [
     g(4, 'c', ['title', '누워 있을 때부터 <b>걸음마 이후</b>까지']),
     g(84, 'c', ['box', '조립식이라 칸을 <b>더하고 빼서</b> 크기 조절해요']),
   ]},
-  // 10 마무리 — 추천 + 저장·공유
-  { src: 'p4', groups: [
-    g(46, 'c', ['box', '그래서 베이비룸은<br><b>출산 전에 미리 설치</b>해두길 추천해요']),
-    g(72, 'c', ['big-box', '베이비룸 고를 때<br><b class="pink">저장</b>해두고 비교해보세요 <span class="emo">📌</span>'], ['box', '예비맘 친구에게 <b>공유</b>도 <span class="emo">💌</span>']),
+  // 10 이번 공구 구성 + 사이즈 5가지 + 증정
+  { sizes: true, groups: [
+    g(4, 'c', ['title', '이번 공구 구성 <span class="emo">🎁</span>']),
+  ]},
+  // 11 마지막 — 갈이대·하베브릭스 공구예고 마지막 장과 같은 구성 (가격 비공개, 할인율 + 알람)
+  { src: 'p0', groups: [
+    g(5, 'c', ['title', '그래서 가격은요? <span class="emo">👀</span>']),
+    g(42, 'c', ['big-box', `<b class="pink">'${DEAL.keyword}'</b> 댓글 남기면<br>정가 대비 <b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크<br>오픈 당일에 보내드려요!`], ['dark', `+ 구매하면 ${DEAL.gift} <b>무조건 증정</b> <span class="emo">🎁</span>`]),
+    g(82, 'c', ['box', '사이즈 5가지 중 <b>우리 집에 맞게</b> 골라요']),
   ]},
 ];
 
@@ -94,6 +107,21 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#f4f1ec;font-fami
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
 .tag{background:rgba(30,26,24,.86);color:#fff;font-size:34px;font-weight:700;padding:10px 30px;letter-spacing:-0.5px}
 .soft{position:absolute;left:0;right:0;top:28%;height:44%;background:radial-gradient(ellipse at center,rgba(0,0,0,.30),rgba(0,0,0,0) 70%)}
+.dark b{color:#FFD84D;font-weight:900}
+.setimg{position:absolute;left:26px;right:26px;top:150px;height:380px;border:6px solid #fff;background:#fff;overflow:hidden}
+.setimg img{width:100%;height:322px;object-fit:cover;object-position:center 60%}
+.setimg .cap{height:52px;line-height:52px;text-align:center;font-size:30px;font-weight:700;letter-spacing:-0.5px;color:#111}
+.setimg .cap b{color:#E0337A}
+.sizes{position:absolute;left:26px;right:26px;top:556px;background:#fff;padding:14px 34px}
+.sizes .hd{font-size:28px;color:#777;text-align:center;letter-spacing:-0.5px;padding:4px 0 10px;border-bottom:2px solid #eee}
+.sizes .row{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid #eee;font-size:34px;letter-spacing:-0.5px;color:#111}
+.sizes .row:last-child{border-bottom:none}
+.sizes .row b{font-weight:700}.sizes .row span{color:#555;font-weight:500}
+.gift{position:absolute;left:26px;right:26px;top:1056px;height:176px;background:#fff;display:flex;align-items:center;gap:28px;padding:0 30px}
+.gift .won{flex:none;width:150px;height:130px;background:#1e1a18;color:#FFD84D;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:44px;letter-spacing:-1px;line-height:1.1}
+.gift .won small{font-size:24px;color:#fff;font-weight:500}
+.gift .g1{display:inline-block;background:#E0337A;color:#fff;font-size:28px;font-weight:700;padding:4px 14px;margin-bottom:8px}
+.gift .g2{font-size:38px;font-weight:700;color:#111;letter-spacing:-0.5px;line-height:1.3}
 .cell{position:absolute;overflow:hidden;border:6px solid #fff;background:#fff}
 .cell img{width:100%;height:calc(100% - 52px);object-fit:cover}
 .cell img.contain{object-fit:contain}
@@ -104,6 +132,10 @@ const item = ([k, t]) => `<div class="${k}">${t}</div>`;
 const groups = (s) => s.groups.map((gr) => `<div class="stack ${gr.align}" style="${gr.mid ? 'top:50%;transform:translateY(-50%)' : 'top:' + gr.top + '%'}${gr.x != null ? (gr.align === 'r' ? ';right:' : ';left:') + gr.x + 'px' : ''}">${gr.items.map(item).join('')}</div>`).join('');
 
 const bg = (s) => {
+  if (s.sizes) return '<div style="position:absolute;inset:0;background:#e6ddd1"></div>'
+    + '<div class="setimg"><img src="../src/107.jpg"><div class="cap">튼튼 밀림방지 베이비룸 + <b>먼지제로 투톤 한판 매트</b></div></div>'
+    + '<div class="sizes"><div class="hd">사이즈 5가지 · 베이비룸 + 매트 세트 (cm)</div>' + SIZES.map(([n, d]) => `<div class="row"><b>${n}</b><span>${d}</span></div>`).join('') + '</div>'
+    + `<div class="gift"><div class="won">1만원<small>올리브영</small></div><div><div class="g1">+ 증정 <span class="emo">🎁</span></div><div class="g2">구매하면 ${DEAL.gift}<br>무조건 드려요</div></div></div>`;
   if (!s.collage) return `<img class="bg" src="../src/${s.src}.jpg">${s.soft ? '<div class="soft"></div>' : ''}`;
   // 2×2 그리드 (제목 아래, 하단 상자 위)
   const W = 445, H = 420, x0 = 26, y0 = 150, gap = 24;
