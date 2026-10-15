@@ -7,7 +7,7 @@
 - 사진 원본: `Downloads\육아 공구\베이비룸\KakaoTalk_20261015_100611486*.jpg` (8장). 이 원본을 보정·크롭한 결과가 `보정본\`에 있음
   - 보정값(ffmpeg): `curves=all='0/0.10 0.25/0.40 0.5/0.70 0.75/0.88 1/0.98',eq=saturation=0.88,colorchannelmixer=rr=0.985:bb=1.01`
   - 크롭: 설명서 스티커·사람 다리·러그·강아지 털 일부를 잘라냄
-- 결과물: `Downloads/육아 공구/베이비룸/공구예고 시안7 A안(한장) 10장 / B안(두장) 11장 (최신, `V=A node build.mjs` / `V=B node build.mjs` → outA/outB)` (처음 만든 정보형 10장은 `캐러셀 시안1`)
+- **최종 결과물(A안, 10장): `Downloads/육아 공구/베이비룸/공구예고 최종/babyroom_01~10.png`** — 빌드는 `V=A node build.mjs` → outA/. 나머지 시안 폴더는 2026-10-15 휴지통으로 정리함
 - 작업 폴더(미디어, git 제외): `delivery/donodono_babyroom/` (src/, out/). 다른 컴퓨터에서는 build.mjs의 root 경로와 src 사진을 맞춰서 쓸 것
 - 시안3(2026-10-15): 제품이 잘 보이는 사진 우선. 위틀스토어 공식 상세페이지 이미지(https://img.essenlue.com/donodono/detail/dd_26_baby_playroom_01~11.jpg)에서 잘라 `src/o_*.jpg`로 사용(o_wide 놀이방 전경, o_basic/o_maze/o_kitchen/o_sleep 형태 4종, o_hand 두께 3.3cm, o_cap 논슬립캡, o_stand 잡고 선 아기). 카드형 장(구성·튼튼 체크·형태·가격)은 위아래 여백 52px, 칸 간격 24px로 맞춤.
 - 시안4(2026-10-15): 인스타 4:5 잘림(위아래 약 40px) 안쪽으로 자막 이동(5·8장), 5장 문장 끝까지("매번 아기침대까지 갔는데"), 7장 사진 칸 크기·배경·구분선 통일, 카드 위아래 여백 60px.
