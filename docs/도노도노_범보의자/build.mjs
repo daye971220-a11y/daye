@@ -18,7 +18,7 @@ for (const f of readdirSync(join(root, 'out'))) rmSync(join(root, 'out', f), { f
 const DEAL = { maxRate: '38%', gift: '아기핸드폰', keyword: '알람' };
 const g = (top, align, ...items) => ({ top, align, items });
 const emo = (e) => `<span class="emo">${e}</span>`;
-const img = (s) => `../src/${s}.${String(s).startsWith('r_') ? 'png' : 'jpg'}`;
+const img = (s) => /^\d+$/.test(String(s)) ? `../src_tone/${s}.jpg` : `../src/${s}.${String(s).startsWith('r_') ? 'png' : 'jpg'}`; // 사진은 아이폰 보정(그림자+100·밝기+29·따뜻함+15) 맞춘 src_tone 사용
 
 // 카톡 말풍선: 실제 캡처 조각 + 형광펜(강조할 줄, 이미지 대비 % 좌표)
 const KAKAO = {
@@ -112,7 +112,7 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
 .prod{background:#E0337A;color:#fff;font-size:118px;font-weight:900;letter-spacing:-2px;line-height:1.12;padding:6px 40px 12px;margin-top:4px}
 .sticker{position:absolute;left:50%;top:56px;height:360px;transform:translateX(-50%) rotate(-4deg);filter:drop-shadow(0 0 0 #fff) drop-shadow(4px 0 0 #fff) drop-shadow(-4px 0 0 #fff) drop-shadow(0 4px 0 #fff) drop-shadow(0 -4px 0 #fff) drop-shadow(0 10px 18px rgba(0,0,0,.35))}
-.patch{position:absolute;background:linear-gradient(90deg,rgb(168,158,140),rgb(182,174,158) 50%,rgb(190,184,172));filter:blur(10px);border-radius:24px}
+.patch{position:absolute;background:linear-gradient(90deg,rgb(186,172,150),rgb(195,185,166) 50%,rgb(203,193,173));filter:blur(10px);border-radius:24px}
 .soft{position:absolute;left:0;right:0;top:28%;height:44%;background:radial-gradient(ellipse at center,rgba(0,0,0,.30),rgba(0,0,0,0) 70%)}
 .card{position:absolute;left:26px;right:26px;top:60px;bottom:60px;display:flex;flex-direction:column;gap:24px}
 .card > .title,.card > .box{align-self:center}
@@ -237,7 +237,7 @@ const card = (s) => {
   return '';
 };
 
-const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}${s.zoom ? ';transform:scale(' + s.zoom + ');transform-origin:50% 0' : ''}">${s.soft ? '<div class="soft"></div>' : ''}${s.sticker ? `<img class="sticker" src="../src/${s.sticker}.png">` : ''}${s.patch ? `<div class="patch" style="left:${s.patch[0]}%;top:${s.patch[1]}%;width:${s.patch[2]}%;height:${s.patch[3]}%"></div>` : ''}`;
+const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}${s.zoom ? ';transform:scale(' + s.zoom + ');transform-origin:50% 0' : ''}">${s.soft ? '<div class="soft"></div>' : ''}${s.sticker ? `<img class="sticker" src="../src_tone/${s.sticker}.png">` : ''}${s.patch ? `<div class="patch" style="left:${s.patch[0]}%;top:${s.patch[1]}%;width:${s.patch[2]}%;height:${s.patch[3]}%"></div>` : ''}`;
 const kakao = (s) => s.kakao ? `<div class="kpanel float${s.kakao.small ? ' small' : ''}" style="top:${s.kakao.top}%">${khead}${s.kakao.items.map((k) => bubble(k, '94%')).join('')}</div>` : '';
 
 slides.forEach((s, i) => {
