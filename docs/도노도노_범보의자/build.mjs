@@ -79,9 +79,15 @@ const slides = [
     ],
     foot: '부엌 · 거실 · 방 <b>어디든</b> 들고 다녀요' },
   // 8 후기 모음 — 실제 카톡 캡처 그대로(형광펜으로 강조)
-  { card: 'reviews' },
+  { src: 139, groups: [
+    g(4, 'c', ['box', `돌 지나니까<br>이걸로 <b>의사소통</b>이 되더라고요 ${emo('🥹')}`]),
+  ], kakao: { top: 66, items: ['r_keep'] } },
   // 9 가격 — 당근 실제 검색 화면 + 공식몰 비교 + 알람
-  { card: 'price' },
+  { src: 170, groups: [
+    g(4, 'c', ['title', `그래서 가격은요? ${emo('👀')}`]),
+    g(37, 'c', ['big-box', `<b class="pink">'${DEAL.keyword}'</b> 댓글 남기면<br>정가 대비 <b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크<br>오픈 당일에 보내드려요!`]),
+    g(86, 'c', ['dark', `10/22(목)~10/24(토) <b>단 3일</b> ${emo('⏰')}`]),
+  ]},
 ];
 
 const css = `
