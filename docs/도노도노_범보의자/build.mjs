@@ -32,8 +32,8 @@ const bubble = (src, w) => `<div class="kb" style="${w ? 'width:' + w : ''}"><di
   + `</div></div>`;
 
 const slides = [
-  // 1 표지 — 의자 전체가 정면으로 보이는 컷(공식), 썸네일 확정 기준 3줄
-  { src: 'o_cover', soft: true, pos: 'center 30%', groups: [
+  // 1 표지 — 직접 쓰는 사진 중 의자 전체(쿠션·손잡이·트레이)가 가장 잘 보이는 뒷모습 컷, 아래 제품 스티커만 흐리게 가림
+  { src: 152, soft: true, patch: [33, 89, 34, 10], groups: [
     { ...g(50, 'c', ['cover', '도노도노'], ['prod', '범보의자'], ['cover', '최저가 공구예고']), mid: true },
   ]},
   // 2 이번 공구 구성
@@ -105,6 +105,7 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .cover{color:#fff;font-size:118px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.55)}
 .prod{background:#E0337A;color:#fff;font-size:118px;font-weight:900;letter-spacing:-2px;line-height:1.12;padding:6px 40px 12px;margin-top:4px}
+.patch{position:absolute;background:linear-gradient(90deg,rgb(168,158,140),rgb(182,174,158) 50%,rgb(190,184,172));filter:blur(10px);border-radius:24px}
 .soft{position:absolute;left:0;right:0;top:28%;height:44%;background:radial-gradient(ellipse at center,rgba(0,0,0,.30),rgba(0,0,0,0) 70%)}
 .card{position:absolute;left:26px;right:26px;top:60px;bottom:60px;display:flex;flex-direction:column;gap:24px}
 .card > .title,.card > .box{align-self:center}
@@ -207,7 +208,7 @@ const card = (s) => {
   return '';
 };
 
-const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}">${s.soft ? '<div class="soft"></div>' : ''}`;
+const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}${s.zoom ? ';transform:scale(' + s.zoom + ');transform-origin:50% 0' : ''}">${s.soft ? '<div class="soft"></div>' : ''}${s.patch ? `<div class="patch" style="left:${s.patch[0]}%;top:${s.patch[1]}%;width:${s.patch[2]}%;height:${s.patch[3]}%"></div>` : ''}`;
 const kakao = (s) => s.kakao ? `<div class="kpanel float" style="top:${s.kakao.top}%">${khead}${s.kakao.items.map((k) => bubble(k, '94%')).join('')}</div>` : '';
 
 slides.forEach((s, i) => {
