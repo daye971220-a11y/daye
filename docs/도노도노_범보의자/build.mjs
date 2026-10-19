@@ -39,14 +39,15 @@ const slides = [
   // 2 이번 공구 구성 — 다예님 시안대로 159번 사진(보정) + 라벨·화살표(기존 폰트), 조카 모델 멘트(다예님 문구)
   { src: 159, groups: [
     g(4, 'c', ['box', `요청이 많아서 범보의자 가져왔는데<br>저희집 아가는 너무 어려서 <b>조카가 모델</b>이 됐어요 ${emo('😆')}`]),
-  ], labels: [
-    { t: '바른자세 쿠션', style: 'right:44px;top:262px' },
-    { t: '범보 의자', style: 'left:40px;top:760px' },
-    { t: '아기 휴대폰<br><i>증정</i>', style: 'right:34px;top:1060px;font-size:50px;text-align:right;line-height:1.25' },
+  ], labels: [ // 다예님 시안(손글씨 라벨) 좌표 그대로, 쿠션 라벨만 상단 멘트 피해 110px 아래
+    { t: '바른자세 쿠션', style: 'left:685px;top:192px;transform:rotate(-4deg)' },
+    { t: '범보 의자', style: 'left:30px;top:795px;transform:rotate(-8deg)' },
+    { t: '아기 휴대폰', style: 'left:735px;top:1058px;transform:rotate(-3deg)' },
+    { t: '<i>증정</i>', style: 'left:866px;top:1122px;transform:rotate(-3deg)' },
   ], arrows: [
-    'M 800 345 C 812 420, 760 452, 722 425 C 690 402, 716 366, 748 388 C 778 410, 680 448, 560 410',
-    'M 120 840 C 112 920, 128 980, 178 1018',
-    'M 822 1202 C 772 1222, 734 1140, 668 1128',
+    'M 846 250 C 848 285, 830 310, 790 322 C 760 332, 735 320, 745 306 C 755 293, 772 306, 760 324 C 735 365, 640 395, 572 410',
+    'M 138 862 C 150 905, 185 935, 238 955',
+    'M 828 1114 C 826 1150, 792 1164, 763 1142 C 736 1120, 712 1092, 642 1084',
   ] },
   // 3 하이체어 vs 범보의자
   { card: 'vs',
@@ -191,10 +192,10 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .kpanel.float.small .kb{width:100% !important;padding:10px 14px}
 .kpanel.float{position:absolute;left:34px;right:34px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
 /* 구성 라벨 */
-.lbl{position:absolute;color:#fff;font-size:54px;font-weight:900;letter-spacing:-1.5px;text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.5);white-space:nowrap}
-.lbl i{font-style:normal;background:#E0337A;font-size:40px;padding:2px 14px 6px;margin-left:8px;vertical-align:6px;text-shadow:none}
-.arw{position:absolute;inset:0;width:966px;height:1288px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}
-.arw path{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.lbl{position:absolute;color:#fff;font-size:46px;font-weight:700;letter-spacing:-1px;text-shadow:0 1px 3px rgba(0,0,0,.35),0 2px 10px rgba(0,0,0,.25);white-space:nowrap;transform-origin:left center}
+.lbl i{font-style:normal;background:#E0337A;font-size:34px;font-weight:700;padding:2px 12px 5px;text-shadow:none}
+.arw{position:absolute;inset:0;width:966px;height:1288px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
+.arw path{fill:none;stroke:#fff;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
 /* 가격 */
 .pstage{position:absolute;left:0;top:0;width:966px;height:720px;background:radial-gradient(ellipse at 50% 55%,#fff6f2 0%,#f3e7df 55%,#e6ddd1 100%)}
 .pcut{position:absolute;top:70px;height:580px}
@@ -254,7 +255,7 @@ const card = (s) => {
 
 const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}${s.zoom ? ';transform:scale(' + s.zoom + ');transform-origin:50% 0' : ''}">${s.soft ? '<div class="soft"></div>' : ''}${s.sticker ? `<img class="sticker" src="../src_tone/${s.sticker}.png">` : ''}${s.patch ? `<div class="patch" style="left:${s.patch[0]}%;top:${s.patch[1]}%;width:${s.patch[2]}%;height:${s.patch[3]}%"></div>` : ''}`;
 const labels = (s) => (s.labels || []).map((l) => `<div class="lbl" style="${l.style}">${l.t}</div>`).join('')
-  + (s.arrows ? `<svg class="arw" viewBox="0 0 966 1288"><defs><marker id="ah" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>${s.arrows.map((d) => `<path d="${d}" marker-end="url(#ah)"/>`).join('')}</svg>` : '');
+  + (s.arrows ? `<svg class="arw" viewBox="0 0 966 1288"><defs><marker id="ah" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>${s.arrows.map((d) => `<path d="${d}" marker-end="url(#ah)"/>`).join('')}</svg>` : '');
 const kakao = (s) => s.kakao ? `<div class="kpanel float${s.kakao.small ? ' small' : ''}" style="top:${s.kakao.top}%">${khead}${s.kakao.items.map((k) => bubble(k, '94%')).join('')}</div>` : '';
 
 slides.forEach((s, i) => {
