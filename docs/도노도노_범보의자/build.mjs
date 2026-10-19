@@ -171,10 +171,13 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .stag{display:inline-block;background:#E0337A;color:#fff;font-size:27px;font-weight:700;padding:4px 16px;margin:0 0 8px 6px;letter-spacing:-0.5px}
 .kpanel.float{position:absolute;left:34px;right:34px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
 /* 가격 */
-.pstage{position:absolute;left:0;top:0;width:966px;height:660px;background:radial-gradient(ellipse at 50% 55%,#fff6f2 0%,#f3e7df 55%,#e6ddd1 100%)}
-.pcut{position:absolute;left:50%;top:44px;height:590px;transform:translateX(-50%)}
-.pshadow{position:absolute;left:50%;top:590px;width:520px;height:60px;transform:translateX(-46%);background:radial-gradient(ellipse,rgba(0,0,0,.22),rgba(0,0,0,0) 70%)}
-.pbox{position:absolute;left:26px;right:26px;top:640px;bottom:60px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.pstage{position:absolute;left:0;top:0;width:966px;height:720px;background:radial-gradient(ellipse at 50% 55%,#fff6f2 0%,#f3e7df 55%,#e6ddd1 100%)}
+.pcut{position:absolute;top:70px;height:580px}
+.pcut.l{left:28px;height:540px;top:110px}
+.pcut.r{right:40px}
+.pshadow{position:absolute;top:620px;width:400px;height:56px;background:radial-gradient(ellipse,rgba(0,0,0,.2),rgba(0,0,0,0) 70%)}
+.pshadow.l{left:40px}.pshadow.r{right:40px}
+.pbox{position:absolute;left:26px;right:26px;top:690px;bottom:80px;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly}
 .dgwrap{align-self:stretch;background:#fff;padding:18px 20px 20px}
 .dgwrap .dh{font-size:34px;font-weight:700;color:#333;letter-spacing:-0.5px;margin-bottom:8px}
 .dgwrap .dh b{color:#E0337A}
@@ -218,9 +221,7 @@ const card = (s) => {
       + card2('r_night') + card2('r_floor') + card2('r_keep') + card2('r_manner', true)
       + `<div class="rsrc">실사용 엄마들과 나눈 카톡 캡처</div></div>`;
   }
-  if (s.card === 'price') return `<div class="pstage"><div class="pshadow"></div><img class="pcut" src="../src/cut_150t.png"></div><div class="pbox"><div class="title">그래서 가격은요? ${emo('👀')}</div>`
-    + `<div class="cmp"><div class="row"><span>공식몰에서 의자 + 쿠션 따로 사면</span><span class="v"><s>103,800원</s></span></div>`
-    + `<div class="row"><span>이번 공구 · 새 제품 + 쿠션 + ${DEAL.gift}</span><span class="v">'알람'으로 공개 ${emo('🔒')}</span></div></div>`
+  if (s.card === 'price') return `<div class="pstage"><div class="pshadow l"></div><div class="pshadow r"></div><img class="pcut l" src="../src/cut_150t.png"><img class="pcut r" src="../src/cut_170t.png"></div><div class="pbox"><div class="title">그래서 가격은요? ${emo('👀')}</div>`
     + `<div class="big-box"><b class="pink">'${DEAL.keyword}'</b> 댓글 남기면 정가 대비<br><b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크 오픈 당일에 보내드려요!</div>`
     + `<div class="dark">10/22(목)~10/24(토) <b>단 3일</b> ${emo('⏰')}</div></div>`;
   return '';
