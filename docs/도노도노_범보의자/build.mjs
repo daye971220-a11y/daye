@@ -36,8 +36,18 @@ const slides = [
   { src: 152, soft: true, patch: [33, 89, 34, 10], sticker: 'cut_170t', groups: [
     { ...g(50, 'c', ['cover', '도노도노'], ['prod', '범보의자'], ['cover', '최저가 공구예고']), mid: true },
   ]},
-  // 2 이번 공구 구성
-  { card: 'set' },
+  // 2 이번 공구 구성 — 다예님 시안대로 159번 사진(보정) + 라벨·화살표(기존 폰트), 조카 모델 멘트(다예님 문구)
+  { src: 159, groups: [
+    g(4, 'c', ['box', `요청이 많아서 범보의자 가져왔는데<br>저희집 아가는 너무 어려서 <b>조카가 모델</b>이 됐어요 ${emo('😆')}`]),
+  ], labels: [
+    { t: '바른자세 쿠션', style: 'right:44px;top:262px' },
+    { t: '범보 의자', style: 'left:40px;top:760px' },
+    { t: '아기 휴대폰<br><i>증정</i>', style: 'right:34px;top:1060px;font-size:50px;text-align:right;line-height:1.25' },
+  ], arrows: [
+    'M 800 345 C 812 420, 760 452, 722 425 C 690 402, 716 366, 748 388 C 778 410, 700 452, 590 430',
+    'M 120 838 C 120 900, 160 950, 238 985',
+    'M 818 1196 C 760 1222, 702 1200, 676 1150',
+  ] },
   // 3 하이체어 vs 범보의자
   { card: 'vs',
     title: `다들 하이체어만 아는데 ${emo('👀')}`,
@@ -54,7 +64,7 @@ const slides = [
   },
   // 4 식사 습관 — 자막은 아기 머리·등 위, 카톡 말풍선 2개(실제 캡처)
   { src: 153, groups: [
-    { ...g(31, 'l', ['box', `밥이랑 간식은<br>여기서만 줬더니<br>배고프면 <b>스스로</b><br><b>가서 앉아요</b> ${emo('🥹')}`]), x: 30 },
+    { ...g(31, 'l', ['box', `밥이랑 간식은<br>여기서만 줬더니<br>배고프면 <b>스스로</b><br><b>가서 앉는대요</b> ${emo('🥹')}`]), x: 30 },
   ], kakao: { top: 62, items: ['r_self'], small: true } },
   // 5 흘려도 OK — 하이체어(높음) vs 범보의자(바닥에 낮게)
   { src: 149, groups: [
@@ -64,13 +74,13 @@ const slides = [
   // 6 바른자세쿠션
   { card: 'checks', title: `<b>바른자세쿠션</b>까지 세트로 ${emo('💛')}`,
     rows: [
-      { src: 159, t: '등·허리·엉덩이 밀착핏', d: '앉는 연습할 때<br>몸이 기울지 않게 잡아줘요' },
+      { src: 158, t: '등·허리·엉덩이 밀착핏', d: '앉는 연습할 때<br>몸이 기울지 않게 잡아줘요' },
       { src: 'o_line', t: '엉덩이 밀림 막는 가로선', d: '앞으로 쭉 미끄러지지 않아요' },
       { src: 'o_wash', t: '생활방수 + 통세탁', d: '쓱 닦고, 더러워지면<br>통째로 빨면 끝' },
     ],
     foot: `의자·쿠션 모두 <b>KC 인증</b> 완료 ${emo('✔️')}` },
   // 7 3way
-  { card: 'grid', title: `6개월부터 <b>5살까지</b> 쭉 ${emo('💛')}`,
+  { card: 'grid', title: `<b>5살까지</b> 쭉 써요 ${emo('💛')}`,
     cells: [
       { src: 'o_bumbo', cap: '혼자 앉기 연습' },
       { src: 'o_booster', cap: '트레이 끼우고 이유식' },
@@ -80,7 +90,7 @@ const slides = [
     foot: '부엌 · 거실 · 방 <b>어디든</b> 들고 다녀요' },
   // 8 후기 모음 — 실제 카톡 캡처 그대로(형광펜으로 강조)
   { src: 139, groups: [
-    g(4, 'c', ['box', `돌 지나니까<br>이걸로 <b>의사소통</b>이 되더라고요 ${emo('🥹')}`]),
+    g(4, 'c', ['box', `돌쯤 되니까<br>이걸로 <b>의사소통</b>이 된대요 ${emo('🥹')}`]),
   ], kakao: { top: 66, items: ['r_keep'] } },
   // 9 가격 — 당근 실제 검색 화면 + 공식몰 비교 + 알람
   { src: 170, groups: [
@@ -180,6 +190,11 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .kpanel.float.small .khead .dot{width:34px;height:34px;font-size:18px}
 .kpanel.float.small .kb{width:100% !important;padding:10px 14px}
 .kpanel.float{position:absolute;left:34px;right:34px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+/* 구성 라벨 */
+.lbl{position:absolute;color:#fff;font-size:54px;font-weight:900;letter-spacing:-1.5px;text-shadow:0 2px 3px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.5);white-space:nowrap}
+.lbl i{font-style:normal;background:#E0337A;font-size:40px;padding:2px 14px 6px;margin-left:8px;vertical-align:6px;text-shadow:none}
+.arw{position:absolute;inset:0;width:966px;height:1288px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}
+.arw path{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
 /* 가격 */
 .pstage{position:absolute;left:0;top:0;width:966px;height:720px;background:radial-gradient(ellipse at 50% 55%,#fff6f2 0%,#f3e7df 55%,#e6ddd1 100%)}
 .pcut{position:absolute;top:70px;height:580px}
@@ -238,12 +253,14 @@ const card = (s) => {
 };
 
 const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}${s.zoom ? ';transform:scale(' + s.zoom + ');transform-origin:50% 0' : ''}">${s.soft ? '<div class="soft"></div>' : ''}${s.sticker ? `<img class="sticker" src="../src_tone/${s.sticker}.png">` : ''}${s.patch ? `<div class="patch" style="left:${s.patch[0]}%;top:${s.patch[1]}%;width:${s.patch[2]}%;height:${s.patch[3]}%"></div>` : ''}`;
+const labels = (s) => (s.labels || []).map((l) => `<div class="lbl" style="${l.style}">${l.t}</div>`).join('')
+  + (s.arrows ? `<svg class="arw" viewBox="0 0 966 1288"><defs><marker id="ah" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>${s.arrows.map((d) => `<path d="${d}" marker-end="url(#ah)"/>`).join('')}</svg>` : '');
 const kakao = (s) => s.kakao ? `<div class="kpanel float${s.kakao.small ? ' small' : ''}" style="top:${s.kakao.top}%">${khead}${s.kakao.items.map((k) => bubble(k, '94%')).join('')}</div>` : '';
 
 slides.forEach((s, i) => {
   const n = String(i + 1).padStart(2, '0');
   const htmlPath = join(root, 'html', `slide_${n}.html`);
-  writeFileSync(htmlPath, `<!doctype html><html><head><meta charset="utf-8"><style>${css}${s.css || ''}</style></head><body>${bg(s)}${groups(s)}${kakao(s)}</body></html>`, 'utf8');
+  writeFileSync(htmlPath, `<!doctype html><html><head><meta charset="utf-8"><style>${css}${s.css || ''}</style></head><body>${bg(s)}${labels(s)}${groups(s)}${kakao(s)}</body></html>`, 'utf8');
   execFileSync(chrome, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
     '--window-size=966,1288', '--virtual-time-budget=8000', `--screenshot=${join(root, 'out', `bumbo_${n}.png`)}`, 'file:///' + htmlPath], { stdio: 'ignore' });
   console.log('done', n);
