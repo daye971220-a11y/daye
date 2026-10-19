@@ -156,14 +156,25 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .kimg img{display:block;width:100%}
 .hl{position:absolute;background:rgba(255,226,0,.5);mix-blend-mode:multiply}
 .kraw{display:block;width:647px}
+.rbg{position:absolute;inset:-30px;width:1026px;height:1348px;object-fit:cover;filter:blur(14px)}
+.rdim{position:absolute;inset:0;background:rgba(40,30,25,.35)}
+.rwrap{position:absolute;left:40px;right:40px;top:60px;bottom:60px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.rtitle{color:#fff;font-size:64px;font-weight:900;letter-spacing:-1.5px;text-shadow:0 2px 3px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.45)}
+.rtitle span{color:#FFD84D}
+.rcard{background:#fff;border-radius:22px;padding:20px 26px;box-shadow:0 8px 26px rgba(0,0,0,.25);width:100%}
+.rcard .kimg{width:100%}
+.rraw{display:block;width:58.75%}
+.rsrc{color:#fff;font-size:24px;opacity:.85;letter-spacing:-0.3px}
 .shots{flex:1;min-height:0;background:#FFDDE2;padding:22px 26px;display:flex;flex-direction:column;justify-content:space-between}
 .shot{background:#FFDDE2;align-self:flex-start;filter:drop-shadow(0 6px 14px rgba(0,0,0,.14))}
 .shot .kb{width:784px;padding:12px 20px;background:#fff}
 .stag{display:inline-block;background:#E0337A;color:#fff;font-size:27px;font-weight:700;padding:4px 16px;margin:0 0 8px 6px;letter-spacing:-0.5px}
 .kpanel.float{position:absolute;left:34px;right:34px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
 /* 가격 */
-.ptop{position:absolute;left:0;top:0;width:966px;height:300px;object-fit:cover;object-position:center 66%}
-.pbox{position:absolute;left:26px;right:26px;top:262px;bottom:60px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.pstage{position:absolute;left:0;top:0;width:966px;height:660px;background:radial-gradient(ellipse at 50% 55%,#fff6f2 0%,#f3e7df 55%,#e6ddd1 100%)}
+.pcut{position:absolute;left:50%;top:44px;height:590px;transform:translateX(-50%)}
+.pshadow{position:absolute;left:50%;top:590px;width:520px;height:60px;transform:translateX(-46%);background:radial-gradient(ellipse,rgba(0,0,0,.22),rgba(0,0,0,0) 70%)}
+.pbox{position:absolute;left:26px;right:26px;top:640px;bottom:60px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
 .dgwrap{align-self:stretch;background:#fff;padding:18px 20px 20px}
 .dgwrap .dh{font-size:34px;font-weight:700;color:#333;letter-spacing:-0.5px;margin-bottom:8px}
 .dgwrap .dh b{color:#E0337A}
@@ -201,18 +212,13 @@ const card = (s) => {
     + s.cells.map((c) => `<div class="cell"><img src="${img(c.src)}"><div class="cap">${c.cap}</div></div>`).join('')
     + `</div><div class="box">${s.foot}</div></div>`;
   if (s.card === 'reviews') {
-    const shot = (src, tag, rot, raw) => `<div class="shot" style="transform:rotate(${rot}deg)"><div class="stag">${tag}</div>`
-      + (raw ? `<img class="kraw" src="${img(src)}">` : bubble(src)) + '</div>';
-    return `<div class="card"><div class="title">써본 엄마들 반응 ${emo('💬')}</div><div class="shots">`
-      + shot('r_night', '밤에도 스스로 와서 앉아요', -1.2)
-      + shot('r_floor', '하이체어보다 훨씬 많이 써요', 1)
-      + shot('r_keep', '당근에 팔려다 안 팔았어요', -0.8)
-      + shot('r_manner_raw', '식사 예절까지', 1.2, true)
-      + '</div></div>';
+    // 참고: 다른 공구 계정 후기 장 = 흐린 생활 사진 배경 + 흰 굵은 제목 + 가운데 흰 후기 캡처 카드
+    const card2 = (src, raw) => `<div class="rcard">${raw ? `<img class="rraw" src="${img(src)}">` : `<div class="kimg"><img src="${img(src)}">${(KAKAO[src]?.hl || []).map(([x, y, w, h]) => `<i class="hl" style="left:${x}%;top:${y}%;width:${w}%;height:${h}%"></i>`).join('')}</div>`}</div>`;
+    return `<img class="rbg" src="${img(149)}"><div class="rdim"></div><div class="rwrap"><div class="rtitle">써본 엄마들 <span>#찐후기</span></div>`
+      + card2('r_night') + card2('r_floor') + card2('r_keep') + card2('r_manner', true)
+      + `<div class="rsrc">실사용 엄마들과 나눈 카톡 캡처</div></div>`;
   }
-  if (s.card === 'price') return `<img class="ptop" src="${img(151)}"><div class="pbox"><div class="title">그래서 가격은요? ${emo('👀')}</div>`
-    + `<div class="dgwrap"><div class="dh">당근 중고 범보의자 풀세트도 <b>7~9만 원대</b> <small>(타 브랜드)</small> ${emo('😳')}</div>`
-    + `<img class="dgbar" src="${img('dg_bar')}"><div class="dgrow"><img src="${img('dg_c1b')}"><img src="${img('dg_c2b')}"><img src="${img('dg_c3b')}"></div></div>`
+  if (s.card === 'price') return `<div class="pstage"><div class="pshadow"></div><img class="pcut" src="../src/cut_150t.png"></div><div class="pbox"><div class="title">그래서 가격은요? ${emo('👀')}</div>`
     + `<div class="cmp"><div class="row"><span>공식몰에서 의자 + 쿠션 따로 사면</span><span class="v"><s>103,800원</s></span></div>`
     + `<div class="row"><span>이번 공구 · 새 제품 + 쿠션 + ${DEAL.gift}</span><span class="v">'알람'으로 공개 ${emo('🔒')}</span></div></div>`
     + `<div class="big-box"><b class="pink">'${DEAL.keyword}'</b> 댓글 남기면 정가 대비<br><b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크 오픈 당일에 보내드려요!</div>`
