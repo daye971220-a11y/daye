@@ -54,8 +54,8 @@ const slides = [
   },
   // 4 식사 습관 — 자막은 아기 머리·등 위, 카톡 말풍선 2개(실제 캡처)
   { src: 153, groups: [
-    { ...g(47, 'l', ['box', '부엌에 두고<br>밥이랑 간식은<br><b>여기서만</b> 줬더니']), x: 30 },
-  ], kakao: { top: 75, items: ['r_self'], small: true } },
+    { ...g(34, 'l', ['box', '부엌에 두고<br>밥이랑 간식은<br><b>여기서만</b> 줬더니']), x: 30 },
+  ], kakao: { top: 62, items: ['r_self'], small: true } },
   // 5 흘려도 OK — 하이체어(높음) vs 범보의자(바닥에 낮게)
   { src: 149, groups: [
     { ...g(4, 'l', ['box', `하이체어는 높아서<br>밥 먹이면 사방으로 다 흘리는데 ${emo('🥲')}`]), x: 40 },
@@ -85,7 +85,7 @@ const slides = [
   // 9 가격 — 당근 실제 검색 화면 + 공식몰 비교 + 알람
   { src: 170, groups: [
     g(4, 'c', ['title', `그래서 가격은요? ${emo('👀')}`]),
-    g(37, 'c', ['big-box', `<b class="pink">'${DEAL.keyword}'</b> 댓글 남기면<br>정가 대비 <b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크<br>오픈 당일에 보내드려요!`]),
+    g(53, 'c', ['big-box', `<b class="pink">'${DEAL.keyword}'</b> 댓글 남기면<br>정가 대비 <b class="pink">최대 ${DEAL.maxRate} 할인</b> 링크<br>오픈 당일에 보내드려요!`]),
     g(86, 'c', ['dark', `10/22(목)~10/24(토) <b>단 3일</b> ${emo('⏰')}`]),
   ]},
 ];
@@ -243,7 +243,7 @@ const kakao = (s) => s.kakao ? `<div class="kpanel float${s.kakao.small ? ' smal
 slides.forEach((s, i) => {
   const n = String(i + 1).padStart(2, '0');
   const htmlPath = join(root, 'html', `slide_${n}.html`);
-  writeFileSync(htmlPath, `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${bg(s)}${groups(s)}${kakao(s)}</body></html>`, 'utf8');
+  writeFileSync(htmlPath, `<!doctype html><html><head><meta charset="utf-8"><style>${css}${s.css || ''}</style></head><body>${bg(s)}${groups(s)}${kakao(s)}</body></html>`, 'utf8');
   execFileSync(chrome, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
     '--window-size=966,1288', '--virtual-time-budget=8000', `--screenshot=${join(root, 'out', `bumbo_${n}.png`)}`, 'file:///' + htmlPath], { stdio: 'ignore' });
   console.log('done', n);
