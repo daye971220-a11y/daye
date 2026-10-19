@@ -25,7 +25,7 @@ const KAKAO = {
   r_self: { hl: [[0, 50, 47.5, 25]] },              // 스스로 거기가서 앉아.
   r_night: { hl: [[0, 34, 70, 33]] },             // 스스로 나와서 의자에 딱 앉음 ㅋㅋ
   r_floor: { hl: [[35, 0, 65, 25]] },             // 흘려봤자 바로 옆 바닥이라
-  r_keep: { hl: [[0, 34, 100, 33]] },             // 이걸로 의사소통이 돼서 너무 좋아서 안팔았
+  r_keep: { hl: [[0, 37, 97, 27], [0, 71, 21.5, 26]] },             // 이걸로 의사소통이 돼서 너무 좋아서 안팔았
 };
 const bubble = (src, w) => `<div class="kb" style="${w ? 'width:' + w : ''}"><div class="kimg"><img src="${img(src)}">`
   + (KAKAO[src]?.hl || []).map(([x, y, ww, hh]) => `<i class="hl" style="left:${x}%;top:${y}%;width:${ww}%;height:${hh}%"></i>`).join('')
