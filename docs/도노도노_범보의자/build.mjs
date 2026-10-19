@@ -18,7 +18,7 @@ for (const f of readdirSync(join(root, 'out'))) rmSync(join(root, 'out', f), { f
 const DEAL = { maxRate: '38%', gift: '아기핸드폰', keyword: '알람' };
 const g = (top, align, ...items) => ({ top, align, items });
 const emo = (e) => `<span class="emo">${e}</span>`;
-const img = (s) => /^\d+$/.test(String(s)) ? `../src_tone/${s}.jpg` : `../src/${s}.${String(s).startsWith('r_') ? 'png' : 'jpg'}`; // 사진은 아이폰 보정(그림자+100·밝기+29·따뜻함+15) 맞춘 src_tone 사용
+const img = (s) => /^\d+$/.test(String(s)) ? `../src_tone/${s}.jpg` : `../src/${s}.${String(s).startsWith('r_') ? 'png' : 'jpg'}`; // 사진은 tone_feed.cjs로 보정한 src_tone 사용(그림자 끌어올림 + 케넨홈 피드 밝기·화이트밸런스에 맞춤)
 
 // 카톡 말풍선: 실제 캡처 조각 + 형광펜(강조할 줄, 이미지 대비 % 좌표)
 const KAKAO = {
@@ -44,9 +44,9 @@ const slides = [
     { t: '범보 의자', style: 'left:40px;top:760px' },
     { t: '아기 휴대폰<br><i>증정</i>', style: 'right:34px;top:1060px;font-size:50px;text-align:right;line-height:1.25' },
   ], arrows: [
-    'M 800 345 C 812 420, 760 452, 722 425 C 690 402, 716 366, 748 388 C 778 410, 700 452, 590 430',
-    'M 120 838 C 120 900, 160 950, 238 985',
-    'M 818 1196 C 760 1222, 702 1200, 676 1150',
+    'M 800 345 C 812 420, 760 452, 722 425 C 690 402, 716 366, 748 388 C 778 410, 680 448, 560 410',
+    'M 120 840 C 112 920, 128 980, 178 1018',
+    'M 822 1202 C 772 1222, 734 1140, 668 1128',
   ] },
   // 3 하이체어 vs 범보의자
   { card: 'vs',
