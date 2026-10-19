@@ -54,8 +54,8 @@ const slides = [
   },
   // 4 식사 습관 — 자막은 아기 머리·등 위, 카톡 말풍선 2개(실제 캡처)
   { src: 153, groups: [
-    g(37, 'c', ['box', '부엌에 두고<br>밥이랑 간식은 <b>여기서만</b> 줬더니']),
-  ], kakao: { top: 62, items: ['r_self'] } },
+    { ...g(47, 'l', ['box', '부엌에 두고<br>밥이랑 간식은<br><b>여기서만</b> 줬더니']), x: 30 },
+  ], kakao: { top: 75, items: ['r_self'], small: true } },
   // 5 흘려도 OK — 하이체어(높음) vs 범보의자(바닥에 낮게)
   { src: 149, groups: [
     { ...g(4, 'l', ['box', `하이체어는 높아서<br>밥 먹이면 사방으로 다 흘리는데 ${emo('🥲')}`]), x: 40 },
@@ -175,6 +175,10 @@ html,body{width:966px;height:1288px;overflow:hidden;background:#e6ddd1;font-fami
 .shot{background:#FFDDE2;align-self:flex-start;filter:drop-shadow(0 6px 14px rgba(0,0,0,.14))}
 .shot .kb{width:784px;padding:12px 20px;background:#fff}
 .stag{display:inline-block;background:#E0337A;color:#fff;font-size:27px;font-weight:700;padding:4px 16px;margin:0 0 8px 6px;letter-spacing:-0.5px}
+.kpanel.float.small{left:auto;right:30px;width:620px;padding:12px 14px 14px;gap:8px}
+.kpanel.float.small .khead{font-size:22px}
+.kpanel.float.small .khead .dot{width:34px;height:34px;font-size:18px}
+.kpanel.float.small .kb{width:100% !important;padding:10px 14px}
 .kpanel.float{position:absolute;left:34px;right:34px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
 /* 가격 */
 .pstage{position:absolute;left:0;top:0;width:966px;height:720px;background:radial-gradient(ellipse at 50% 55%,#fff6f2 0%,#f3e7df 55%,#e6ddd1 100%)}
@@ -234,7 +238,7 @@ const card = (s) => {
 };
 
 const bg = (s) => s.card ? card(s) : `<img class="bg" src="${img(s.src)}" style="object-position:${s.pos || 'center'}${s.zoom ? ';transform:scale(' + s.zoom + ');transform-origin:50% 0' : ''}">${s.soft ? '<div class="soft"></div>' : ''}${s.sticker ? `<img class="sticker" src="../src/${s.sticker}.png">` : ''}${s.patch ? `<div class="patch" style="left:${s.patch[0]}%;top:${s.patch[1]}%;width:${s.patch[2]}%;height:${s.patch[3]}%"></div>` : ''}`;
-const kakao = (s) => s.kakao ? `<div class="kpanel float" style="top:${s.kakao.top}%">${khead}${s.kakao.items.map((k) => bubble(k, '94%')).join('')}</div>` : '';
+const kakao = (s) => s.kakao ? `<div class="kpanel float${s.kakao.small ? ' small' : ''}" style="top:${s.kakao.top}%">${khead}${s.kakao.items.map((k) => bubble(k, '94%')).join('')}</div>` : '';
 
 slides.forEach((s, i) => {
   const n = String(i + 1).padStart(2, '0');
