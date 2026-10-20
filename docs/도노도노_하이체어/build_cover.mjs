@@ -10,10 +10,10 @@ const root = 'C:/Users/user/Desktop/daye/delivery/donodono_highchair';
 const chrome = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 for (const d of ['html', 'out']) mkdirSync(join(root, d), { recursive: true });
 const emoCss = '';
-// TONE=0 원본 / TONE=light 그림자·밝기만 살짝(src_light: curves 0/0.02 0.2/0.235 0.5/0.535 0.8/0.82 1/1) / 기본 뽀얀 보정(src_tone)
+// TONE=0 원본 / TONE=light 그림자·밝기만 살짝(src_light: curves 0/0.02 0.2/0.235 0.5/0.535 0.8/0.82 1/1) / 기본 뽀얀 보정(src_tone) / TONE=pick 추천(제품 또렷: 살짝 밝게+부드러운 대비, 색은 원본, 넓은 반경 선명도+잔선명도)
 const MODE = process.env.TONE || 'soft';
-const DIR = { 0: 'src', light: 'src_light', soft: 'src_tone' }[MODE];
-const OUT = { 0: 'highchair_01_원본.png', light: 'highchair_01_살짝보정.png', soft: 'highchair_01_뽀얀보정.png' }[MODE];
+const DIR = { 0: 'src', light: 'src_light', soft: 'src_tone', pick: 'src_pick' }[MODE];
+const OUT = { 0: 'highchair_01_원본.png', light: 'highchair_01_살짝보정.png', soft: 'highchair_01_뽀얀보정.png', pick: 'highchair_01_추천보정.png' }[MODE];
 const TONE = MODE;
 
 const cells = [
