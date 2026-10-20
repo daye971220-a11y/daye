@@ -25,8 +25,8 @@ const css = `
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=block');
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:966px;height:1288px;overflow:hidden;background:#fff;font-family:'Noto Sans KR','Malgun Gothic',sans-serif}
-.grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;background:#fff}
-.grid img{width:100%;height:100%;object-fit:cover;display:block}
+.grid{position:absolute;inset:0;display:grid;grid-template-columns:480px 480px;grid-template-rows:641px 641px;gap:6px;background:#fff}
+.grid img{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;display:block}
 .soft{position:absolute;left:0;right:0;top:28%;height:44%;background:radial-gradient(ellipse at center,rgba(0,0,0,.26),rgba(0,0,0,0) 70%)}
 .stack{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:16px}
 .cover{color:#fff;font-size:118px;font-weight:900;letter-spacing:-2px;line-height:1.18;text-align:center;
