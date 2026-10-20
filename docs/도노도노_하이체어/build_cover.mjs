@@ -10,9 +10,11 @@ const root = 'C:/Users/user/Desktop/daye/delivery/donodono_highchair';
 const chrome = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 for (const d of ['html', 'out']) mkdirSync(join(root, d), { recursive: true });
 const emoCss = '';
-const TONE = process.env.TONE !== '0';
-const DIR = TONE ? 'src_tone' : 'src';
-const OUT = TONE ? 'highchair_01_뽀얀보정.png' : 'highchair_01_원본.png';
+// TONE=0 원본 / TONE=light 그림자·밝기만 살짝(src_light: curves 0/0.02 0.2/0.235 0.5/0.535 0.8/0.82 1/1) / 기본 뽀얀 보정(src_tone)
+const MODE = process.env.TONE || 'soft';
+const DIR = { 0: 'src', light: 'src_light', soft: 'src_tone' }[MODE];
+const OUT = { 0: 'highchair_01_원본.png', light: 'highchair_01_살짝보정.png', soft: 'highchair_01_뽀얀보정.png' }[MODE];
+const TONE = MODE;
 
 const cells = [
   { src: 'o_181', pos: '45% 0%' },   // 뉴본 바운서
@@ -40,7 +42,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>${css}</st
 <div class="stack"><div class="cover">도노도노</div><div class="prod">하이체어</div><div class="cover">최저가 공구예고</div></div>
 </body></html>`;
 
-const htmlPath = join(root, 'html', TONE ? 'cover.html' : 'cover_orig.html');
+const htmlPath = join(root, 'html', 'cover_' + MODE + '.html');
 writeFileSync(htmlPath, html, 'utf8');
 execFileSync(chrome, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
   '--window-size=966,1288', '--virtual-time-budget=8000', `--screenshot=${join(root, 'out', OUT)}`, 'file:///' + htmlPath], { stdio: 'ignore' });
